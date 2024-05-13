@@ -46,7 +46,7 @@ public class Utils {
      * @return File supplied
      */
    public static File getFileFromBin(String fileName) {
-    return new File(new File(".").getPath() + File.separator + "bin" + File.separator + "zork" + File.separator + "data" + File.separator + fileName);
+    return new File(new File("").getPath() + fileName);
 }
 
 /**
@@ -235,10 +235,10 @@ public static class SoundHandler {
         /**
          * add file names here
          */
-        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\omission.wav");
-        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\house_of_the_rising_sun.wav");
-        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\american_pie.wav");
-        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\stairway_to_heaven.wav");
+        addToPlaylist("src\\cityzork\\bin\\zork\\data\\omission.wav");
+        addToPlaylist("src\\cityzork\\bin\\zork\\data\\house_of_the_rising_sun.wav");
+        addToPlaylist("src\\cityzork\\bin\\zork\\data\\american_pie.wav");
+        addToPlaylist("src\\cityzork\\bin\\zork\\data\\stairway_to_heaven.wav");
         songQueue = songQueueTemplate;
         stop();
         radioPlayerThread.start();
@@ -249,14 +249,14 @@ public static class SoundHandler {
      * plays ttc subway sound
      */
     public static synchronized void subwaySound() {
-        playSound("subway.wav",false);
+        playSound("src\\cityzork\\bin\\zork\\data\\subway.wav",false);
     }
 
     /**
      * plays title music
      */
     public static synchronized void playTitleSound() {
-        playSound("titlescreen.wav",true);
+        playSound("src\\cityzork\\bin\\zork\\data\\titlescreen.wav",true);
     }
 
 
@@ -302,6 +302,7 @@ public static class SoundHandler {
                     startAfterInterruption();
 
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
             }
             
