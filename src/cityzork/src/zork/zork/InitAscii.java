@@ -11,7 +11,7 @@ public class InitAscii {
         // \\bin\\zork\\data\\cutscene.txt
         // System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         String roomNameFile = roomName + ".txt";
-        File f = new File(new File("").getAbsolutePath().concat("\\src\\cityzork\\bin\\locations\\" + roomNameFile));
+        File f = new File(new File("").getAbsolutePath() + File.separator + "src" + File.separator + "cityzork" + File.separator + "bin" + File.separator + "locations" + File.separator + roomNameFile);
         BufferedReader reader = new BufferedReader(new FileReader(f));
         String line = null;
         while((line = reader.readLine()) != null) {
