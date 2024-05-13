@@ -1,0 +1,53 @@
+package cityzork.src.zork.zork.commands;
+
+import java.util.ArrayList;
+import cityzork.src.zork.zork.Command;
+import cityzork.src.zork.zork.Game;
+import cityzork.src.zork.zork.Item;
+import cityzork.src.zork.zork.entites.Player;
+// import cityzork.src.zork.zork.items.Weapon;
+public class Use extends Command {
+    public Use(String name) {
+        super(name);
+    }
+
+    @Override
+    public String runCommand(String... args) { // Adds the ability to use items that heal you outside of battle
+        String command = "";
+        for (int i = 0; i < args.length; i++) {
+            command+=args[i] + " ";
+        }
+        command = command.substring(0, command.length()-1);
+        Player p = Game.getGame().getPlayer();
+        ArrayList<Item> arr = p.getInventory().getItems();
+        ArrayList<Item> arr2 = p.getInventory().getItemsWithEffects();
+        int location = 0;
+        for(int i = 0; i<arr.size(); i++){
+            if(arr.get(i).getName().equalsIgnoreCase(command))
+                location = i;
+        }
+        
+            for(int i = 0; i<arr2.size(); i++){
+                try {
+                    
+                
+                    if(command.contains(arr2.get(i).getName().toLowerCase())){
+                        if(p.getHealth() + arr2.get(i).getEffect().getHealth()>Game.getGame().getPlayer().getMaxHealth()){
+                            p.setHealth(Game.getGame().getPlayer().getMaxHealth());
+                        }else{
+                            p.setHealth(p.getHealth() + arr2.get(i).getEffect().getHealth());
+                        }
+                        Game.getGame().getPlayer().getInventory().getItems().remove(location);
+                        return "";
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("You cant use that item right now");
+                }
+            }
+        
+        return "";
+    }
+
+    
+}

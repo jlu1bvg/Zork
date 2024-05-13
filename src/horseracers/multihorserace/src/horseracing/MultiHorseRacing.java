@@ -302,6 +302,7 @@ public class MultiHorseRacing {
             }else if (result.equals("n")){
                 temp = "n";
                 validInput = true;
+                HorseRacingHelper.clearConsole();
                 System.out.println("Thank you for playing Horse Racing.");
                 
             //failsafe
