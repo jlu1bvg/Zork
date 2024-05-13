@@ -1,8 +1,6 @@
 package zork;
 import cityzork.src.zork.zork.CityZork;
-import horseracers.maphorserace.src.horseracing.MapHorseRacing;
 import horseracers.multihorserace.src.horseracing.MultiHorseRacing;
-import horseracers.otherhorserace.src.horseracing.OtherHorseRacing;
 
 public class Zork {
   public static void main(String[] args) {
