@@ -34,7 +34,7 @@ public class Constants {
      */
     public static void initCommands() {
         try {
-            for(Class<?> command : Utils.getClasses("zork.commands")) {
+            for(Class<?> command : Utils.getClasses("cityzork.src.zork.zork.commands")) {
                 Utils.registerCommand(command);
             }
         } catch (ClassNotFoundException | IOException e) {
