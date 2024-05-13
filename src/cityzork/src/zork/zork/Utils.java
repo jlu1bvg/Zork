@@ -234,10 +234,10 @@ public static class SoundHandler {
         /**
          * add file names here
          */
-        addToPlaylist("src\\cityzork\\bin\\zork\\data\\omission.wav");
-        addToPlaylist("src\\cityzork\\bin\\zork\\data\\house_of_the_rising_sun.wav");
-        addToPlaylist("src\\cityzork\\bin\\zork\\data\\american_pie.wav");
-        addToPlaylist("src\\cityzork\\bin\\zork\\data\\stairway_to_heaven.wav");
+        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\omission.wav");
+        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\house_of_the_rising_sun.wav");
+        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\american_pie.wav");
+        addToPlaylist("\\src\\cityzork\\bin\\zork\\data\\stairway_to_heaven.wav");
         songQueue = songQueueTemplate;
         stop();
         radioPlayerThread.start();

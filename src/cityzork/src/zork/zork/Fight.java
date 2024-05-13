@@ -40,9 +40,9 @@ public class Fight {
         boolean didPlayerWin = false;
         SoundHandler.stop();
         if(enemy.getName().equalsIgnoreCase("ksi-prime")) {
-            SoundHandler.playSound("src\\cityzork\\bin\\zork\\data\\kids_arent_alright.wav",true);
+            SoundHandler.playSound("\\src\\cityzork\\bin\\zork\\data\\kids_arent_alright.wav",true);
         } else {
-            SoundHandler.playSound("src\\cityzork\\bin\\zork\\data\\would_boss.wav",true);
+            SoundHandler.playSound("\\src\\cityzork\\bin\\zork\\data\\would_boss.wav",true);
         }
         didPlayerWin = fightingResults();
         if(didPlayerWin){
@@ -55,9 +55,9 @@ public class Fight {
             System.out.println("lost");
         }
         if(enemy.getName().equalsIgnoreCase("ksi-prime")) {
-            SoundHandler.stopSound("src\\cityzork\\bin\\zork\\data\\kids_arent_alright.wav");
+            SoundHandler.stopSound("\\src\\cityzork\\bin\\zork\\data\\kids_arent_alright.wav");
         } else {
-            SoundHandler.stopSound("src\\cityzork\\bin\\zork\\data\\would_boss.wav");
+            SoundHandler.stopSound("\\src\\cityzork\\bin\\zork\\data\\would_boss.wav");
         }
         SoundHandler.startAfterInterruption();
         Game.getGame().getPlayer().setInWeaponMenu(false);
