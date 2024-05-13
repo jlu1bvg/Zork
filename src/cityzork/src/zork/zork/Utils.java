@@ -31,7 +31,7 @@ public class Utils {
      * @return InputStream of the file selected, relative to the bin directory.
      */
     public static InputStream getFileStreamFromBin(String fileName) {
-        File soundFile = new File(new File(".").getPath() + "\\bin\\zork\\data\\" + fileName);
+        File soundFile = new File(new File(".").getPath() + File.separator + "bin" + File.separator + "zork" + File.separator + "data" + File.separator + fileName);
         try {
             return (InputStream) new FileInputStream(soundFile);
         } catch (FileNotFoundException e) {
@@ -45,31 +45,32 @@ public class Utils {
      * @param fileName
      * @return File supplied
      */
-    public static File getFileFromBin(String fileName) {
-        return new File(new File(".").getPath() + "\\bin\\zork\\data\\" + fileName);
-    }
+   public static File getFileFromBin(String fileName) {
+    return new File(new File(".").getPath() + File.separator + "bin" + File.separator + "zork" + File.separator + "data" + File.separator + fileName);
+}
 
-    /**
-     * @param fileName
-     * @return BufferedReader of the file that is selected, relative to the bin directory.
-     */
+/**
+ * @param fileName
+ * @return BufferedReader of the file that is selected, relative to the bin directory.
+ */
     public static BufferedReader getReaderFromBin(String fileName) {
-        File soundFile = new File(new File(".").getPath() + "\\bin\\zork\\data\\" + fileName);
+        File file = new File(new File(".").getPath() + File.separator + "bin" + File.separator + "zork" + File.separator + "data" + File.separator + fileName);
         try {
-            return new BufferedReader(new InputStreamReader(new FileInputStream(soundFile)));
+            return new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return null;
     }
-    /**
-     * @param fileName
-     * @return BufferedWriter of the file that is selected, relative to the bin directory.
-     */
+
+/**
+ * @param fileName
+ * @return BufferedWriter of the file that is selected, relative to the bin directory.
+ */
     public static BufferedWriter getWriterFromBin(String fileName) {
-        File soundFile = new File(new File(".").getPath() + "\\bin\\zork\\data\\" + fileName);
+        File file = new File(new File(".").getPath() + File.separator + "bin" + File.separator + "zork" + File.separator + "data" + File.separator + fileName);
         try {
-            return new BufferedWriter(new FileWriter(soundFile));
+            return new BufferedWriter(new FileWriter(file));
         } catch (IOException e) {
             e.printStackTrace();
         }
