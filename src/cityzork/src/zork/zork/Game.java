@@ -34,7 +34,7 @@ public class Game {
   public static Game game = new Game();
   public static boolean finished = false;
   public static boolean shouldCreateRooms = true;
-  public static boolean isTesting = false;
+  public static boolean isTesting = true;
   public static HashMap<String, Room> roomMap; 
 
   private final Player player;
@@ -333,7 +333,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -455,7 +455,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -562,7 +562,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -728,7 +728,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -825,7 +825,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -980,7 +980,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -1116,7 +1116,7 @@ public class Game {
                         }else{
                           text.slowTextSpeed("ok come back soon", 7);
                         }
-                        in.close();
+                        
                       } catch (Exception e) {
                         // TODO: handle exception
                       }
@@ -1194,14 +1194,14 @@ public class Game {
             artRoomLightsOn[2] = true;
             text.slowTextSpeed("You feel the ground shaking, but then it stops. huh strange i wonder what that button did?", 20);
           } else {
-            in.close();
+            
             return;
           }
         }
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-        in.close();
+        
        });
        
        final Room bayviewGlenHallwayTheatreBack = new Room ("You walk into a hallway behind the theatre, you see the grade 11 common area to the east", "bayviewglenhallwaytheatreback"); roomMap.put(bayviewGlenHallwayTheatreBack.getRoomName(), bayviewGlenHallwayTheatreBack);
@@ -1258,7 +1258,7 @@ public class Game {
          Graphics text = new Graphics();
          try {
          if (hasChosenInstrument[0]) {
-          in.close();
+          
           return;
          }
 
@@ -1305,7 +1305,7 @@ public class Game {
             } if (ans.equalsIgnoreCase("none")){ 
               hasChosenInstrument[0] = true;
               text.slowTextSpeed("You decide to leave such a huge choice for another day", 15); Thread.sleep(1000);
-              in.close();
+              
               return;
             } else if (hasChosenInstrument[0] == true) {
               text.slowTextSpeed("As you select your instrument, the other instruments dissapear along with musicMan", 15);
@@ -1319,7 +1319,7 @@ public class Game {
         } catch (InterruptedException e) {
         e.printStackTrace();
        }
-       in.close();
+       
        });
        
        
@@ -1376,13 +1376,13 @@ public class Game {
                   } 
                 } 
               } else {
-                in.close();
+                
                 return;
               }
             } catch (Exception e) {
               // TODO: handle exception
             }
-            in.close();
+            
           }
        });
 
@@ -1408,13 +1408,13 @@ public class Game {
               text.slowTextSpeed("You cannot afford the little rat key", 20);
             } else {
               text.slowTextSpeed(" You - Maybe next time", 20);
-              in.close();
+              
               return;
             }
           } catch (Exception e) {
             
           }
-          in.close();
+          
        });
        final Room bayviewGlen4thFloorLobby = new Room ("You enter the top floor, right below you is right above the lobby. neat!", "bayviewglen4thfloorlobby"); roomMap.put(bayviewGlen4thFloorLobby.getRoomName(), bayviewGlen4thFloorLobby);
        final Room bayviewGlenPrepStaffRoom = new Room ("Nice little staff room overlooking the Learning Commons", "bayviewglenprepstaffroom"); roomMap.put(bayviewGlenPrepStaffRoom.getRoomName(), bayviewGlenPrepStaffRoom);
@@ -1446,12 +1446,12 @@ public class Game {
                   Game.getGame().getPlayer().setCurrentRoom(pickeringCameronsHouse); System.out.println("You were knocked out... You wake up in a cold sweat in pickering");
                 }
               } else if (ans.equalsIgnoreCase("n")) {
-                in.close();
+                
                 return;
               } else {
                 text.slowTextSpeed("Please type Y or N \n" , 20);
               }
-              in.close();
+              
             }
           }
           } catch (InterruptedException e) {
@@ -1500,7 +1500,7 @@ public class Game {
          }catch (Exception e) {
            System.out.println("SlowTextSpeedNoWork");
          }
-         in.close();
+         
        });
          
  
@@ -1733,10 +1733,10 @@ public class Game {
                 Game.getGame().getPlayer().setCurrentRoom(pickeringCameronsHouse); System.out.println("You were knocked out... You wake up in a cold sweat in pickering");
               }
             } else {
-              in.close();
+              
               return;
             }
-            in.close();
+            
           } catch (Exception e) {
               
           }
@@ -1925,11 +1925,11 @@ public class Game {
                }
               
              } else {
-              in.close();
+              // 
                return;
              }
            }
-           in.close();
+          //  
          } catch (Exception e) {
          // TODO Auto-generated catch block
          e.printStackTrace();
@@ -2037,7 +2037,7 @@ public class Game {
             }else{
               text.slowTextSpeed("ok come back soon", 7);
             }
-            in.close();
+            
           } catch (Exception e) {
   
           }
@@ -2336,7 +2336,7 @@ public class Game {
                     }else{
                       text.slowTextSpeed("ok come back soon", 7);
                     }
-                    in.close();
+                    
                   } catch (Exception e) {
                     // TODO: handle exception
                   }
@@ -2417,7 +2417,7 @@ public class Game {
                 }else{
                   text.slowTextSpeed("alright, your loss...", 20);
                 }
-                in.close();
+                
               }catch (Exception e){
                 //ajsdasda
               }
@@ -2650,7 +2650,7 @@ public class Game {
            } catch (Exception Exception) {
              
            }
-           in.close();
+           
           }
  
  
@@ -2765,7 +2765,7 @@ public class Game {
                         }else{
                           text.slowTextSpeed("ok come back soon", 7);
                         }
-                        in.close();
+                        
                       } catch (Exception e) {
                         // TODO: handle exception
                       }
@@ -2999,7 +2999,7 @@ public class Game {
     }).start();
 
   } catch (Exception e){}
-  // in.close();
+  // 
   }
 
   /**
