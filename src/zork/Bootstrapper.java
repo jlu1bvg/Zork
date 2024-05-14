@@ -5,7 +5,7 @@ import horseracers.maphorserace.HorseRacingAssignment.src.horseracing.MapHorseRa
 import horseracers.multihorserace.src.horseracing.MultiHorseRacing;
 
 public class Bootstrapper {
-    public static void runHorseRacing(){
+    public static void runMultiHorseRacing(){
          MultiHorseRacing.runMultiHorseRace();
     }
     
@@ -16,7 +16,7 @@ public class Bootstrapper {
             e.printStackTrace();
     }
     }
-    public static void runJolineHorseRacing(){
+    public static void runMapHorseRacing(){
         MapHorseRacing.runMapHorseRace();
     }
 }
