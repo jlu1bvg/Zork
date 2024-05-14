@@ -22,7 +22,7 @@ import cityzork.src.zork.zork.entites.Enemy;
 import cityzork.src.zork.zork.entites.Player;
 import cityzork.src.zork.zork.items.Prime;
 import cityzork.src.zork.zork.items.Weapon;
-import horseracers.multihorserace.src.horseracing.HorseRacingHelper;
+import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 
 import java.lang.Runnable;
 
