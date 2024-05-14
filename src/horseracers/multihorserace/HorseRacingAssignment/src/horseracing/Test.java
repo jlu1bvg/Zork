@@ -1,4 +1,4 @@
-package horseracers.multihorserace.src.horseracing;
+package horseracers.multihorserace.HorseRacingAssignment.src.horseracing;
 
 public class Test {
     public static void main(String[] args) {

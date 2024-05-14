@@ -1,4 +1,4 @@
-package horseracers.multihorserace.src.horseracing;
+package horseracers.multihorserace.HorseRacingAssignment.src.horseracing;
 
 import java.util.Scanner;
 import java.util.List;

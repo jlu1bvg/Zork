@@ -1,4 +1,4 @@
-package horseracers.multihorserace.src.horseracing;
+package horseracers.multihorserace.HorseRacingAssignment.src.horseracing;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,4 +1,4 @@
-package horseracers.multihorserace.src.horseracing;
+package horseracers.multihorserace.HorseRacingAssignment.src.horseracing;
 
 public class Horse{
         private String name;
