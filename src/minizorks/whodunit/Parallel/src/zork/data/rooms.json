@@ -1,0 +1,932 @@
+{
+  "rooms": [
+    {
+      "id": "userRoom",
+      "name": "Your Room",
+      "description": "You are inside your hotel room.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "pillow" }, { "id": "painting" }, { "id": "welcome letter" }, { "id": "nightstand" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "userKitchen"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "hallwayLow"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "userBathroom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "userCloset"
+        }
+      ]
+    },
+    {
+      "id": "userKitchen",
+      "name": "Your Kitchen",
+      "description": "You are inside your kitchen",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "knife" }, { "id": "plate" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "userRoom"
+        }
+      ]
+    },
+    {
+      "id": "userBathroom",
+      "name": "Your Bathroom",
+      "description": "You are inside your bathroom",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "rubberDuck"}, { "id": "towel" }, { "id": "toilet paper" }, { "id": "bathtub" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "userRoom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "userSink"
+        }
+      ]
+    },
+    {
+      "id": "cellar",
+      "name": "Cellar",
+      "description": "You are inside the cellar. The wall seems to be cracked and could break easily.",
+      "capacity": 500,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "crate" }, { "id": "batteringRam" } 
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "userBathroom"
+        }
+      ]
+    },
+    {
+      "id": "userCloset",
+      "name": "Your Closet",
+      "description": "You are in your closet.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "brentClosetKey" }, { "id": "sweater" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "userRoom"
+        }
+      ]
+    },
+    {
+      "id": "userSink",
+      "name": "Your Sink",
+      "description": "You are looking inside your sink cupboard.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "hair dryer" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "userBathroom"
+        }
+      ]
+    },
+    {
+      "id": "hallwayLow",
+      "name": "Hallway",
+      "description": "You are in the hotel hallway on floor 8.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "hallwayMid"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "userRoom"
+        }
+      ]
+    },
+    {
+      "id": "hallwayMid",
+      "name": "Hallway",
+      "description": "You are in the hotel hallway on floor 8.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "littleGirl" }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "hallwayHigh"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "elevator"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "brentRoom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "hallwayLow"
+        }
+      ]
+    },
+    {
+      "id": "brentRoom",
+      "name": "Brent's Room",
+      "description": "You are inside Brent's hotel room.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "nightstand" }, { "id": "bed" }, { "id": "pen" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "brentKitchen"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "hallwayMid"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "brentBathroom"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "brentCloset"
+        },
+        {
+          "isLocked": false,
+          "direction": "Through",
+          "adjacentRoom": "cellar"
+        }
+      ]
+    },
+    {
+      "id": "brentKitchen",
+      "name": "Brent's Kitchen",
+      "description": "You are inside Brent's kitchen",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "brentBathroomKey" }, { "id": "newspaper" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "brentRoom"
+        }
+      ]
+    },
+    {
+      "id": "brentBathroom",
+      "name": "Brent's Bathroom",
+      "description": "You are inside Brent's bathroom",
+      "capacity": 150,
+      "keyid": "brentBathroomKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "baseball bat"}, { "id": "shower mat"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "brentRoom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "brentSink"
+        }
+      ]
+    },
+    {
+      "id": "brentCloset",
+      "name": "Brent's Closet",
+      "description": "You are in Brent's closet.",
+      "capacity": 150,
+      "keyid": "brentClosetKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "2 bullets (closet)"}, {"id": "hanger"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "brentRoom"
+        }
+      ]
+    },
+    {
+      "id": "brentSink",
+      "name": "Brent's Sink",
+      "description": "You are looking inside Brent's sink cupboard.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "hand soap"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "brentBathroom"
+        }
+      ]
+    },
+    {
+      "id": "hallwayHigh",
+      "name": "Hallway",
+      "description": "You are in the hotel hallway on floor 8.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "garbageChute"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "glennRoom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "hallwayMid"
+        }
+      ]
+    },
+    {
+      "id": "glennRoom",
+      "name": "Glenn's Room",
+      "description": "You are inside Glenn's hotel room.",
+      "capacity": 150,
+      "keyid": "glennRoomKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "Rope"}, { "id": "t shirt"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "glennKitchen"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "hallwayHigh"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "glennBathroom"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "glennCloset"
+        }
+      ]
+    },
+    {
+      "id": "glennKitchen",
+      "name": "Glenn's Kitchen",
+      "description": "You are inside Glenn's kitchen",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "fork"}, { "id": "ground beef"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "glennRoom"
+        }
+      ]
+    },
+    {
+      "id": "glennBathroom",
+      "name": "Glenn's Bathroom",
+      "description": "You are inside Glenn's bathroom",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "glennRoom"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "glennSink"
+        }
+      ]
+    },
+    {
+      "id": "glennCloset",
+      "name": "Glenn's Closet",
+      "description": "You are in Glenn's closet. You see Glenn's dead body inside, which makes you break down.",
+      "capacity": 150,
+      "keyid": "glennClosetKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "tennisCourtKey"}, { "id": "tennis shoes"}, { "id": "glennBody"}, { "id": "glennClosetNote"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "glennRoom"
+        }
+      ]
+    },
+    {
+      "id": "glennSink",
+      "name": "Glenn's Sink",
+      "description": "You are looking inside Glenn's sink cupboard.",
+      "capacity": 150,
+      "keyid": "glennSinkKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {"id": "plunger"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "glennBathroom"
+        }
+      ]
+    },
+    {
+      "id": "garbageChute",
+      "name": "Garbage Chute",
+      "description": "You are looking inside the garbage chute on floor 8 of the hotel.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "glennSinkKey"}, { "id": "banana peel"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "hallwayHigh"
+        }
+      ]
+    },
+    {
+      "id": "elevator",
+      "name": "Elevator",
+      "description": "You are inside the hotel elevator.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "hotelRoof"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "hallwayMid"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "hotelLobby"
+        }
+      ]
+    },
+    {
+      "id": "hotelRoof",
+      "name": "Hotel Roof",
+      "description": "You are on the roof of the hotel building",
+      "capacity": 150,
+      "keyid": "hotelRoofKey",
+      "npcs": [
+        { "id": "hotelStaff" }
+      ],
+      "items": [
+        { "id": "Gun"}, { "id": "plank of wood"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "elevator"
+        }
+      ]
+    },
+    {
+      "id": "hotelLobby",
+      "name": "Hotel Lobby",
+      "description": "You are in the hotel lobby.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "police" }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "elevator"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "reception"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "hotelDoors"
+        }
+      ]
+    },
+    {
+      "id": "hotelDoors",
+      "name": "Hotel Front Doors",
+      "description": "You are standing at the front doors of the hotel.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "door mat"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "hotelLobby"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "swimmingPool"
+        },
+        {           
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "parkingLot"
+        }
+      ]
+    },
+    {
+      "id": "parkingLot",
+      "name": "Parking Lot",
+      "description": "You are standing in a parking lot.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "invitationMan" }
+      ],
+      "items": [
+        { "id": null}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "hotelDoors"
+        }
+      ]
+    },
+    {
+      "id": "swimmingPool",
+      "name": "Swimming Pool",
+      "description": "You are at the hotel swimming pool.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "walletOwner" }
+      ],
+      "items": [
+        { "id": "sandals"}, { "id": "water gun"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "bbalCourt"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "snackBar"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "hotelDoors"
+        }
+      ]
+    },
+    {
+      "id": "snackBar",
+      "name": "Snack Bar",
+      "description": "You are at the counter of the snack bar by the pool.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "burger"}, { "id": "hot dog"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "swimmingPool"
+        }
+      ]
+    },
+    {
+      "id": "bbalCourt",
+      "name": "Basketball Court",
+      "description": "You are at the centre of a basketball court.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "lebronJames" }, { "id": "scottieBarnes" }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "stands"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "tennisCourt"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "grass"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "swimmingPool"
+        }
+      ]
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "description": "You are standing in a patch of grass.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "vaultKey"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "bbalCourt"
+        }
+      ]
+    },
+    {
+      "id": "stands",
+      "name": "Stands",
+      "description": "You are sitting in the stands at the basketball court.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "2 bullets (stands)" }, { "id": "lebronBag" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "bbalCourt"
+        }
+      ]
+    },
+    {
+      "id": "tennisCourt",
+      "name": "Tennis Court",
+      "description": "You are at the base line of a tennis court.",
+      "capacity": 150,
+      "keyid": "tennisCourtKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "hotelRoofKey"}, { "id": "tennis ball"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "bbalCourt"
+        }
+      ]
+    },
+    {
+      "id": "reception",
+      "name": "Reception",
+      "description": "You are at the reception desk of the hotel.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "receptionist" }
+      ],
+      "items": [
+        { "id": "bottle of water"}
+      ],
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "casino"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "hotelLobby"
+        }
+      ]
+    },
+    {
+      "id": "casino",
+      "name": "Casino",
+      "description": "You are inside of a casino, with flashing lights everywhere you look.",
+      "capacity": 150,
+      "keyid": "casinoKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "slots"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "pokerTables"
+        }
+      ]
+    },
+    {
+      "id": "slots",
+      "name": "Slots",
+      "description": "You are in an aisle of slot machines.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "bag of quaters"}, { "id": "cheating device"}
+      ],
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "vault"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "casino"
+        }
+      ]
+    },
+    {
+      "id": "vault",
+      "name": "Vault",
+      "description": "You are inside of a vault. It is shockingly empty.",
+      "capacity": 150,
+      "keyid": "vaultKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        {
+          "id": null
+        }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "slots"
+        }
+      ]
+    },
+    {
+      "id": "pokerTables",
+      "name": "Poker Tables",
+      "description": "You are walking around various poker tables.",
+      "capacity": 150,
+      "keyid": null,
+      "npcs": [
+        { "id": "arman" }
+      ],
+      "items": [
+        { "id": "poker chips"}, { "id": "playing cards"}
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "casino"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "privatePokerTable"
+        }
+      ]
+    },
+    {
+      "id": "privatePokerTable",
+      "name": "Private Poker Table",
+      "description": "Even though you know this is the private poker table room, it oddly doesn't have a poker table.",
+      "capacity": 500,
+      "keyid": "privatePokerTableKey",
+      "npcs": [
+        { "id": null }
+      ],
+      "items": [
+        { "id": "comb" }, { "id": "computer" }, { "id": "pen" }, { "id": "coat" }
+      ],
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "pokerTables"
+        }
+      ]
+    }
+  ]
+}

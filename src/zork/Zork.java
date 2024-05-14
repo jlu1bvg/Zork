@@ -1,5 +1,7 @@
 package zork;
 
+import minizorks.whodunit.Parallel.src.zork.Whodunit;
+
 public class Zork {
   public static void main(String[] args) {
     // Game game = new Game();
@@ -8,6 +10,13 @@ public class Zork {
     // OtherHorseRacing.runOtherHorseRace(); //not compatible with anything but works
     // MultiHorseRacing.runMultiHorseRace();
     // Bootstrapper.runMultiHorseRacing();
-    Bootstrapper.runCityZork();
+    // Bootstrapper.runPrimequest();
+    try {
+      Whodunit.runWhodunit();
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    // Bootstrapper.runPrimequest();
   }
 }
