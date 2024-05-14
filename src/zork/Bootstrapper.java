@@ -1,8 +1,8 @@
 package zork;
 
-import cityzork.src.zork.zork.CityZork;
 import horseracers.maphorserace.HorseRacingAssignment.src.horseracing.MapHorseRacing;
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.MultiHorseRacing;
+import minizorks.cityzork.src.zork.zork.CityZork;
 
 public class Bootstrapper {
     public static void runMultiHorseRacing(){

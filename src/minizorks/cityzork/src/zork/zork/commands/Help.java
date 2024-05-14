@@ -1,0 +1,30 @@
+package minizorks.cityzork.src.zork.zork.commands;
+
+import java.io.IOException;
+
+import minizorks.cityzork.src.zork.zork.Command;
+import minizorks.cityzork.src.zork.zork.Graphics;
+
+public class Help extends Command {
+
+    public Help(String name) {
+        super(name);
+        addAlias("h");
+    }
+
+    @Override
+    public String runCommand(String... args){
+        final Graphics renderer = new Graphics();
+        try {
+            renderer.showCutScene(1100, "src\\minizorks\\cityzork\\bin\\zork\\data\\help.txt", 15);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return "";
+    }
+}
+

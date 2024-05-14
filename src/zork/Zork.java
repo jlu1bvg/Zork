@@ -7,7 +7,7 @@ public class Zork {
     // MapHorseRacing.runMapHorseRace(); //npc moving not working so basically unusable
     // OtherHorseRacing.runOtherHorseRace(); //not compatible with anything but works
     // MultiHorseRacing.runMultiHorseRace();
-    Bootstrapper.runMultiHorseRacing();
+    // Bootstrapper.runMultiHorseRacing();
     Bootstrapper.runCityZork();
   }
 }
