@@ -17,6 +17,7 @@ import cityzork.src.zork.datatypes.CommandNotFoundException;
 import cityzork.src.zork.datatypes.Location;
 import cityzork.src.zork.zork.Constants.PlayerConstants;
 import cityzork.src.zork.zork.Utils.SoundHandler;
+import cityzork.src.zork.zork.commands.Stop;
 import cityzork.src.zork.zork.entites.Enemy;
 import cityzork.src.zork.zork.entites.Player;
 import cityzork.src.zork.zork.items.Prime;
@@ -34,7 +35,7 @@ public class Game {
   public static Game game = new Game();
   public static boolean finished = false;
   public static boolean shouldCreateRooms = true;
-  public static boolean isTesting = true;
+  public static boolean isTesting = false;
   public static HashMap<String, Room> roomMap; 
 
   private final Player player;
@@ -2911,6 +2912,7 @@ public class Game {
       }
 
     } 
+    Stop.runCommand();
     SoundHandler.stopSound("src\\cityzork\\bin\\zork\\data\\cutscene.wav");
     SoundHandler.stopSound("src\\cityzork\\bin\\zork\\data\\kids_arent_alright.wav");
     HorseRacingHelper.clearConsole();
@@ -2946,7 +2948,7 @@ public class Game {
           SoundHandler.stopSound("src\\cityzork\\bin\\zork\\data\\titlescreen.wav");
           SoundHandler.playSound("src\\cityzork\\bin\\zork\\data\\cutscene.wav", false);
         try {
-          renderer.showCutScene(1500, "src\\cityzork\\bin\\zork\\data\\cutscene.txt", 75);
+          renderer.showCutScene(1500, "\\src\\cityzork\\bin\\zork\\data\\cutscene.txt", 75);
         } catch (Exception e) {
           handleException(e);
         }

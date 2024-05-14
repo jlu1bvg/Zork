@@ -15,5 +15,9 @@ public class Stop extends Command{
       return "music stopped";
     }
 
+    public static void runCommand(){
+      SoundHandler.stop();
+    }
+
     
 }
