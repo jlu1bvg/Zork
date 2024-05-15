@@ -13,9 +13,6 @@ public class Zork {
     // Bootstrapper.runPrimequest();
     // Bootstrapper.runPrimequest();
     Bootstrapper.runWhodunit();
-    while(Stopper.getStopped()){
-      Bootstrapper.runPrimequest(); 
-      break;
-    }
+    Bootstrapper.runPrimequest(); 
   }
 }

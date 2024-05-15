@@ -18,7 +18,7 @@ public class CommandListener extends Thread {
             try {
                 while (!Thread.interrupted()) {
                     System.out.println("--------------");
-                    CommandContext res = Parser.getCommand();
+                    CommandContext res = Parser.getCommand("");
                     System.out.println("--------------");
                     res.runCommand();
                 }

@@ -12,9 +12,12 @@ import minizorks.whodunit.Parallel.src.zork.utils.CommandLoader;
 import minizorks.whodunit.Parallel.src.zork.utils.Dictionary;
 import minizorks.whodunit.Parallel.src.zork.utils.Give;
 import minizorks.whodunit.Parallel.src.zork.utils.CharacterConstants;
+import minizorks.whodunit.Parallel.src.zork.utils.CommandContext;
 import minizorks.whodunit.Parallel.src.zork.utils.MinigameLoader;
 import minizorks.whodunit.Parallel.src.zork.utils.Music;
+import minizorks.whodunit.Parallel.src.zork.utils.Parser;
 import minizorks.whodunit.Parallel.src.zork.commands.Play;
+import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -39,7 +42,9 @@ public class Game {
 
     private static Game game = new Game();
 
-    private static final Thread cmdListener = new CommandListener();
+	private static boolean finished=false;
+
+    // private static final Thread cmdListener = new CommandListener();
 
 	static final String GREEN_TEXT = "\033[1;32m", RESET = "\033[0m", RED_TEXT = "\033[1;31m", BLUE_TEXT = "\033[1;34m";
 
@@ -160,8 +165,9 @@ public class Game {
 
 	/**
 	 * Main play routine. Loops until end of play.
+	 * @throws CommandNotFoundException 
 	 */
-	public void play(boolean test) throws InterruptedException {
+	public void play(boolean test) throws InterruptedException, CommandNotFoundException {
 		if(!test) {
 			printWelcome();
 			player.setPlayerName();
@@ -171,7 +177,20 @@ public class Game {
 		else { player.setPlayerName(0); }
 		print("/b" + Game.player.getCurrentRoom().longDescription());
 		
-    	cmdListener.start();
+		Scanner in=new Scanner(System.in);
+		while(!finished){
+			try{
+				System.out.println("--------------");
+				System.out.print("> ");
+				CommandContext res = Parser.getCommand(in.nextLine());
+				System.out.println("--------------");
+				res.runCommand();
+			} catch(CommandNotFoundException e){
+				System.out.println(e);
+			}
+			
+		}
+    	// cmdListener.start();
 	}
 
 	private void printStory() throws InterruptedException {
@@ -460,22 +479,25 @@ public class Game {
 	}
 
 	public static void printWin() {
-		cmdListener.interrupt();
+		// cmdListener.interrupt();
+		finished=true;
 		HorseRacingHelper.clearConsole();
 		print("\n/bYou win! You found out Whodunit! Congrats /p!");
 	}
 
 	public static void printLoss() {
-		cmdListener.interrupt();
+		// cmdListener.interrupt();
+		finished=true;
 		HorseRacingHelper.clearConsole();
 		print("\n/rUnfortunately, you lost the game of poker, and Brent . YOU LOSE.");
 	}
 
 	public static void quitGame(){
-		Stopper.stopThis();
-		System.out.println(Stopper.getStopped());
+		finished=true;
+		// Stopper.stopThis();
+		// System.out.println(Stopper.getStopped());
 		//cmdListener.interrupt();
-		//HorseRacingHelper.clearConsole();
+		HorseRacingHelper.clearConsole();
 		System.out.println("game quitted");
 	}
 }

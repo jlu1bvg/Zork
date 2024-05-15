@@ -7,12 +7,13 @@ import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
 public class Parser {
     private static Scanner in = new Scanner(System.in);
 
-    public static CommandContext getCommand() throws CommandNotFoundException {
+    public static CommandContext getCommand(String input) throws CommandNotFoundException {
         String inputLine, words[];
 
-        System.out.print("> "); // print prompt
+        // System.out.print("> "); // print prompt
         
-        inputLine = in.nextLine();
+        // inputLine = in.nextLine();
+        inputLine=input;
         words = inputLine.split(" ");
 
         return new CommandContext(words[0], Arrays.copyOfRange(words, 1, words.length));
