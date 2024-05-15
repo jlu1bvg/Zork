@@ -27,6 +27,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
 
 public class Game {
 
@@ -38,7 +39,7 @@ public class Game {
 
     private static Game game = new Game();
 
-    // private static final Thread cmdListener = new CommandListener();
+    private static final Thread cmdListener = new CommandListener();
 
 	static final String GREEN_TEXT = "\033[1;32m", RESET = "\033[0m", RED_TEXT = "\033[1;31m", BLUE_TEXT = "\033[1;34m";
 
@@ -170,7 +171,7 @@ public class Game {
 		else { player.setPlayerName(0); }
 		print("/b" + Game.player.getCurrentRoom().longDescription());
 		
-        // cmdListener.start();
+    	cmdListener.start();
 	}
 
 	private void printStory() throws InterruptedException {
@@ -459,20 +460,22 @@ public class Game {
 	}
 
 	public static void printWin() {
+		cmdListener.interrupt();
 		HorseRacingHelper.clearConsole();
 		print("\n/bYou win! You found out Whodunit! Congrats /p!");
-		// System.exit(0);
 	}
 
 	public static void printLoss() {
+		cmdListener.interrupt();
 		HorseRacingHelper.clearConsole();
 		print("\n/rUnfortunately, you lost the game of poker, and Brent . YOU LOSE.");
-		// System.exit(0);
 	}
 
 	public static void quitGame(){
-		HorseRacingHelper.clearConsole();
+		Stopper.stopThis();
+		System.out.println(Stopper.getStopped());
+		//cmdListener.interrupt();
+		//HorseRacingHelper.clearConsole();
 		System.out.println("game quitted");
-		// System.exit(0);
 	}
 }

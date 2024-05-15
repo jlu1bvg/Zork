@@ -2793,7 +2793,7 @@ public class Game {
                       if(didWin){
                         Game.getGame().getPlayer().getCurrentRoom().getEnemies().remove(LOGAN_PAUL);
                         renderer.showCutScene(1100, "\\src\\minizorks\\primequest\\bin\\zork\\data\\finalcutscene.txt", 15);
-                        System.exit(0);
+                        // System.exit(0);
                         
                         //cutscence with logan paul dieing and you getting the prime, then bringing all the primes back to cyrus and playing soccor with him
                       }else{

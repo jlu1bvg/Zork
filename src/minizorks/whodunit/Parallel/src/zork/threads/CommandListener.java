@@ -4,6 +4,7 @@ import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
 import minizorks.whodunit.Parallel.src.zork.utils.CommandContext;
 import minizorks.whodunit.Parallel.src.zork.utils.Parser;
 import minizorks.whodunit.Parallel.src.zork.Game;
+import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
 
 public class CommandListener extends Thread {
     public CommandListener() {
@@ -12,15 +13,15 @@ public class CommandListener extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        Stopper stopper = new Stopper();
+        while (!stopper.getStopped()) {
             try {
-                System.out.println("--------------");
-                
-                CommandContext res = Parser.getCommand();
-
-                System.out.println("--------------");
-
-                res.runCommand();
+                while (!Thread.interrupted()) {
+                    System.out.println("--------------");
+                    CommandContext res = Parser.getCommand();
+                    System.out.println("--------------");
+                    res.runCommand();
+                }
             } catch (CommandNotFoundException e) {
                 e.printStackTrace(getName());
             }
