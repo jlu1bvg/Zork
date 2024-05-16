@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Music {
-    private Clip audioClip;
+    private static Clip audioClip;
 
     public Music() {
         try {
@@ -24,7 +24,7 @@ public class Music {
         }
     }
 
-    public void stop() {
+    public static void stop() {
         if (audioClip != null) {
             audioClip.stop(); 
             audioClip.close();

@@ -480,6 +480,7 @@ public class Game {
 
 	public static void printWin() {
 		// cmdListener.interrupt();
+		Music.stop();
 		finished=true;
 		HorseRacingHelper.clearConsole();
 		print("\n/bYou win! You found out Whodunit! Congrats /p!");
@@ -487,12 +488,14 @@ public class Game {
 
 	public static void printLoss() {
 		// cmdListener.interrupt();
+		Music.stop();
 		finished=true;
 		HorseRacingHelper.clearConsole();
 		print("\n/rUnfortunately, you lost the game of poker, and Brent . YOU LOSE.");
 	}
 
 	public static void quitGame(){
+		Music.stop();
 		finished=true;
 		// Stopper.stopThis();
 		// System.out.println(Stopper.getStopped());
