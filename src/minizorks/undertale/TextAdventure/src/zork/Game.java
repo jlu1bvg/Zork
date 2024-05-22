@@ -13,6 +13,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+
 public class Game {
 
     public static HashMap<String, Room> roomMap = new HashMap<>();
@@ -887,8 +889,10 @@ public class Game {
             case "quit":
                 if (command.hasSecondWord())
                     System.out.println("? -> " + shortenInvalid(command.getSecondWord()));
-                else
+                else{
+                    HorseRacingHelper.clearConsole();
                     return true; // signal that we want to quit
+                }
                 break;
             case "eat":
                 if (!command.hasSecondWord()) {
