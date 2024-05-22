@@ -4,6 +4,7 @@ import horseracers.maphorserace.HorseRacingAssignment.src.horseracing.MapHorseRa
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.MultiHorseRacing;
 import minizorks.primequest.src.zork.zork.Primequest;
 import minizorks.whodunit.Parallel.src.zork.Whodunit;
+import minizorks.undertale.TextAdventure.src.zork.Undertale;
 import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
 
 public class Bootstrapper {
@@ -31,5 +32,9 @@ public class Bootstrapper {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public static void runUndertale(){
+        Undertale.runUndertale();
     }
 }
