@@ -1,5 +1,6 @@
 package minizorks.primequest.src.zork.zork;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,9 +41,9 @@ public class Fight {
         boolean didPlayerWin = false;
         SoundHandler.stop();
         if(enemy.getName().equalsIgnoreCase("ksi-prime")) {
-            SoundHandler.playSound("src\\minizorks\\primequest\\bin\\zork\\data\\kids_arent_alright.wav",true);
+            SoundHandler.playSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"kids_arent_alright.wav",true);
         } else {
-            SoundHandler.playSound("src\\minizorks\\primequest\\bin\\zork\\data\\would_boss.wav",true);
+            SoundHandler.playSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"would_boss.wav",true);
         }
         didPlayerWin = fightingResults();
         if(didPlayerWin){
@@ -55,9 +56,9 @@ public class Fight {
             System.out.println("lost");
         }
         if(enemy.getName().equalsIgnoreCase("ksi-prime")) {
-            SoundHandler.stopSound("src\\minizorks\\primequest\\bin\\zork\\data\\kids_arent_alright.wav");
+            SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"kids_arent_alright.wav");
         } else {
-            SoundHandler.stopSound("src\\minizorks\\primequest\\bin\\zork\\data\\would_boss.wav");
+            SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"would_boss.wav");
         }
         SoundHandler.startAfterInterruption();
         Game.getGame().getPlayer().setInWeaponMenu(false);

@@ -75,7 +75,7 @@ public class Game {
 	}
 
 	private void initCharacters() throws Exception {
-		Path path = Path.of("src\\minizorks\\whodunit\\Parallel\\src\\zork\\data\\npc.json");
+		Path path = Path.of("src"+File.separator+"minizorks"+File.separator+"whodunit"+File.separator+"Parallel"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"npc.json");
 		String jsonString = Files.readString(path);
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(jsonString);
@@ -94,7 +94,7 @@ public class Game {
 	}
 
 	private void initItems() throws Exception {
-		Path path = Path.of("src\\minizorks\\whodunit\\Parallel\\src\\zork\\data\\items.json");
+		Path path = Path.of("src"+File.separator+"minizorks"+File.separator+"whodunit"+File.separator+"Parallel"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"items.json");
 		String jsonString = Files.readString(path);
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(jsonString);
@@ -115,7 +115,7 @@ public class Game {
 	}
 
 	private void initRooms() throws Exception {
-		Path path = Path.of("src\\minizorks\\whodunit\\Parallel\\src\\zork\\data\\rooms.json");
+		Path path = Path.of("src"+File.separator+"minizorks"+File.separator+"whodunit"+File.separator+"Parallel"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"rooms.json");
 		String jsonString = Files.readString(path);
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(jsonString);

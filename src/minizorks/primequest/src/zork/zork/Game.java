@@ -2,6 +2,7 @@ package minizorks.primequest.src.zork.zork;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class Game {
   public Game() { 
     Constants.initCommands();
     try {
-      // initRooms("src\\zork\\data\\rooms.json");
+      // initRooms("src"+File.separator+"zork"+File.separator+"data"+File.separator+"rooms.json");
       // currentRoom = roomMap.get("Bedroom");
 
     } catch (Exception e) {
@@ -413,7 +414,7 @@ public class Game {
                                   Game.getGame().getPlayer().getInventory().addItem(new Prime(0, "Ice Pop Prime", false, "ICE", true, "foodcourt"));
                                   player.setPrimeCounter(player.getPrimeCounter()+1);
                                   try {
-                                    renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\foodcourtcyruscall.txt", 15);
+                                    renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"foodcourtcyruscall.txt", 15);
                                   } catch (Exception e) {
                                     handleException(e);
                                   }   
@@ -516,7 +517,7 @@ public class Game {
                                   eglintonSubway.setLocked(false);
                                   yorkMillsSubway.setLocked(false);
                                   try {
-                                    renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\circlekcyruscall.txt", 15);
+                                    renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"circlekcyruscall.txt", 15);
                                   } catch (Exception e) {
                                     handleException(e);
                                   }
@@ -937,7 +938,7 @@ public class Game {
                                   Game.getGame().getPlayer().getInventory().addItem(new Prime(1, "GRAPE PRIME", false, "Purple", true, "On The Run"));
                                   player.setPrimeCounter(player.getPrimeCounter()+1);
                                   try {
-                                    renderer.showCutScene(1100, "\\src\\minizorks\\primequest\\bin\\zork\\data\\stclairwestcyruscall.txt", 15);
+                                    renderer.showCutScene(1100, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"stclairwestcyruscall.txt", 15);
                                   } catch (Exception e) {
                                     handleException(e);
                                   }
@@ -1473,7 +1474,7 @@ public class Game {
            if (!hasEnteredLobby[0]) {
              hasEnteredLobby[0] = true;
              try {
-               renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\bayviewglencyruscall.txt", 15);
+               renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"bayviewglencyruscall.txt", 15);
              } catch (Exception e) {
                handleException(e);
              }
@@ -1993,7 +1994,7 @@ public class Game {
                           Game.getGame().getPlayer().setMoney(pMoney-=10);
                           Game.getGame().getPlayer().getInventory().addItem(new Prime(0, "Meta Moon Prime", false, "Blue", true, "circlek"));
                           player.setPrimeCounter(player.getPrimeCounter()+1);
-                          renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\pickeringgotprime.txt", 15);
+                          renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"pickeringgotprime.txt", 15);
                           eglintonSubway.setLocked(false);
                           boughtPrime4[0] = true;
 
@@ -2356,7 +2357,7 @@ public class Game {
                   if (!hasEnteredMainArea[0]) {
                     hasEnteredMainArea[0] = true;
                     try {
-                      renderer.showCutScene(1100, "\\src\\minizorks\\primequest\\bin\\zork\\data\\unioncyruscall.txt", 15);
+                      renderer.showCutScene(1100, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"unioncyruscall.txt", 15);
                     } catch (Exception e) {
                       handleException(e);
                     }
@@ -2638,12 +2639,12 @@ public class Game {
            Graphics text = new Graphics();
            Scanner in = new Scanner(System.in);
            try {
-             renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\uniongobuscyruscall.txt", 15);
+             renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"uniongobuscyruscall.txt", 15);
              text.slowTextSpeed("No going back now, would you like to leave for pearson? Y/N:", 50);
              String ans = in.nextLine(); 
              if(ans.equalsIgnoreCase("y")) {
                text.slowTextSpeed("Alright, lets get this show on the road", 20);
-               renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\gotoukcutscene.txt", 15);
+               renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"gotoukcutscene.txt", 15);
                Game.getGame().getPlayer().setCurrentRoom(UKOutsideKsiHouse);
                UKOutsideKsiHouse.printAscii();
                
@@ -2792,7 +2793,7 @@ public class Game {
                     boolean didWin = f.fight();
                       if(didWin){
                         Game.getGame().getPlayer().getCurrentRoom().getEnemies().remove(LOGAN_PAUL);
-                        renderer.showCutScene(1100, "\\src\\minizorks\\primequest\\bin\\zork\\data\\finalcutscene.txt", 15);
+                        renderer.showCutScene(1100, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"finalcutscene.txt", 15);
                         // System.exit(0);
                         
                         //cutscence with logan paul dieing and you getting the prime, then bringing all the primes back to cyrus and playing soccor with him
@@ -2913,8 +2914,8 @@ public class Game {
 
     } 
     Stop.runCommand();
-    SoundHandler.stopSound("src\\minizorks\\primequest\\bin\\zork\\data\\cutscene.wav");
-    SoundHandler.stopSound("src\\minizorks\\primequest\\bin\\zork\\data\\kids_arent_alright.wav");
+    SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"cutscene.wav");
+    SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"kids_arent_alright.wav");
     HorseRacingHelper.clearConsole();
     System.out.println("game finished");
   }
@@ -2945,10 +2946,10 @@ public class Game {
       if(result.equals("start")) {
         hasStart = true;
         if(!isTesting) {
-          SoundHandler.stopSound("src\\minizorks\\primequest\\bin\\zork\\data\\titlescreen.wav");
-          SoundHandler.playSound("src\\minizorks\\primequest\\bin\\zork\\data\\cutscene.wav", false);
+          SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"titlescreen.wav");
+          SoundHandler.playSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"cutscene.wav", false);
         try {
-          renderer.showCutScene(1500, "\\src\\minizorks\\primequest\\bin\\zork\\data\\cutscene.txt", 75);
+          renderer.showCutScene(1500, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"cutscene.txt", 75);
         } catch (Exception e) {
           handleException(e);
         }

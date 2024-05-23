@@ -1,5 +1,6 @@
 package minizorks.primequest.src.zork.zork.commands;
 
+import java.io.File;
 import java.io.IOException;
 
 import minizorks.primequest.src.zork.zork.Command;
@@ -16,7 +17,7 @@ public class Help extends Command {
     public String runCommand(String... args){
         final Graphics renderer = new Graphics();
         try {
-            renderer.showCutScene(1100, "\\src\\minizorks\\primequest\\bin\\zork\\data\\help.txt", 15);
+            renderer.showCutScene(1100, ""+File.separator+"src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"help.txt", 15);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

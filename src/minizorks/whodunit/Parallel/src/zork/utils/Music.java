@@ -8,7 +8,7 @@ public class Music {
 
     public Music() {
         try {
-            File audioFile = new File("src\\minizorks\\whodunit\\Parallel\\src\\zork\\data\\music 1.wav");
+            File audioFile = new File("src"+File.separator+"minizorks"+File.separator+"whodunit"+File.separator+"Parallel"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music 1.wav");
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
             audioClip = AudioSystem.getClip();
             audioClip.open(audioStream);

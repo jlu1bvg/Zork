@@ -40,7 +40,7 @@ public class Game {
     boolean firstWaterfall = true;
     boolean firstSnowdin = true;
     boolean firstCore = true;
-    static String currentSong = "src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Ruins.wav";
+    static String currentSong = "src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Ruins.wav";
     ArrayList<String> alreadyDoneRooms = new ArrayList<>();
 
     ArrayList<Room> ruins = new ArrayList<>();
@@ -72,7 +72,7 @@ public class Game {
         }
 
         try {
-            initRooms("src\\minizorks\\undertale\\TextAdventure\\src\\zork\\data\\rooms.json");
+            initRooms("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"rooms.json");
             currentRoom = roomMap.get("Spawn Room");
             savedRoom = currentRoom;
         } catch (Exception e) {
@@ -89,7 +89,7 @@ public class Game {
     }
 
     private String namePrompt() {
-        PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale Start Menu.wav", true);
+        PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale Start Menu.wav", true);
         String name;
         String temp;
         while (true) {
@@ -212,7 +212,7 @@ public class Game {
             }
             if (currentRoom.getRoomName().equals("Flower Room") && !flowerRoomDialogueShown) {
                 PlayMusic.clip.stop();
-                PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Flowey.wav", true);
+                PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Flowey.wav", true);
                 printAsciiImage("flowey");
                 printText("Howdy! I'm Flowey. Flowey the Flower!");
                 printText("You're new to the underground, aren'tcha?");
@@ -312,7 +312,7 @@ public class Game {
             }
             if (currentRoom.getRoomName().equals("Toriel Encounter") && !torielEncounterDialogueShown) {
                 PlayMusic.clip.stop();
-                PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Toriel-Theme.wav", true);
+                PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Toriel-Theme.wav", true);
                 printAsciiImage("toriel");
                 printText("You want to leave so badly?");
                 printText("Hmph.");
@@ -345,7 +345,7 @@ public class Game {
             if (currentRoom.getRoomName().equals("Muffet Encounter") && !muffetDefeated) {
                 if (player.inventory.findItemByName("Spider Cider")>-1 || player.inventory.findItemByName("Spider Donut")>-1) {
                     PlayMusic.clip.stop();
-                    PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Muffet-Theme.wav", true);
+                    PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Muffet-Theme.wav", true);
                     printAsciiImage("muffet");
                     printText("Huh?");
                     printText("Where did you get that spider food?");
@@ -371,7 +371,7 @@ public class Game {
             }
             if (currentRoom.getRoomName().equals("Castle Hall") && !finalSansEncounterDialogueShown) {
                 PlayMusic.clip.stop();
-                PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Waterfall-Music.wav", true);
+                PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Waterfall-Music.wav", true);
                 printAsciiImage("sans");
                 printText("In a few moments, you will meet the king.");
                 printText("Together... You will determine the future of this world");
@@ -428,7 +428,7 @@ public class Game {
 
             if (currentRoom.getRoomName().equals("Sans Dialogue") && !sansEncounterDialogueShown) {
                 PlayMusic.clip.stop();
-                PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Papyrus.wav", true);
+                PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Papyrus.wav", true);
                 printAsciiImage("sans");
                 printText("hey Kiddo.");
                 sleep(1000);
@@ -524,7 +524,7 @@ public class Game {
 
     private void rollCredits() {
         PlayMusic.clip.stop();
-        PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Last Goodbye.wav", true);
+        PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Last Goodbye.wav", true);
         printTextCustomDelay("UNDERTALE TEXT ADVENTURE", 100);
         printTextCustomDelay("A GAME BY...", 100);
         printTextCustomDelay("JAD C.", 50);
@@ -543,7 +543,7 @@ public class Game {
      * Print out the opening message for the player.
      */
     private static void printIntro() {
-        PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Once-Upon-A-Time-Music.wav", true);
+        PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Once-Upon-A-Time-Music.wav", true);
         printTextCustomDelay(" ___  ___      ________       ________      _______       ________      _________    ________      ___           _______      \n" +
                 "|\\  \\|\\  \\    |\\   ___  \\    |\\   ___ \\    |\\  ___ \\     |\\   __  \\    |\\___   ___\\ |\\   __  \\    |\\  \\         |\\  ___ \\     \n" +
                 "\\ \\  \\\\\\  \\   \\ \\  \\\\ \\  \\   \\ \\  \\_|\\ \\   \\ \\   __/|    \\ \\  \\|\\  \\   \\|___ \\  \\_| \\ \\  \\|\\  \\   \\ \\  \\        \\ \\   __/|    \n" +
@@ -568,7 +568,7 @@ public class Game {
         // allow readers to read text before image
         sleep(1000);
         try {
-            File ascii = new File("src\\minizorks\\undertale\\TextAdventure\\src\\zork\\data\\ascii_art\\" + name.toLowerCase() + ".txt");
+            File ascii = new File("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"ascii_art"+File.separator+"" + name.toLowerCase() + ".txt");
             Scanner reader = new Scanner(ascii);
             while (reader.hasNextLine()) {
                 String data = reader.nextLine();
@@ -635,10 +635,10 @@ public class Game {
 
     private boolean encounter(String monsterName) {
         switch (monsterName) {
-            case "muffet" -> PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Muffet-Theme.wav", true);
-            case "flowey", "evil flowey" -> PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-OmegaFlowey.wav", true);
-            case "asgore" -> PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Toriel-Theme.wav", true);
-            default -> PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Enemy.wav", true);
+            case "muffet" -> PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Muffet-Theme.wav", true);
+            case "flowey", "evil flowey" -> PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-OmegaFlowey.wav", true);
+            case "asgore" -> PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Toriel-Theme.wav", true);
+            default -> PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Enemy.wav", true);
         }
         Monster monster = MonsterList.monsters.get(monsterName.toLowerCase());
         monsterName = monsterName.toUpperCase();
@@ -890,6 +890,7 @@ public class Game {
                 if (command.hasSecondWord())
                     System.out.println("? -> " + shortenInvalid(command.getSecondWord()));
                 else{
+                    PlayMusic.stop();
                     HorseRacingHelper.clearConsole();
                     return true; // signal that we want to quit
                 }
@@ -1168,33 +1169,33 @@ public class Game {
 
             if (ruins.contains(currentRoom)) {
                 if (switchingAreas()) {
-                    PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Ruins.wav", false);
+                    PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Ruins.wav", false);
                 }
-                currentSong = "src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Ruins.wav";
+                currentSong = "src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Ruins.wav";
             }
 
             if (snowdin.contains(currentRoom)) {
                 if (switchingAreas() || firstSnowdin) {
-                    PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Snowdin-Music.wav", false);
+                    PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Snowdin-Music.wav", false);
                     firstSnowdin = false;
                 }
-                currentSong = "src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Snowdin-Music.wav";
+                currentSong = "src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Snowdin-Music.wav";
             }
 
             if (waterfall.contains(currentRoom)) {
                 if (switchingAreas() || firstWaterfall) {
-                    PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Waterfall-Music.wav", false);
+                    PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Waterfall-Music.wav", false);
                     firstWaterfall = false;
                 }
-                currentSong = "src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-Waterfall-Music.wav";
+                currentSong = "src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-Waterfall-Music.wav";
             }
 
             if (core.contains(currentRoom)) {
                 if (switchingAreas() || firstCore) {
-                    PlayMusic.play("src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-CORE.wav", false);
+                    PlayMusic.play("src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-CORE.wav", false);
                     firstCore = false;
                 }
-                currentSong = "src/minizorks/undertale/TextAdventure/src/zork/data/music/Undertale-CORE.wav";
+                currentSong = "src"+File.separator+"minizorks"+File.separator+"undertale"+File.separator+"TextAdventure"+File.separator+"src"+File.separator+"zork"+File.separator+"data"+File.separator+"music"+File.separator+"Undertale-CORE.wav";
             }
 
             Game.printText(currentRoom.longDescription());

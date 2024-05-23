@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class InitAscii {
         public static void fillAsciiArt (String roomName) throws FileNotFoundException, IOException {
-        // \\bin\\zork\\data\\cutscene.txt
+        // "+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"cutscene.txt
         // System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         String roomNameFile = roomName + ".txt";
         File f = new File(new File("").getAbsolutePath() + File.separator + "src" + File.separator + "minizorks" + File.separator + "primequest" + File.separator + "bin" + File.separator + "locations" + File.separator + roomNameFile);

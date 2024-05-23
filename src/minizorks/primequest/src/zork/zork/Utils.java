@@ -235,10 +235,10 @@ public static class SoundHandler {
         /**
          * add file names here
          */
-        addToPlaylist("src\\minizorks\\primequest\\bin\\zork\\data\\omission.wav");
-        addToPlaylist("src\\minizorks\\primequest\\bin\\zork\\data\\house_of_the_rising_sun.wav");
-        addToPlaylist("src\\minizorks\\primequest\\bin\\zork\\data\\american_pie.wav");
-        addToPlaylist("src\\minizorks\\primequest\\bin\\zork\\data\\stairway_to_heaven.wav");
+        addToPlaylist("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"omission.wav");
+        addToPlaylist("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"house_of_the_rising_sun.wav");
+        addToPlaylist("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"american_pie.wav");
+        addToPlaylist("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"stairway_to_heaven.wav");
         songQueue = songQueueTemplate;
         stop();
         radioPlayerThread.start();
@@ -249,14 +249,14 @@ public static class SoundHandler {
      * plays ttc subway sound
      */
     public static synchronized void subwaySound() {
-        playSound("src\\minizorks\\primequest\\bin\\zork\\data\\subway.wav",false);
+        playSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"subway.wav",false);
     }
 
     /**
      * plays title music
      */
     public static synchronized void playTitleSound() {
-        playSound("src\\minizorks\\primequest\\bin\\zork\\data\\titlescreen.wav",true);
+        playSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"titlescreen.wav",true);
     }
 
 

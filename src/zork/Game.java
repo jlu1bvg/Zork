@@ -1,5 +1,6 @@
 package zork;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +22,7 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
+      initRooms("src"+File.separator+"zork"+File.separator+"data"+File.separator+"rooms.json");
       currentRoom = roomMap.get("Bedroom");
     } catch (Exception e) {
       e.printStackTrace();
