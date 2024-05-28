@@ -37,4 +37,9 @@ public class Bootstrapper {
     public static void runUndertale(){
         Undertale.runUndertale();
     }
+
+    public static void runZork(){
+        Game game = new Game();
+        game.play();
+    }
 }

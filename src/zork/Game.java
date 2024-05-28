@@ -9,6 +9,7 @@ import java.util.HashMap;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import zork.commands.go;
 
 public class Game {
 
@@ -108,7 +109,7 @@ public class Game {
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go"))
-      goRoom(command);
+      go.goRoom(currentRoom, command);
     else if (commandWord.equals("quit")) {
       if (command.hasSecondWord())
         System.out.println("Quit what?");
@@ -138,23 +139,4 @@ public class Game {
    * Try to go to one direction. If there is an exit, enter the new room,
    * otherwise print an error message.
    */
-  private void goRoom(Command command) {
-    if (!command.hasSecondWord()) {
-      // if there is no second word, we don't know where to go...
-      System.out.println("Go where?");
-      return;
-    }
-
-    String direction = command.getSecondWord();
-
-    // Try to leave current room.
-    Room nextRoom = currentRoom.nextRoom(direction);
-
-    if (nextRoom == null)
-      System.out.println("There is no door!");
-    else {
-      currentRoom = nextRoom;
-      System.out.println(currentRoom.longDescription());
-    }
-  }
 }

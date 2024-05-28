@@ -12,8 +12,9 @@ public class Zork {
     // Bootstrapper.runMultiHorseRacing();
     // Bootstrapper.runPrimequest();
     // Bootstrapper.runPrimequest();
-    Bootstrapper.runUndertale();
-    Bootstrapper.runWhodunit();
-    Bootstrapper.runPrimequest(); 
+    // Bootstrapper.runUndertale();
+    // Bootstrapper.runWhodunit();
+    // Bootstrapper.runPrimequest();
+    Bootstrapper.runZork(); 
   }
 }
