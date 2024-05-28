@@ -1,6 +1,17 @@
 {
   "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "c:\\Users\\kdeslauriers\\Downloads\\json-simple-1.1.jar\\json-simple-1.1.jar"
+    "lib\\jnativehook-2.2.2.jar",
+    "lib\\json-simple-1.1.jar",
+    "lib\\gson-2.8.2.jar"
+  ],
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.configuration.runtimes": [
+    {
+    "name":"JavaSE-20",
+    "path":"C:/Program Files/Java/jdk-20/",
+    "default": true
+    }
   ]
 }

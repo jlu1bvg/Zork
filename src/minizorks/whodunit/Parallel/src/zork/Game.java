@@ -19,6 +19,7 @@ import minizorks.whodunit.Parallel.src.zork.utils.Parser;
 import minizorks.whodunit.Parallel.src.zork.commands.Play;
 import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
