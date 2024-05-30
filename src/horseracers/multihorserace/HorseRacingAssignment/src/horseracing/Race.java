@@ -1,5 +1,6 @@
 package horseracers.multihorserace.HorseRacingAssignment.src.horseracing;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -156,36 +157,36 @@ public class Race {
         //custom intro music
 
         if(terrainType==HorseRacingHelper.AIR&&honored==false){
-            HorseRacingHelper.playBackgroundMusicAndWait("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Word of Honor OST Opening Theme Song.wav");
+            HorseRacingHelper.playBackgroundMusicAndWait("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Word of Honor OST Opening Theme Song.wav");
         }
         else if(terrainType==HorseRacingHelper.PARADISUS&&honored==false){
-            HorseRacingHelper.playBackgroundMusicAndWait("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Crab Rave.wav");
+            HorseRacingHelper.playBackgroundMusicAndWait("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Crab Rave.wav");
         }
         else if(terrainType==HorseRacingHelper.KITCHEN&&honored==false){
-            HorseRacingHelper.playBackgroundMusicAndWait("src\\horseracers\\multihorserace\\HorseRacingAssignment\\C418 Mutation.wav");
+            HorseRacingHelper.playBackgroundMusicAndWait("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"C418 Mutation.wav");
         }
         else{
-            HorseRacingHelper.playBackgroundMusicAndWait("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Race.wav");
+            HorseRacingHelper.playBackgroundMusicAndWait("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Race.wav");
         }
 
         //custom race music
 
         if(honored == true){
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Gojo Satoru - The Honored One.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Gojo Satoru - The Honored One.wav", true);
         }
         else if(terrainType==HorseRacingHelper.AIR){
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Word of Honor OST Opening Theme Song2.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Word of Honor OST Opening Theme Song2.wav", true);
         }
         else if(terrainType==HorseRacingHelper.PARADISUS){
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\Crab Rave2.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Crab Rave2.wav", true);
         }
         else if(terrainType==HorseRacingHelper.KITCHEN){
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\C418 Mutation2.wav", true);
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\minecraft-eating-sound.wav", true);
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\minecraft-drinking-sound-effect.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"C418 Mutation2.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"minecraft-eating-sound.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"minecraft-drinking-sound-effect.wav", true);
         }
         else{
-            HorseRacingHelper.playBackgroundMusic("src\\horseracers\\multihorserace\\HorseRacingAssignment\\horse_gallop.wav", true);
+            HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horse_gallop.wav", true);
         }        
 
         while(!done){

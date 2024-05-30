@@ -39,7 +39,7 @@ public class HorseRacingHelper {
     
     private HorseRacingHelper() {
         allHorses = new ArrayList<>();
-        loadHorsesFromCSV("src\\horseracers\\multihorserace\\HorseRacingAssignment\\horses.csv"); 
+        loadHorsesFromCSV("src"+File.separator+"horseracers"+File.separator+"multihorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horses.csv"); 
     }
 
     public static void prepareHorseRacingSimulation(){

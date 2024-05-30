@@ -1,5 +1,6 @@
 package horseracers.maphorserace.HorseRacingAssignment.src.horseracing;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,8 +75,8 @@ public class Race {
         int numSpaces = (int)(raceLength*10);
         boolean done = false;
         HorseRacingHelper.pauseForMilliseconds(100);
-        HorseRacingHelper.playBackgroundMusicAndWait("src\\horseracers\\maphorserace\\HorseRacingAssignment\\Race.wav");
-        HorseRacingHelper.playBackgroundMusic("src\\horseracers\\maphorserace\\HorseRacingAssignment\\horse_gallop.wav", true);
+        HorseRacingHelper.playBackgroundMusicAndWait("src"+File.separator+"horseracers"+File.separator+"maphorserace"+File.separator+"HorseRacingAssignment"+File.separator+"Race.wav");
+        HorseRacingHelper.playBackgroundMusic("src"+File.separator+"horseracers"+File.separator+"maphorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horse_gallop.wav", true);
 
         while(!done){
             HorseRacingHelper.pauseForMilliseconds(100);

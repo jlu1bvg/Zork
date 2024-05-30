@@ -1,4 +1,4 @@
-package horseracers.maphorserace.HorseRacingAssignment.src.horseracing;
+package horseracers.otherhorserace.src.horseracing;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -37,7 +36,7 @@ public class HorseRacingHelper {
     
     private HorseRacingHelper() {
         allHorses = new ArrayList<>();
-        loadHorsesFromCSV("src"+File.separator+"horseracers"+File.separator+"maphorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horses.csv"); 
+        loadHorsesFromCSV("src"+File.separator+"horseracers"+File.separator+"otherhorserace"+File.separator+"horses.csv"); 
     }
 
     public static void prepareHorseRacingSimulation(){
@@ -90,7 +89,7 @@ public class HorseRacingHelper {
         return shuffledList.subList(0, n);
     }
 
-    public static Race createRace(Scanner in, int numHorses, int raceType, int raceTerrain){
+    public static Race createRace(int numHorses, int raceType, int raceTerrain){
         double[] raceLengths;
         if (raceType == SHORT)
             raceLengths = SHORT_RACES;
@@ -116,9 +115,164 @@ public class HorseRacingHelper {
         for (int j = 1; j <= horses.size(); j++) {
             horses.get(j-1).setNumber(j);
         }
-
         return new Race(horses, raceLength, terrain);
     }
+
+    //creates a class to calculatethe ratio for show for anyhorse and uses the values percent and lengthdifference from the getOddsS class in race.java
+    public static String calculateRatioShow(double percent, double lengthDifference) {
+        Double RatioAmountToOneS = (((lengthDifference + (10-percent)) *2) +3);
+        return (double)RatioAmountToOneS + "-1";
+    }
+
+    //creates a class to calculatethe ratio for place for anyhorse and uses the values percent and lengthdifference from the getOddsP class in race.java
+    public static String calculateRatioPlace(double percent, double lengthDifference) {
+        Double RatioAmountToOneP = (((lengthDifference + (10-percent)) *2) +2);
+        return (double)RatioAmountToOneP + "-1";
+    }
+
+    //creates a class to calculatethe ratio for win for anyhorse and uses the values percent and lengthdifference from the getOddsW class in race.java
+    public static String calculateRatioWin(double percent, double lengthDifference) {
+        Double RatioAmountToOneW = (((lengthDifference + (10-percent)) *2)+1);
+        double winratio = RatioAmountToOneW; //does nothing i was just testing
+        return (double)RatioAmountToOneW + "-1";
+    }
+
+
+    
+    // public static String calculateRatioShow(double percent, double lengthDifference) {
+    //     double RatioAmountToOne = 0;
+    //     if (percent >= 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOne = 4; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOne = 8; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOne = 12; 
+    //         }
+    //     } 
+    //     else if (percent >= 60 && percent < 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOne = 6; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOne = 10; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOne = 14; 
+    //         }
+    //     } 
+    //     else if (percent >= 40 && percent < 60) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOne = 8; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOne = 12; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOne = 16; 
+    //         }
+    //     }
+    //     else if (percent <40) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOne = 10; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOne = 14; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOne = 18; 
+    //         }
+    //     }
+
+    // // putting the ratio amount to one in a string that returns it ((the ratio amount) - 1)
+
+    //     return (int)RatioAmountToOne + "-1";
+
+
+    // }
+
+    // public static String calculateRatioPlace(double percent, double lengthDifference) {
+    //     double RatioAmountToOneP = 0;
+    //     if (percent >= 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneP = 3; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneP = 7; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneP = 11; 
+    //         }
+    //     } 
+    //     else if (percent >= 60 && percent < 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneP = 5; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneP = 9; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneP = 13; 
+    //         }
+    //     } 
+    //     else if (percent >= 40 && percent < 60) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneP = 7; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneP = 11; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneP = 15; 
+    //         }
+    //     }
+    //     else if (percent <40) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneP = 9; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneP = 13; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneP = 17; 
+    //         }
+    //     }
+    // // putting the ratio amount to one in a string that returns it ((the ratio amount) - 1)
+    //     return (int)RatioAmountToOneP + "-1";
+
+
+    // }
+    // public static String calculateRatioWin(double percent, double lengthDifference) {
+    //     double RatioAmountToOneW = 0;
+    //     if (percent >= 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneW = 2; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneW = 6; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneW = 10; 
+    //         }
+    //     } 
+    //     else if (percent >= 60 && percent < 80) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneW = 4; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneW = 8; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneW = 12; 
+    //         }
+    //     } 
+    //     else if (percent >= 40 && percent < 60) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneW = 6; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneW = 10; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneW = 14; 
+    //         }
+    //     }
+    //     else if (percent <40) {
+    //         if (lengthDifference <= 2) {
+    //             RatioAmountToOneW = 8; 
+    //         } else if (lengthDifference >= 3 && lengthDifference <= 5) {
+    //             RatioAmountToOneW = 12; 
+    //         } else if (lengthDifference >= 6) {
+    //             RatioAmountToOneW = 16; 
+    //         }
+    //     }
+    
+    // // putting the ratio amount to one in a string that returns it ((the ratio amount) - 1)
+
+    //     return (int)RatioAmountToOneW + "-1";
+
+
+    // }
 
     public static void clearConsole() {
         try {
@@ -138,18 +292,6 @@ public class HorseRacingHelper {
         }
     }
 
-    public static int getLongestWidth(List<Horse> horses){
-        int i = 0;
-        for (Horse horse : horses) {
-            if (horse.getName().length() > i){
-                i = horse.getName().length();
-            }
-        }
-
-        return i;
-
-    }
-
     public static void pauseForMilliseconds(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -158,7 +300,7 @@ public class HorseRacingHelper {
             e.printStackTrace();
         }
     }
-   
+
     public static void drawHorse(Horse horse, int width, int number){
         // Using printf to display the formatted string with the number
         System.out.printf("|%"+((width - horse.getCurrentPosition())>1?(horse.getCurrentPosition()):width-1)+"s%" + ((width - horse.getCurrentPosition())>1?(width - horse.getCurrentPosition()):1) + "s\n", horse.getNumber(),"|");

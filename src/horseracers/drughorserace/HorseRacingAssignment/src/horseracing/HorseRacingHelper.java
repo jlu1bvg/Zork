@@ -1,4 +1,4 @@
-package horseracers.maphorserace.HorseRacingAssignment.src.horseracing;
+package horseracers.drughorserace.HorseRacingAssignment.src.horseracing;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -37,7 +36,7 @@ public class HorseRacingHelper {
     
     private HorseRacingHelper() {
         allHorses = new ArrayList<>();
-        loadHorsesFromCSV("src"+File.separator+"horseracers"+File.separator+"maphorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horses.csv"); 
+        loadHorsesFromCSV("src"+File.separator+"horseracers"+File.separator+"drughorserace"+File.separator+"HorseRacingAssignment"+File.separator+"horses.csv"); 
     }
 
     public static void prepareHorseRacingSimulation(){
@@ -90,7 +89,7 @@ public class HorseRacingHelper {
         return shuffledList.subList(0, n);
     }
 
-    public static Race createRace(Scanner in, int numHorses, int raceType, int raceTerrain){
+    public static Race createRace(int numHorses, int raceType, int raceTerrain){
         double[] raceLengths;
         if (raceType == SHORT)
             raceLengths = SHORT_RACES;
@@ -116,7 +115,6 @@ public class HorseRacingHelper {
         for (int j = 1; j <= horses.size(); j++) {
             horses.get(j-1).setNumber(j);
         }
-
         return new Race(horses, raceLength, terrain);
     }
 
