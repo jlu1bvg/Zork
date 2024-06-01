@@ -3,7 +3,7 @@ package zork;
 import minizorks.whodunit.Parallel.src.zork.Whodunit;
 import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
 public class Zork {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     // Game game = new Game();
     // game.play();
     // MapHorseRacing.runMapHorseRace(); //npc moving not working so basically unusable
@@ -15,6 +15,7 @@ public class Zork {
     // Bootstrapper.runUndertale();
     // Bootstrapper.runWhodunit();
     // Bootstrapper.runPrimequest();
-    Bootstrapper.runZork(); 
+    // Bootstrapper.runZork(); 
+    DDOS.runDDOS();
   }
 }

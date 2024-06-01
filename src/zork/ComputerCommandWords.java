@@ -1,0 +1,38 @@
+package zork;
+
+public class ComputerCommandWords {
+  // a constant array that holds all valid command words
+  private static final String validCommands[] = {"go", "quit", "help", "eat", "pick up", "swing", "south", "north", "west", "east",
+        "open", "close", "look", "inventory", "drop", "use", "read", "write", "climb",
+        "run", "talk", "shout", "integrate", "place"};
+
+  /**
+   * Constructor - initialise the command words.
+   */
+  public ComputerCommandWords() {
+    // nothing to do at the moment...
+  }
+
+  /**
+   * Check whether a given String is a valid command word. Return true if it is,
+   * false if it isn't.
+   **/
+  public boolean isCommand(String aString) {
+    for (String c : validCommands) {
+      if (c.equals(aString))
+        return true;
+    }
+    // if we get here, the string was not found in the commands
+    return false;
+  }
+
+  /*
+   * Print all valid commands to System.out.
+   */
+  public void showAll() {
+    for (String c : validCommands) {
+      System.out.print(c + "  ");
+    }
+    System.out.println();
+  }
+}
