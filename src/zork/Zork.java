@@ -1,7 +1,5 @@
 package zork;
 
-import minizorks.whodunit.Parallel.src.zork.Whodunit;
-import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
 public class Zork {
   public static void main(String[] args) throws InterruptedException {
     // Game game = new Game();
@@ -16,6 +14,7 @@ public class Zork {
     // Bootstrapper.runWhodunit();
     // Bootstrapper.runPrimequest();
     // Bootstrapper.runZork(); 
-    DDOS.runDDOS();
+    Parser parser=new Parser();
+    DDOS.runDDOS(parser);
   }
 }

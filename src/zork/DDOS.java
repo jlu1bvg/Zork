@@ -1,18 +1,28 @@
 package zork;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 
 public class DDOS {
-    private CommandWords commands;
+    private ComputerCommandWords commands;
     private Scanner in;
     private static boolean runningDDOS;
     private static int bootTime=1;
 
-    public static void runDDOS() throws InterruptedException{
+    public static void runDDOS(Parser parser) throws InterruptedException{
         runningDDOS=true;
         bootup();
+        while(runningDDOS){
+            ComputerCommand computerCommand;
+            try {
+                computerCommand=parser.getComputerCommand();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
     private static void bootup() throws InterruptedException{
@@ -26,7 +36,8 @@ public class DDOS {
                 Thread.sleep(timeScale);
             }
             HorseRacingHelper.clearConsole();
-            System.out.print("Deslauriers Disk Operating System for Enterprise v9.11\n  _____  _____   ____   _____ \r\n" + //
+            System.out.print("Deslauriers Disk Operating System Pro for Enterprise v9.11\n"+
+                                "  _____  _____   ____   _____ \r\n" + //
                                 " |  __ \\|  __ \\ / __ \\ / ____|\r\n" + //
                                 " | |  | | |  | | |  | | (___  \r\n" + //
                                 " | |  | | |  | | |  | |\\___ \\ \r\n" + //
@@ -40,7 +51,13 @@ public class DDOS {
             }
             System.out.print("|");
         }
+        HorseRacingHelper.playBackgroundMusic("src\\zork\\data\\audio\\Windows Final Vista.wav", false);
         HorseRacingHelper.clearConsole();
+
+        System.out.println("Deslauriers Disk Operating System for Enterprise v9.11");
+        System.out.println("Copyright Kevin Deslauriers Enterprise Networks. All rights reserved.");
+        System.out.println("");
+        System.out.println("help - Shows all commands");
     }
 
 
