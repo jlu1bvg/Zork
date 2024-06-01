@@ -6,6 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,6 +17,7 @@ import zork.commands.go;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
+  private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;
   private Room currentRoom;
@@ -29,6 +33,35 @@ public class Game {
       e.printStackTrace();
     }
     parser = new Parser();
+    initializeCommands();
+  }
+
+  /**
+  * Print out some help information. Here we print some stupid, cryptic message
+  * and a list of the command words.
+  */
+  private void printHelp() {
+      System.out.println("You are lost. You are alone. You wander");
+      System.out.println("around at Monash Uni, Peninsula Campus.");
+      System.out.println();
+      System.out.println("Your command words are:");
+      parser.showCommands();
+  }
+
+  private void initializeCommands() {
+      commandActions.put("help", command -> printHelp());
+      commandActions.put("go", command -> go.goRoom(currentRoom, command));
+      commandActions.put("quit", this::processQuit);
+      commandActions.put("eat", command -> System.out.println("Do you really think you should be eating at a time like this?"));
+  }
+
+  private void processQuit(Command command) {
+    if (command.hasSecondWord()){
+      System.out.println("Quit what?");
+    }
+    else{
+      //quit
+    }
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -99,41 +132,21 @@ public class Game {
    * Given a command, process (that is: execute) the command. If this command ends
    * the game, true is returned, otherwise false is returned.
    */
-  private boolean processCommand(Command command) {
-    if (command.isUnknown()) {
-      System.out.println("I don't know what you mean...");
-      return false;
+  public boolean processCommand(Command command) {
+        if (command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
+
+        Consumer<Command> action = commandActions.get(command.getCommandWord());
+        if (action != null) {
+            action.accept(command);
+            return command.getCommandWord().equals("quit") && !command.hasSecondWord();
+        } else {
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
     }
-
-    String commandWord = command.getCommandWord();
-    if (commandWord.equals("help"))
-      printHelp();
-    else if (commandWord.equals("go"))
-      go.goRoom(currentRoom, command);
-    else if (commandWord.equals("quit")) {
-      if (command.hasSecondWord())
-        System.out.println("Quit what?");
-      else
-        return true; // signal that we want to quit
-    } else if (commandWord.equals("eat")) {
-      System.out.println("Do you really think you should be eating at a time like this?");
-    }
-    return false;
-  }
-
-  // implementations of user commands:
-
-  /**
-   * Print out some help information. Here we print some stupid, cryptic message
-   * and a list of the command words.
-   */
-  private void printHelp() {
-    System.out.println("You are lost. You are alone. You wander");
-    System.out.println("around at Monash Uni, Peninsula Campus.");
-    System.out.println();
-    System.out.println("Your command words are:");
-    parser.showCommands();
-  }
 
   /**
    * Try to go to one direction. If there is an exit, enter the new room,
