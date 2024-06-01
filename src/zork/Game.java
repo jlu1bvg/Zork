@@ -16,7 +16,7 @@ import zork.commands.go;
 
 public class Game {
 
-  public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
+  public static HashMap<String, Room> roomMap = new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;
@@ -27,41 +27,13 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src"+File.separator+"zork"+File.separator+"data"+File.separator+"rooms.json");
+      initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
       currentRoom = roomMap.get("Bedroom");
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
     initializeCommands();
-  }
-
-  /**
-  * Print out some help information. Here we print some stupid, cryptic message
-  * and a list of the command words.
-  */
-  private void printHelp() {
-      System.out.println("You are lost. You are alone. You wander");
-      System.out.println("around at Monash Uni, Peninsula Campus.");
-      System.out.println();
-      System.out.println("Your command words are:");
-      parser.showCommands();
-  }
-
-  private void initializeCommands() {
-      commandActions.put("help", command -> printHelp());
-      commandActions.put("go", command -> go.goRoom(currentRoom, command));
-      commandActions.put("quit", this::processQuit);
-      commandActions.put("eat", command -> System.out.println("Do you really think you should be eating at a time like this?"));
-  }
-
-  private void processQuit(Command command) {
-    if (command.hasSecondWord()){
-      System.out.println("Quit what?");
-    }
-    else{
-      //quit
-    }
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -81,7 +53,7 @@ public class Game {
       room.setRoomName(roomName);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
-      ArrayList<Exit> exits = new ArrayList<Exit>();
+      ArrayList<Exit> exits = new ArrayList<>();
       for (Object exitObj : jsonExits) {
         String direction = (String) ((JSONObject) exitObj).get("direction");
         String adjacentRoom = (String) ((JSONObject) exitObj).get("adjacentRoom");
@@ -96,9 +68,6 @@ public class Game {
     }
   }
 
-  /**
-   * Main play routine. Loops until end of play.
-   */
   public void play() {
     printWelcome();
 
@@ -111,7 +80,6 @@ public class Game {
       } catch (IOException e) {
         e.printStackTrace();
       }
-
     }
     System.out.println("Thank you for playing.  Good bye.");
   }
@@ -128,28 +96,58 @@ public class Game {
     System.out.println(currentRoom.longDescription());
   }
 
-  /**
-   * Given a command, process (that is: execute) the command. If this command ends
-   * the game, true is returned, otherwise false is returned.
-   */
-  public boolean processCommand(Command command) {
-        if (command.isUnknown()) {
-            System.out.println("I don't know what you mean...");
-            return false;
-        }
-
-        Consumer<Command> action = commandActions.get(command.getCommandWord());
-        if (action != null) {
-            action.accept(command);
-            return command.getCommandWord().equals("quit") && !command.hasSecondWord();
-        } else {
-            System.out.println("I don't know what you mean...");
-            return false;
-        }
+  private boolean processCommand(Command command) {
+    if (command.isUnknown()) {
+      System.out.println("I don't know what you mean...");
+      return false;
     }
 
+    Consumer<Command> action = commandActions.get(command.getCommandWord().toLowerCase());
+    if (action != null) {
+      action.accept(command);
+      return command.getCommandWord().equals("quit") && !command.hasSecondWord();
+    } else {
+      System.out.println("I don't know what you mean...");
+      return false;
+    }
+  }
+
   /**
-   * Try to go to one direction. If there is an exit, enter the new room,
-   * otherwise print an error message.
+   * Print out some help information. Here we print some stupid, cryptic message
+   * and a list of the command words.
    */
+  private void printHelp() {
+    System.out.println("You are lost. You are alone. You wander");
+    System.out.println("around at Monash Uni, Peninsula Campus.");
+    System.out.println();
+    System.out.println("Your command words are:");
+    parser.showCommands();
+  }
+
+  private void goRoom(Command command) {
+    currentRoom = go.goRoom(currentRoom, command);
+  }
+
+  private void goRoom(String direction) {
+    currentRoom = go.goRoom(currentRoom, direction);
+  }
+
+  private void initializeCommands() {
+    commandActions.put("help", command -> printHelp());
+    commandActions.put("go", this::goRoom);
+    commandActions.put("quit", this::processQuit);
+    commandActions.put("eat", command -> System.out.println("Do you really think you should be eating at a time like this?"));
+    commandActions.put("north", command -> goRoom("north"));
+    commandActions.put("south", command -> goRoom("south"));
+    commandActions.put("east", command -> goRoom("east"));
+    commandActions.put("west", command -> goRoom("west"));
+  }
+
+  private void processQuit(Command command) {
+    if (command.hasSecondWord()) {
+      System.out.println("Quit what?");
+    } else {
+      // Do any cleanup if necessary
+    }
+  }
 }

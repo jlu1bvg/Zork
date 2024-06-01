@@ -1,22 +1,27 @@
 package zork.commands;
 
-import zork.Room;
 import zork.Command;
+import zork.Room;
+
 public class go {
-    public static void goRoom(Room currentRoom, Command command) {
+    public static Room goRoom(Room currentRoom, Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Go where?");
-            return;
+            return currentRoom;
         }
-        
         String direction = command.getSecondWord();
+        return goRoom(currentRoom, direction);
+    }
+
+    public static Room goRoom(Room currentRoom, String direction) {
         Room nextRoom = currentRoom.nextRoom(direction);
 
-        if (nextRoom == null)
+        if (nextRoom == null) {
             System.out.println("There is no door!");
-        else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.longDescription());
+            return currentRoom;
+        } else {
+            System.out.println(nextRoom.longDescription());
+            return nextRoom;
         }
     }
 }

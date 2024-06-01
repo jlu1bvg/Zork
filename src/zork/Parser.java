@@ -25,8 +25,7 @@ public class Parser {
     String word2 = null;
     if (words.length > 1)
       word2 = words[1];
-
-    if (commands.isCommand(word1))
+    if (commands.isCommand(word1.toLowerCase()))
       return new Command(word1, word2);
     else
       return new Command(null, word2);
