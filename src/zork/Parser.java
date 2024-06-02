@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import zork.DDOS.ComputerCommand;
 import zork.DDOS.ComputerCommandWords;
+import zork.DDOS.Folder;
 
 public class Parser {
   private CommandWords commands; // holds all valid command words
@@ -36,11 +37,11 @@ public class Parser {
       return new Command(null, word2);
   }
 
-  public ComputerCommand getComputerCommand(String currentFolder) throws java.io.IOException {
+  public ComputerCommand getComputerCommand(Folder currentFolder) throws java.io.IOException {
     String inputLine = "";
     String[] words;
 
-    System.out.print(currentFolder+"> "); // print prompt
+    System.out.print(currentFolder.getFolderPath()+"> "); // print prompt
 
     inputLine = in.nextLine();
 
@@ -50,10 +51,12 @@ public class Parser {
     String word2 = null;
     if (words.length > 1)
       word2 = words[1];
-    if (computerCommands.isCommand(word1.toLowerCase()))
-      return new ComputerCommand(word1, word2);
+    if (computerCommands.isCommand(word1.toLowerCase())&&word2==null)
+      return new ComputerCommand(word1, null);
+    else if(currentFolder.checkFile(word1))
+      return new ComputerCommand("open", word2);
     else
-      return new ComputerCommand(null, word2);
+      return new ComputerCommand(word1, word2);
   }
 
   /**

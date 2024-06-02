@@ -30,11 +30,21 @@
       "changeDirectories": [
         {
           "directory":"..",
-          "adjacentPath":"C:\\Users\\StuartUllman"
+          "adjacentPath":"C:\\Users"
         },
         {
           "directory": "Documents",
           "adjacentPath": "C:\\Users\\StuartUllman\\Documents"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\StuartUllman\\Documents",
+      "name": "Documents",
+      "changeDirectories": [
+        {
+          "directory":"..",
+          "adjacentPath":"C:\\Users\\StuartUllman"
         }
       ]
     }

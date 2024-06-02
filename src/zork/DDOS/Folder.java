@@ -1,6 +1,8 @@
 package zork.DDOS;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.function.Consumer;
 
 import zork.Game;
 
@@ -10,6 +12,7 @@ public class Folder {
   private String folderPath;
   private ArrayList<ChangeDirectory> changeDirectories;
   private ArrayList<File> files;
+  private Map<String,Consumer<File>> mapFiles;
 
   public ArrayList<ChangeDirectory> getChangeDirectories() {
     return changeDirectories;
@@ -18,12 +21,20 @@ public class Folder {
   public void printChangeDirectories(){
     System.out.printf("%-20s %-50s\n","Type","Name");
     System.out.println();
-    for(ChangeDirectory changeDirectory:changeDirectories){
-      System.out.printf("%-20s %-50s\n","Folder",changeDirectory.getDirectory());
+    if(changeDirectories.size()==1&&files==null&&!folderPath.equals("C:")){
+      for(ChangeDirectory changeDirectory:changeDirectories){
+        System.out.printf("%-20s %-50s\n","Folder",changeDirectory.getDirectory());
+      }
+      System.out.println("-----Folder empty-----");
     }
-    if(files!=null){
-      for(File file:files){
-        System.out.printf("%-20s %-50s\n",file.getType(),file.getName());
+    else{
+      for(ChangeDirectory changeDirectory:changeDirectories){
+        System.out.printf("%-20s %-50s\n","Folder",changeDirectory.getDirectory());
+      }
+      if(files!=null){
+        for(File file:files){
+          System.out.printf("%-20s %-50s\n",file.getType(),file.getName());
+        }
       }
     }
   }
@@ -112,6 +123,17 @@ public class Folder {
 
   public ArrayList<File> getFiles() {
     return files;
+  }
+
+  public Boolean checkFile(String name){
+    if(files!=null){
+      for(File file:files){
+        if(file.getName().equalsIgnoreCase(name)){
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public Folder addFile(File i) {

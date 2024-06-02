@@ -41,7 +41,7 @@ public class DDOS {
         while(runningDDOS){
             ComputerCommand computerCommand;
             try {
-                computerCommand=parser.getComputerCommand(currentFolder.getFolderPath());
+                computerCommand=parser.getComputerCommand(currentFolder);
                 runningDDOS=processComputerCommand(computerCommand);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -87,7 +87,7 @@ public class DDOS {
 
     private static boolean processComputerCommand(ComputerCommand computerCommand) {
         if (computerCommand.isUnknown()) {
-            System.out.println("I don't know what you mean...");
+            System.out.println("Invalid command");
             return true;
         }
 
@@ -97,7 +97,7 @@ public class DDOS {
             return !(computerCommand.getComputerCommandWord().equals("exit") && !computerCommand.hasSecondWord());
         } 
         else {
-            System.out.println("I don't know what you mean...");
+            System.out.println("Invalid command");
             return true;
         }
     }
@@ -107,6 +107,8 @@ public class DDOS {
         computerCommandActions.put("clear", this::clearConsole);
         computerCommandActions.put("exit", this::processQuit);
         computerCommandActions.put("dir",computerCommand->currentFolder.printChangeDirectories());
+        computerCommandActions.put("cd", this::changeDirectory);
+        computerCommandActions.put("open", null);
       }
 
     private void initFolders(String fileName) throws Exception {
@@ -134,6 +136,35 @@ public class DDOS {
         }
         folder.setChangeDirectories(changeDirectories);
         Game.folderMap.put(folderPath, folder);
+        }
+    }
+
+    private void changeDirectory(ComputerCommand command){
+        if(command.getSecondWord()==null){
+            System.out.println("No given folder");
+        }
+        else if(command.getSecondWord().equals("..")){
+            if(currentFolder.getFolderPath().equals("C:")){
+                System.out.println("Cannot go back");
+            }
+            else{
+                Folder newFolder=Game.folderMap.get(currentFolder.getFolderPath().substring(0,currentFolder.getFolderPath().indexOf(currentFolder.getFolderName())-1));
+                if(newFolder==null){
+                    System.out.println("Folder not found");
+                }
+                else{
+                    currentFolder=newFolder;
+                }
+            }
+        }
+        else{
+            Folder newFolder=Game.folderMap.get(currentFolder.getFolderPath()+"\\"+command.getSecondWord());
+            if(newFolder==null){
+                System.out.println("Folder not found");
+            }
+            else{
+                currentFolder=newFolder;
+            }
         }
     }
 

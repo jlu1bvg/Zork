@@ -2,7 +2,7 @@ package zork.DDOS;
 
 public class ComputerCommandWords {
   // a constant array that holds all valid command words
-  private static final String validCommands[] = {"dir", "cd <folder>", "clear", "help", "<filename>", "exit"};
+  private static final String validCommands[] = {"dir", "cd", "clear", "help", "<filename>", "exit"};
 
   /**
    * Constructor - initialise the command words.
