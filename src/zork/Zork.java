@@ -2,7 +2,7 @@ package zork;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import zork.utils.Audio;    
 public class Zork {
 
     private static final String ASCII_ART_FILE_PATH = "src\\zork\\data\\KDstudios.txt";
@@ -36,6 +36,8 @@ public class Zork {
         // Bootstrapper.runUndertale();
         // Bootstrapper.runWhodunit();
         // Bootstrapper.runPrimequest();
+        Audio audio = new Audio("audio", "src\\zork\\data\\audio\\01 - Main Title The Shining.wav");
+        audio.play();
         Bootstrapper.runZork();
     }
 
