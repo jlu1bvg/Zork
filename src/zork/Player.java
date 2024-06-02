@@ -3,7 +3,7 @@ import zork.utils.progressbar;
 public class Player {
 
     private int health;
-    private Inventory inventory;
+    private static Inventory inventory;
     private int insanity;
 
     public Player (int hp, Inventory i){
@@ -12,7 +12,7 @@ public class Player {
         insanity = 0;
     }
 
-    public Inventory getInventory(){
+    public static Inventory getInventory(){
         return inventory;
     }
 

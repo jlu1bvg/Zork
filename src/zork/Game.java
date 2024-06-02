@@ -12,6 +12,8 @@ import java.util.function.Consumer;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import zork.commands.drop;
 import zork.commands.go;
 import zork.commands.pickup;
 import zork.commands.look;
@@ -195,6 +197,15 @@ public class Game {
     }
   }
 
+  private void dropItem(Command command){
+    if(Command.getSecondWord() == null){
+      System.out.println("What do you want to drop?");
+    }else{
+      String response = drop.dropItem(Command.getSecondWord());
+      System.out.println(response);
+    }
+  }
+
   private void lookaround(Command command){
     look.lookaround(currentRoom);
   }
@@ -230,6 +241,7 @@ public class Game {
     commandActions.put("pickup", this::pickup);
     commandActions.put("inventory", this::inventory);
     commandActions.put("look", this::lookaround);
+    commandActions.put("drop", this::dropItem);
   }
 
   private void processQuit(Command command) {
