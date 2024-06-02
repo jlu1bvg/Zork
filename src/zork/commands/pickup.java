@@ -13,7 +13,7 @@ public class pickup {
             if(item.equals(i.getName())){
                 player.getInventory().addItem(i);
                 Game.getRoom().remove(i);
-                return "You have picked up" + i.getName();
+                return "You have picked up " + i.getName();
             }
         }
         return "Item not found";
