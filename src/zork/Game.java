@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import zork.commands.go;
 import zork.commands.pickup;
+import zork.commands.look;
 
 public class Game {
 
@@ -60,11 +61,12 @@ public class Game {
             String itemId = (String) jsonItem.get("id");
             String itemName = (String) jsonItem.get("name");
             String itemDescription = (String) jsonItem.get("description");
+            String itemShrotDescription = (String) jsonItem.get("shortDescription");
             String weightString = (String) jsonItem.get("weight");
             double itemWeightDouble = Double.parseDouble(weightString.replace("kg", "").trim());
             int itemWeight = (int) itemWeightDouble;  // Convert to int if necessary
             boolean isOpenable = (boolean) jsonItem.get("isOpenable");
-            Item item = new Item(itemWeight, itemName, itemDescription, isOpenable);
+            Item item = new Item(itemWeight, itemName, itemDescription, itemShrotDescription, isOpenable);
             itemMap.put(itemId, item);
         }
     }
@@ -192,6 +194,10 @@ public class Game {
       System.out.println(response);
     }
   }
+
+  private void lookaround(Command command){
+    look.lookaround(currentRoom);
+  }
   
   private void inventory(Command command){
     int nameWidth = 20;
@@ -223,6 +229,7 @@ public class Game {
     commandActions.put("west", command -> goRoom("west"));
     commandActions.put("pickup", this::pickup);
     commandActions.put("inventory", this::inventory);
+    commandActions.put("look", this::lookaround);
   }
 
   private void processQuit(Command command) {
