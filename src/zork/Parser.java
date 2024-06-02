@@ -49,14 +49,18 @@ public class Parser {
 
     String word1 = words[0];
     String word2 = null;
-    if (words.length > 1)
+    if (words.length > 1){
       word2 = words[1];
-    if (computerCommands.isCommand(word1.toLowerCase())&&word2==null)
+      if(computerCommands.isMultiCommand(word1)){
+        return new ComputerCommand(word1, word2);
+      }
+    }
+    if (computerCommands.isSingleCommand(word1.toLowerCase())&&word2==null)
       return new ComputerCommand(word1, null);
     else if(currentFolder.checkFile(word1))
       return new ComputerCommand("open", word2);
     else
-      return new ComputerCommand(word1, word2);
+      return new ComputerCommand(null, null);
   }
 
   /**
