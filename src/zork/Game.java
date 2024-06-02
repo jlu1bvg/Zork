@@ -192,6 +192,21 @@ public class Game {
       System.out.println(response);
     }
   }
+  
+  private void inventory(Command command){
+    int nameWidth = 20;
+    int weightWidth = 10;
+    int isOpenableWidth = 15;
+
+    System.out.println("Inventory:");
+    System.out.printf("%-" + nameWidth + "s %" + weightWidth + "s %" + isOpenableWidth + "s\n", "Name", "Weight", "Openable");
+
+    System.out.println(new String(new char[nameWidth + weightWidth + isOpenableWidth + 2]).replace('\0', '-'));
+
+    for (Item item : Jack.getInventory().getItems()) {
+        System.out.printf("%-" + nameWidth + "s %" + weightWidth + "d %" + isOpenableWidth + "s\n", item.getName(), item.getWeight(), item.isOpenable() ? "Yes" : "No");
+    }
+  }
 
   public static Room getRoom(){
     return currentRoom;
@@ -207,6 +222,7 @@ public class Game {
     commandActions.put("east", command -> goRoom("east"));
     commandActions.put("west", command -> goRoom("west"));
     commandActions.put("pickup", this::pickup);
+    commandActions.put("inventory", this::inventory);
   }
 
   private void processQuit(Command command) {

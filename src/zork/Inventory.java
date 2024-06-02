@@ -1,5 +1,6 @@
 package zork;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Inventory {
@@ -28,6 +29,10 @@ public class Inventory {
       System.out.println("There is no room to add the item.");
       return false;
     }
+  }
+
+  public ArrayList<Item> getItems() {
+    return items;
   }
 
 }
