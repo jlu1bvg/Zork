@@ -18,6 +18,7 @@ import zork.commands.pickup;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<>();
+  private Map<String, Item> itemMap = new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;
@@ -45,37 +46,66 @@ public class Game {
     return Jack;
   }
 
-  private void initRooms(String fileName) throws Exception {
-    Path path = Path.of(fileName);
-    String jsonString = Files.readString(path);
-    JSONParser parser = new JSONParser();
-    JSONObject json = (JSONObject) parser.parse(jsonString);
+   private void initRooms(String fileName) throws Exception {
+        Path path = Path.of(fileName);
+        String jsonString = Files.readString(path);
+        JSONParser parser = new JSONParser();
+        JSONObject json = (JSONObject) parser.parse(jsonString);
 
-    JSONArray jsonRooms = (JSONArray) json.get("rooms");
+        JSONArray jsonItems = (JSONArray) json.get("items");
+        if (jsonItems != null) {
+            for (Object itemObj : jsonItems) {
+                JSONObject jsonItem = (JSONObject) itemObj;
+                String itemId = (String) jsonItem.get("id");
+                String itemName = (String) jsonItem.get("name");
+                String itemDescription = (String) jsonItem.get("description");
+                String weightString = (String) jsonItem.get("weight");
+                int itemWeight = Integer.parseInt(weightString.replace("kg", "").trim());
+                boolean isOpenable = (boolean) jsonItem.get("isOpenable");
+                Item item = new Item(itemWeight, itemName, itemDescription, isOpenable);
+                itemMap.put(itemId, item);
+            }
+        }
 
-    for (Object roomObj : jsonRooms) {
-      Room room = new Room();
-      String roomName = (String) ((JSONObject) roomObj).get("name");
-      String roomId = (String) ((JSONObject) roomObj).get("id");
-      String roomDescription = (String) ((JSONObject) roomObj).get("description");
-      room.setDescription(roomDescription);
-      room.setRoomName(roomName);
+        JSONArray jsonRooms = (JSONArray) json.get("rooms");
+        if (jsonRooms != null) {
+            for (Object roomObj : jsonRooms) {
+                Room room = new Room();
+                String roomName = (String) ((JSONObject) roomObj).get("name");
+                String roomId = (String) ((JSONObject) roomObj).get("id");
+                String roomDescription = (String) ((JSONObject) roomObj).get("description");
+                room.setDescription(roomDescription);
+                room.setRoomName(roomName);
 
-      JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
-      ArrayList<Exit> exits = new ArrayList<>();
-      for (Object exitObj : jsonExits) {
-        String direction = (String) ((JSONObject) exitObj).get("direction");
-        String adjacentRoom = (String) ((JSONObject) exitObj).get("adjacentRoom");
-        String keyId = (String) ((JSONObject) exitObj).get("keyId");
-        Boolean isLocked = (Boolean) ((JSONObject) exitObj).get("isLocked");
-        Boolean isOpen = (Boolean) ((JSONObject) exitObj).get("isOpen");
-        Exit exit = new Exit(direction, adjacentRoom, isLocked, keyId, isOpen);
-        exits.add(exit);
-      }
-      room.setExits(exits);
-      roomMap.put(roomId, room);
+                JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
+                ArrayList<Exit> exits = new ArrayList<>();
+                for (Object exitObj : jsonExits) {
+                    String direction = (String) ((JSONObject) exitObj).get("direction");
+                    String adjacentRoom = (String) ((JSONObject) exitObj).get("adjacentRoom");
+                    String keyId = (String) ((JSONObject) exitObj).get("keyId");
+                    Boolean isLocked = (Boolean) ((JSONObject) exitObj).get("isLocked");
+                    Boolean isOpen = (Boolean) ((JSONObject) exitObj).get("isOpen");
+                    Exit exit = new Exit(direction, adjacentRoom, isLocked, keyId, isOpen);
+                    exits.add(exit);
+                }
+                room.setExits(exits);
+
+                JSONArray jsonItemsInRoom = (JSONArray) ((JSONObject) roomObj).get("items");
+                ArrayList<Item> itemsInRoom = new ArrayList<>();
+                if (jsonItemsInRoom != null) {
+                    for (Object itemId : jsonItemsInRoom) {
+                        Item item = itemMap.get((String) itemId);
+                        if (item != null) {
+                            itemsInRoom.add(item);
+                        }
+                    }
+                }
+                room.setItems(itemsInRoom);
+
+                roomMap.put(roomId, room);
+            }
+        }
     }
-  }
 
   public void play() {
     printWelcome();

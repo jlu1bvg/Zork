@@ -4,6 +4,7 @@ public class Item extends OpenableObject {
   private int weight;
   private String name;
   private boolean isOpenable;
+  private String description;
 
   public Item(int weight, String name, boolean isOpenable) {
     this.weight = weight;
@@ -11,7 +12,15 @@ public class Item extends OpenableObject {
     this.isOpenable = isOpenable;
   }
 
-  public void open() {
+  public Item(int weight, String name, String description, boolean isOpenable) {
+      this.weight = weight;
+      this.name = name;
+      this.description = description;
+      this.isOpenable = isOpenable;
+  }
+
+
+public void open() {
     if (!isOpenable)
       System.out.println("The " + name + " cannot be opened.");
 

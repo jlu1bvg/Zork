@@ -1,7 +1,5 @@
 package zork;
 
-import minizorks.whodunit.Parallel.src.zork.Whodunit;
-import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
