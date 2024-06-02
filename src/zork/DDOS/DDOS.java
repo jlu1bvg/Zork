@@ -50,7 +50,7 @@ public class DDOS {
         }
     }
 
-    private static void bootup() throws InterruptedException{
+    private void bootup() throws InterruptedException{
         int timeScale=bootTime*100/100;
         for(int i=0;i<=100;i++){
             int delay=(int)(Math.random()*100000);
@@ -77,12 +77,7 @@ public class DDOS {
             System.out.print("|");
         }
         HorseRacingHelper.playBackgroundMusic("src\\zork\\data\\audio\\Windows Final Vista.wav", false);
-        HorseRacingHelper.clearConsole();
-
-        System.out.println("Deslauriers Disk Operating System for Enterprise v9.11");
-        System.out.println("Copyright Kevin Deslauriers Enterprise Networks. All rights reserved.");
-        System.out.println("");
-        System.out.println("help - Shows all commands");
+        clearConsole(null);
     }
 
     private static boolean processComputerCommand(ComputerCommand computerCommand) {
@@ -105,6 +100,7 @@ public class DDOS {
 
     private void initializeCommands() {
         computerCommandActions.put("help", computerCommand -> Parser.showComputerCommands());
+        computerCommandActions.put("clear", this::clearConsole);
         computerCommandActions.put("exit", this::processQuit);
         computerCommandActions.put("dir",computerCommand->currentFolder.getChangeDirectories());
       }
@@ -134,6 +130,15 @@ public class DDOS {
         folder.setChangeDirectories(changeDirectories);
         Game.folderMap.put(folderPath, folder);
         }
+    }
+
+    private void clearConsole(ComputerCommand command){
+        HorseRacingHelper.clearConsole();
+
+        System.out.println("Deslauriers Disk Operating System for Enterprise v9.11");
+        System.out.println("Copyright Kevin Deslauriers Enterprise Networks. All rights reserved.");
+        System.out.println("");
+        System.out.println("help - Shows all commands");
     }
 
     private void processQuit(ComputerCommand command) {

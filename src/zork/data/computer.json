@@ -5,7 +5,6 @@
       "name": "C:",
       "changeDirectories": [
         {
-          "type": "folder",
           "directory": "Users",
           "adjacentID": "C:\\Users"
         }
@@ -16,12 +15,10 @@
       "name": "Users",
       "changeDirectories": [
         {
-          "type": "folder",
           "directory": "..",
           "adjacentPath": "C:"
         },
         {
-          "type": "folder",
           "directory": "StuartUllman",
           "adjacentPath": "C:\\Users\\StuartUllman"
         }
@@ -32,12 +29,10 @@
       "name": "StuartUllman",
       "changeDirectories": [
         {
-          "type":"folder",
           "directory":"..",
           "adjacentPath":"C:\\Users\\StuartUllman"
         },
         {
-          "type": "folder",
           "directory": "Documents",
           "adjacentPath": "C:\\Users\\StuartUllman\\Documents"
         }
