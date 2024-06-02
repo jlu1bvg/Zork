@@ -17,6 +17,10 @@ public class Room {
     this.exits = exits;
   }
 
+  public void setItems(ArrayList<Item> items){
+    this.items = items;
+  }
+
   /**
    * Create a room described "description". Initially, it has no exits.
    * "description" is something like "a kitchen" or "an open court yard".
@@ -30,6 +34,7 @@ public class Room {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
+    items = new ArrayList<Item>();
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -121,7 +126,7 @@ public class Room {
     items.add(i);
     return this;
   }
-  
+
   public Room remove(Item i) {
     items.remove(i);
     return this;

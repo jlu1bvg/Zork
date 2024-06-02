@@ -1,8 +1,8 @@
 package zork;
 
 public class Command {
-  private String commandWord;
-  private String secondWord;
+  private static String commandWord;
+  private static String secondWord;
 
   /**
    * Create a command object. First and second word must be supplied, but either
@@ -11,14 +11,14 @@ public class Command {
    */
   public Command(String firstWord, String secondWord) {
     commandWord = firstWord;
-    this.secondWord = secondWord;
+    Command.secondWord = secondWord;
   }
 
   /**
    * Return the command word (the first word) of this command. If the command was
    * not understood, the result is null.
    */
-  public String getCommandWord() {
+  public static String getCommandWord() {
     return commandWord;
   }
 
@@ -26,7 +26,7 @@ public class Command {
    * Return the second word of this command. Returns null if there was no second
    * word.
    */
-  public String getSecondWord() {
+  public static String getSecondWord() {
     return secondWord;
   }
 

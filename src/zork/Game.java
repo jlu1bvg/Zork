@@ -13,6 +13,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import zork.commands.go;
+import zork.commands.pickup;
 
 public class Game {
 
@@ -20,7 +21,8 @@ public class Game {
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;
-  private Room currentRoom;
+  private static Room currentRoom;
+  private static Player Jack;
 
   /**
    * Create the game and initialise its internal map
@@ -28,12 +30,19 @@ public class Game {
   public Game() {
     try {
       initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
-      currentRoom = roomMap.get("Bedroom");
+      currentRoom = roomMap.get("Bedroom"); //change this
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
     initializeCommands();
+    Jack = new Player(100, new Inventory(100));
+    Jack.increaseInsanity(48);
+    Jack.checkInsanity();
+  }
+
+  public static Player getPlayer(){
+    return Jack;
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -102,10 +111,10 @@ public class Game {
       return false;
     }
 
-    Consumer<Command> action = commandActions.get(command.getCommandWord().toLowerCase());
+    Consumer<Command> action = commandActions.get(Command.getCommandWord().toLowerCase());
     if (action != null) {
       action.accept(command);
-      return command.getCommandWord().equals("quit") && !command.hasSecondWord();
+      return Command.getCommandWord().equals("quit") && !command.hasSecondWord();
     } else {
       System.out.println("I don't know what you mean...");
       return false;
@@ -132,6 +141,19 @@ public class Game {
     currentRoom = go.goRoom(currentRoom, direction);
   }
 
+  private void pickup(Command command){
+    if(Command.getSecondWord() == null){
+      System.out.println("What do you want to pick up?");
+    }else{
+      String response = pickup.pickup(Command.getSecondWord());
+      System.out.println(response);
+    }
+  }
+
+  public static Room getRoom(){
+    return currentRoom;
+  }
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -141,6 +163,7 @@ public class Game {
     commandActions.put("south", command -> goRoom("south"));
     commandActions.put("east", command -> goRoom("east"));
     commandActions.put("west", command -> goRoom("west"));
+    commandActions.put("pickup", this::pickup);
   }
 
   private void processQuit(Command command) {
