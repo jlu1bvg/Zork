@@ -9,7 +9,7 @@ public class go {
             System.out.println("Go where?");
             return currentRoom;
         }
-        String direction = command.getSecondWord();
+        String direction = Command.getSecondWord();
         return goRoom(currentRoom, direction);
     }
 

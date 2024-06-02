@@ -26,7 +26,7 @@ public class pickup {
             }
             return "You can pickup " + listOfItems;
         }else if(items.size() == 1){
-            return "You can pickup " + items.get(0);
+            return "You can pickup " + items.get(0).getName();
         }
         return "Item not found";
     }
