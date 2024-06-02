@@ -44,7 +44,6 @@ public class DDOS {
                 computerCommand=parser.getComputerCommand(currentFolder.getFolderPath());
                 runningDDOS=processComputerCommand(computerCommand);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -62,12 +61,18 @@ public class DDOS {
                 Thread.sleep(timeScale);
             }
             HorseRacingHelper.clearConsole();
-            System.out.print("  _____   _____    ____    _____ \r\n" + //
-                             " |  __ \\ |  __ \\  / __ \\  / ____|\r\n" + //
-                             " | |  | || |  | || |  | || (___  \r\n" + //
-                             " | |  | || |  | || |  | | \\___ \\ \r\n" + //
-                             " | |__| || |__| || |__| | ____) |\r\n" + //
-                             " |_____/ |_____/  \\____/ |_____/\n\n\n\n\n\n\n\n|");
+            System.out.println("  _____    _____     ____     _____ \r\n" + //
+                             " |  __ \\  |  __ \\   / __ \\   / ____|\r\n" + //
+                             " | |  | | | |  | | | |  | | | (___  \r\n" + //
+                             " | |  | | | |  | | | |  | |  \\___ \\ \r\n" + //
+                             " | |__| | | |__| | | |__| |  ____) |\r\n" + //
+                             " |_____/  |_____/   \\____/  |_____/ ");
+            System.out.println("  ___            _  __  ___    ___   _  _ \r\n" + //
+                                " | _ )  _  _    | |/ / |   \\  | __| | \\| |\r\n" + //
+                                " | _ \\ | || |   |   <  | |) | | _|  |    |\r\n" + //
+                                " |___/  \\_  |   |_|\\_\\ |___/  |___| |_|\\_|\r\n" + //
+                                "        |__/ ");
+            System.out.print("|");
             for(int j=0;j<i;j++){
                 System.out.print("-");
             }
@@ -76,7 +81,7 @@ public class DDOS {
             }
             System.out.print("|");
         }
-        HorseRacingHelper.playBackgroundMusic("src\\zork\\data\\audio\\Windows Final Vista.wav", false);
+        HorseRacingHelper.playBackgroundMusic("src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"Windows Final Vista.wav", false);
         clearConsole(null);
     }
 
