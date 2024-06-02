@@ -1,7 +1,10 @@
 package zork;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 
@@ -10,6 +13,7 @@ public class DDOS {
     private Scanner in;
     private static boolean runningDDOS;
     private static int bootTime=1;
+    private Map<String,Consumer<Command>> computerCommandActions=new HashMap<>();
 
     public static void runDDOS(Parser parser) throws InterruptedException{
         runningDDOS=true;
@@ -18,6 +22,7 @@ public class DDOS {
             ComputerCommand computerCommand;
             try {
                 computerCommand=parser.getComputerCommand();
+                runningDDOS=processCommand(computerCommand);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -37,12 +42,12 @@ public class DDOS {
             }
             HorseRacingHelper.clearConsole();
             System.out.print("Deslauriers Disk Operating System Pro for Enterprise v9.11\n"+
-                                "  _____  _____   ____   _____ \r\n" + //
-                                " |  __ \\|  __ \\ / __ \\ / ____|\r\n" + //
-                                " | |  | | |  | | |  | | (___  \r\n" + //
-                                " | |  | | |  | | |  | |\\___ \\ \r\n" + //
-                                " | |__| | |__| | |__| |____) |\r\n" + //
-                                " |_____/|_____/ \\____/|_____/\n\n\n\n\n\n\n\n|");
+                                "  _____   _____    ____    _____ \r\n" + //
+                                " |  __ \\ |  __ \\  / __ \\  / ____|\r\n" + //
+                                " | |  | || |  | || |  | || (___  \r\n" + //
+                                " | |  | || |  | || |  | | \\___ \\ \r\n" + //
+                                " | |__| || |__| || |__| | ____) |\r\n" + //
+                                " |_____/ |_____/  \\____/ |_____/\n\n\n\n\n\n\n\n|");
             for(int j=0;j<i;j++){
                 System.out.print("-");
             }
@@ -60,5 +65,28 @@ public class DDOS {
         System.out.println("help - Shows all commands");
     }
 
+    private static boolean processCommand(ComputerCommand computerCommand) {
+        if (computerCommand.isUnknown()) {
+        System.out.println("I don't know what you mean...");
+        return false;
+        }
+
+        Consumer<ComputerCommand> action = computerCommandActions.get(computerCommand.getCommandWord().toLowerCase());
+        if (action != null) {
+        action.accept(computerCommand);
+        return computerCommand.getCommandWord().equals("quit") && !computerCommand.hasSecondWord();
+        } 
+        else {
+        System.out.println("I don't know what you mean...");
+        return false;
+        }
+    }
+
+    private void initializeCommands() {
+        computerCommandActions.put("help", computerCommand -> printHelp());
+        computerCommandActions.put("go", );
+        computerCommandActions.put("quit", );
+        computerCommandActions.put("eat", command -> System.out.println("Do you really think you should be eating at a time like this?"));
+      }
 
 }

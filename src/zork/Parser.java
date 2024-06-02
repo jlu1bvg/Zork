@@ -9,6 +9,7 @@ public class Parser {
 
   public Parser() {
     commands = new CommandWords();
+    computerCommands=new ComputerCommandWords();
     in = new Scanner(System.in);
   }
 
@@ -46,7 +47,7 @@ public class Parser {
     String word2 = null;
     if (words.length > 1)
       word2 = words[1];
-    if (commands.isCommand(word1.toLowerCase()))
+    if (computerCommands.isCommand(word1.toLowerCase()))
       return new ComputerCommand(word1, word2);
     else
       return new ComputerCommand(null, word2);
