@@ -13,8 +13,20 @@ public class pickup {
             if(item.equals(i.getName())){
                 player.getInventory().addItem(i);
                 Game.getRoom().remove(i);
-                return "You have picked up " + i.getName();
+                return "You have picked up " + i.getDescription();
             }
+        }
+        if(items.size()>1){
+            System.out.println("Item not found");
+            String listOfItems = "";
+            for (int i = 0; i < items.size()-1; i++) {
+                listOfItems += items.get(i).getName() + ", ";
+                if(i == items.size()-1)
+                    listOfItems += items.get(i+1) + ".";
+            }
+            return "You can pickup " + listOfItems;
+        }else if(items.size() == 1){
+            return "You can pickup " + items.get(0);
         }
         return "Item not found";
     }

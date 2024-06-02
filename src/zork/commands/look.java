@@ -9,6 +9,7 @@ public class look {
     public static void lookaround(Room room){
         ArrayList<Item> items = Game.getRoom().getItems();
         System.out.println(Game.getRoom().getDescription());
+        System.out.println(Game.getRoom().getExits());
         if(items.size()>1){
             System.out.print("You see ");
             for (int i = 0; i < items.size()-1; i++) {

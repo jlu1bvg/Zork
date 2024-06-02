@@ -16,6 +16,6 @@ public class drop {
                 return "You dropped " + i.getName();
             }
         }
-        return "Item not found";
+        return "Item not found in inventory";
     }
 }
