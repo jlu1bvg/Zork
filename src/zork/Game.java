@@ -220,7 +220,7 @@ public class Game {
 
     System.out.println(new String(new char[nameWidth + weightWidth + isOpenableWidth + 2]).replace('\0', '-'));
 
-    for (Item item : Jack.getInventory().getItems()) {
+    for (Item item : Player.getInventory().getItems()) {
         System.out.printf("%-" + nameWidth + "s %" + weightWidth + "d %" + isOpenableWidth + "s\n", item.getName(), item.getWeight(), item.isOpenable() ? "Yes" : "No");
     }
   }
