@@ -18,7 +18,7 @@ public class ComputerCommand {
    * Return the command word (the first word) of this command. If the command was
    * not understood, the result is null.
    */
-  public String getCommandWord() {
+  public String getComputerCommandWord() {
     return commandWord;
   }
 

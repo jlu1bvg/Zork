@@ -7,15 +7,14 @@ import zork.Game;
 public class Folder {
 
   private String folderName;
-  private String description;
-  private ArrayList<Directory> directories;
+  private ArrayList<ChangeDirectory> directories;
   private ArrayList<File> files;
 
-  public ArrayList<Directory> getDirectories() {
+  public ArrayList<ChangeDirectory> getDirectories() {
     return directories;
   }
 
-  public void setDirectories(ArrayList<Directory> directories) {
+  public void setDirectories(ArrayList<ChangeDirectory> directories) {
     this.directories = directories;
   }
 
@@ -23,58 +22,40 @@ public class Folder {
    * Create a room described "description". Initially, it has no directories.
    * "description" is something like "a kitchen" or "an open court yard".
    */
-  public Folder(String description) {
-    this.description = description;
-    directories = new ArrayList<Directory>();
-  }
+  // public Folder(String description) {
+  //   this.description = description;
+  //   directories = new ArrayList<ChangeDirectory>();
+  // }
 
   public Folder() {
     folderName = "DEFAULT ROOM";
-    description = "DEFAULT DESCRIPTION";
-    directories = new ArrayList<Directory>();
+    directories = new ArrayList<ChangeDirectory>();
   }
 
-  public void addDirectory(Directory directory) throws Exception {
+  public void addDirectory(ChangeDirectory directory) throws Exception {
     directories.add(directory);
-  }
-
-  /**
-   * Return the description of the room (the one that was defined in the
-   * constructor).
-   */
-  public String shortDescription() {
-    return "Room: " + folderName + "\n\n" + description;
-  }
-
-  /**
-   * Return a long description of this room, on the form: You are in the kitchen.
-   * Directorys: north west
-   */
-  public String longDescription() {
-
-    return "Room: " + folderName + "\n\n" + description + "\n" + directoryString();
   }
 
   /**
    * Return a string describing the room's directories, for example "Directorys: north west
    * ".
    */
-  private String directoryString() {
-    String returnString = "Directorys: ";
-    for (Directory directory : directories) {
-      returnString += directory.getDirection() + " ";
-    }
+  // private String directoryString() {
+  //   String returnString = "Directorys: ";
+  //   for (ChangeDirectory directory : directories) {
+  //     returnString += directory.getDirection() + " ";
+  //   }
 
-    return returnString;
-  }
+  //   return returnString;
+  // }
 
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
    */
-  public Folder nextFolder(String direction) {
+  public Folder nextFolder(String folderName) {
     try {
-      for (Directory directory : directories) {
+      for (ChangeDirectory directory : directories) {
 
         if (directory.getDirection().equalsIgnoreCase(direction)) {
           String adjacentRoom = directory.getAdjacentRoom();
@@ -99,20 +80,12 @@ public class Folder {
    * 
    * throw new IllegalArgumentException("Invalid Direction"); }
    */
-  public String getRoomName() {
+  public String getFolderName() {
     return folderName;
   }
 
-  public void setRoomName(String roomName) {
-    this.folderName = roomName;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setFolderName(String folderName) {
+    this.folderName = folderName;
   }
 
   public ArrayList<File> getFiles() {

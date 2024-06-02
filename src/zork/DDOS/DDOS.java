@@ -2,13 +2,21 @@ package zork.DDOS;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.Command;
+import zork.Game;
 import zork.Parser;
 
 public class DDOS {
@@ -16,13 +24,14 @@ public class DDOS {
     private Scanner in;
     private static boolean runningDDOS;
     private static int bootTime=1;
-    private Map<String,Consumer<Command>> computerCommandActions=new HashMap<>();
-
+    private static Map<String,Consumer<ComputerCommand>> computerCommandActions=new HashMap<>();
+    private Folder currentFolder;
+    private static Parser Parser;
 
     public DDOS() {
         try {
         initFolders("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
-        currentFolder = roomMap.get("Bedroom");
+        currentFolder = Game.folderMap.get("C:\\Users\\StuartUllman");
         } catch (Exception e) {
         e.printStackTrace();
         }
@@ -30,13 +39,14 @@ public class DDOS {
     }
 
     public static void runDDOS(Parser parser) throws InterruptedException{
+        Parser=parser;
         runningDDOS=true;
         bootup();
         while(runningDDOS){
             ComputerCommand computerCommand;
             try {
                 computerCommand=parser.getComputerCommand();
-                runningDDOS=processCommand(computerCommand);
+                runningDDOS=processComputerCommand(computerCommand);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -79,16 +89,16 @@ public class DDOS {
         System.out.println("help - Shows all commands");
     }
 
-    private boolean processCommand(ComputerCommand computerCommand) {
+    private static boolean processComputerCommand(ComputerCommand computerCommand) {
         if (computerCommand.isUnknown()) {
         System.out.println("I don't know what you mean...");
         return false;
         }
 
-        Consumer<ComputerCommand> action = computerCommandActions.get(computerCommand.getCommandWord().toLowerCase());
+        Consumer<ComputerCommand> action = computerCommandActions.get(computerCommand.getComputerCommandWord().toLowerCase());
         if (action != null) {
         action.accept(computerCommand);
-        return computerCommand.getCommandWord().equals("quit") && !computerCommand.hasSecondWord();
+        return computerCommand.getComputerCommandWord().equals("quit") && !computerCommand.hasSecondWord();
         } 
         else {
         System.out.println("I don't know what you mean...");
@@ -97,10 +107,34 @@ public class DDOS {
     }
 
     private void initializeCommands() {
-        computerCommandActions.put("help", computerCommand -> printHelp());
-        computerCommandActions.put("go", );
-        computerCommandActions.put("quit", );
-        computerCommandActions.put("eat", command -> System.out.println("Do you really think you should be eating at a time like this?"));
+        computerCommandActions.put("help", computerCommand -> Parser.showComputerCommands());
+        computerCommandActions.put("dir",computerCommand->)
       }
 
+    private void initFolders(String fileName) throws Exception {
+        Path path = Path.of(fileName);
+        String jsonString = Files.readString(path);
+        JSONParser parser = new JSONParser();
+        JSONObject json = (JSONObject) parser.parse(jsonString);
+
+        JSONArray jsonFolders = (JSONArray) json.get("folders");
+
+        for (Object folderObj : jsonFolders) {
+        Folder folder = new Folder();
+        String folderName = (String) ((JSONObject) folderObj).get("name");
+        String folderPath = (String) ((JSONObject) folderObj).get("path");
+        folder.setFolderName(folderName);
+
+        JSONArray jsonChangeDirectories = (JSONArray) ((JSONObject) folderObj).get("changeDirectories");
+        ArrayList<ChangeDirectory> changeDirectories = new ArrayList<>();
+        for (Object directoryObj : jsonChangeDirectories) {
+            String directory = (String) ((JSONObject) directoryObj).get("directory");
+            String adjacentPath = (String) ((JSONObject) directoryObj).get("adjacentPath");
+            ChangeDirectory changeDirectory = new ChangeDirectory(directory, adjacentPath);
+            changeDirectories.add(changeDirectory);
+        }
+        folder.setDirectories(changeDirectories);
+        Game.folderMap.put(folderPath, folder);
+        }
+    }
 }

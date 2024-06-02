@@ -1,58 +1,45 @@
 {
   "folders": [
     {
-      "id": "C:",
+      "path": "C:",
       "name": "C:",
-      "description": "You are in a long hallway. There are family pictures on all of the walls.",
-      "exits": [
+      "changeDirectories": [
         {
           "type": "folder",
-          "direction": "Users",
-          "adjacentRoom": "C:\\Users"
+          "directory": "Users",
+          "adjacentID": "C:\\Users"
         }
       ]
     },
     {
-      "id": "C:\\Users",
+      "path": "C:\\Users",
       "name": "Users",
-      "description": "You are in a large bedroom",
-      "exits": [
+      "changeDirectories": [
         {
           "type": "folder",
-          "direction": "..",
-          "adjacentRoom": "C:"
+          "directory": "..",
+          "adjacentPath": "C:"
         },
         {
           "type": "folder",
-          "direction": "StuartUllman",
-          "adjacentRoom": "C:\\Users\\StuartUllman"
+          "directory": "StuartUllman",
+          "adjacentPath": "C:\\Users\\StuartUllman"
         }
       ]
     },
     {
-      "id": "C:\\Users\\StuartUllman",
+      "path": "C:\\Users\\StuartUllman",
       "name": "StuartUllman",
-      "description": "You are in a blue bathroom",
-      "exits": [
+      "changeDirectories": [
         {
-          "type": "folder",
-          "direction": "Documents",
-          "adjacentRoom": "C:\\Users\\StuartUllman\\Documents"
+          "type":"folder",
+          "directory":"..",
+          "adjacentPath":"C:\\Users\\StuartUllman"
         },
         {
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
-        }
-      ]
-    },
-    {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
-      "exits": [
-        {
-          "direction": "West",
-          "adjacentRoom": "Bedroom"
+          "type": "folder",
+          "directory": "Documents",
+          "adjacentPath": "C:\\Users\\StuartUllman\\Documents"
         }
       ]
     }
