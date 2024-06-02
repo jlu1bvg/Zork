@@ -18,4 +18,14 @@ public class drop {
         }
         return "Item not found in inventory";
     }
+
+    public static String dropAll(){
+        Player player = Game.getPlayer();
+        ArrayList<Item> items = Player.getInventory().getItems();
+        for (int i = items.size()-1; i >= 0; i--) {
+            Game.getRoom().addItem(items.get(i));
+            player.getInventory().removeItem(items.get(i));
+        }
+        return "You dropped everything.";
+    }
 }

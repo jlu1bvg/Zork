@@ -16,6 +16,9 @@
           "adjacentRoom": "Bathroom",
           "keyId": "1234"
         }
+      ],
+      "items": [
+        "room_237_key"
       ]
     },
     {

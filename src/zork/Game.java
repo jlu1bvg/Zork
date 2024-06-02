@@ -27,6 +27,7 @@ public class Game {
   private Parser parser;
   private static Room currentRoom;
   private static Player Jack;
+  private static boolean tryToPickup;
 
   /**
    * Create the game and initialise its internal map
@@ -109,7 +110,6 @@ public class Game {
                 if (jsonItemsInRoom != null) {
                     for (Object itemIdObj : jsonItemsInRoom) {
                         String itemId = (String) itemIdObj;
-                        System.out.println(itemId);
                         Item item = itemMap.get(itemId);
                         if (item != null) {
                             itemsInRoom.add(item);
@@ -154,6 +154,8 @@ public class Game {
 
   private boolean processCommand(Command command) {
     if (command.isUnknown()) {
+      if(tryToPickup)
+        pickup(Command.getCommandWord());
       System.out.println("I don't know what you mean...");
       return false;
     }
@@ -191,15 +193,32 @@ public class Game {
   private void pickup(Command command){
     if(Command.getSecondWord() == null){
       System.out.println("What do you want to pick up?");
+      tryToPickup = true;
     }else{
       String response = pickup.pickup(Command.getSecondWord());
       System.out.println(response);
     }
   }
 
+  public static boolean canPickup(){
+    return tryToPickup;
+  }
+
+  public static void changeCanPickup(){
+    tryToPickup = false;
+  }
+
+  private void pickup(String item){
+      String response = pickup.pickup(item);
+      System.out.println(response);
+  }
+
   private void dropItem(Command command){
     if(Command.getSecondWord() == null){
       System.out.println("What do you want to drop?");
+    }else if(Command.getSecondWord().equals("everything") || Command.getSecondWord().equals("all")){
+      String response = drop.dropAll();
+      System.out.println(response);
     }else{
       String response = drop.dropItem(Command.getSecondWord());
       System.out.println(response);

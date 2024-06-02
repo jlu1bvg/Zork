@@ -25,10 +25,16 @@ public class Parser {
     String word2 = null;
     if (words.length > 1)
       word2 = words[1];
-    if (commands.isCommand(word1.toLowerCase()))
+    if (commands.isCommand(word1.toLowerCase())){
+      Game.changeCanPickup();
       return new Command(word1, word2);
-    else
-      return new Command(null, word2);
+    }else{
+      if(Game.canPickup()){
+        Game.changeCanPickup();
+        return new Command("pickup", word1);
+      }
+      return new Command(null, word2);        
+    }
   }
 
   /**
