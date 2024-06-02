@@ -26,7 +26,7 @@ public class DDOS {
 
     public DDOS() {
         try {
-        initFolders("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
+        initFolders("src"+File.separator+"zork"+File.separator+"data"+File.separator+"folders.json");
         currentFolder = Game.folderMap.get("C:\\Users\\StuartUllman");
         } catch (Exception e) {
         e.printStackTrace();
@@ -41,18 +41,19 @@ public class DDOS {
         while(runningDDOS){
             ComputerCommand computerCommand;
             try {
-                computerCommand=parser.getComputerCommand();
+                computerCommand=parser.getComputerCommand(currentFolder.getFolderPath());
                 runningDDOS=processComputerCommand(computerCommand);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
+        HorseRacingHelper.clearConsole();
     }
 
     private void bootup() throws InterruptedException{
         int timeScale=bootTime*100/100;
-        for(int i=0;i<=100;i++){
+        for(int i=0;i<=50;i++){
             int delay=(int)(Math.random()*100000);
             if(delay>100&&delay<2000){
                 Thread.sleep(timeScale+delay);
@@ -61,17 +62,16 @@ public class DDOS {
                 Thread.sleep(timeScale);
             }
             HorseRacingHelper.clearConsole();
-            System.out.print("Deslauriers Disk Operating System Pro for Enterprise v9.11\n"+
-                                "  _____   _____    ____    _____ \r\n" + //
-                                " |  __ \\ |  __ \\  / __ \\  / ____|\r\n" + //
-                                " | |  | || |  | || |  | || (___  \r\n" + //
-                                " | |  | || |  | || |  | | \\___ \\ \r\n" + //
-                                " | |__| || |__| || |__| | ____) |\r\n" + //
-                                " |_____/ |_____/  \\____/ |_____/\n\n\n\n\n\n\n\n|");
+            System.out.print("  _____   _____    ____    _____ \r\n" + //
+                             " |  __ \\ |  __ \\  / __ \\  / ____|\r\n" + //
+                             " | |  | || |  | || |  | || (___  \r\n" + //
+                             " | |  | || |  | || |  | | \\___ \\ \r\n" + //
+                             " | |__| || |__| || |__| | ____) |\r\n" + //
+                             " |_____/ |_____/  \\____/ |_____/\n\n\n\n\n\n\n\n|");
             for(int j=0;j<i;j++){
                 System.out.print("-");
             }
-            for(int k=100-i;k>0;k--){
+            for(int k=50-i;k>0;k--){
                 System.out.print(" ");
             }
             System.out.print("|");
@@ -83,14 +83,13 @@ public class DDOS {
     private static boolean processComputerCommand(ComputerCommand computerCommand) {
         if (computerCommand.isUnknown()) {
             System.out.println("I don't know what you mean...");
-            return false;
+            return true;
         }
 
         Consumer<ComputerCommand> action = computerCommandActions.get(computerCommand.getComputerCommandWord().toLowerCase());
         if (action != null) {
             action.accept(computerCommand);
-            // return computerCommand.getComputerCommandWord().equals("quit") && !computerCommand.hasSecondWord();
-            return true;
+            return !(computerCommand.getComputerCommandWord().equals("exit") && !computerCommand.hasSecondWord());
         } 
         else {
             System.out.println("I don't know what you mean...");
@@ -102,7 +101,7 @@ public class DDOS {
         computerCommandActions.put("help", computerCommand -> Parser.showComputerCommands());
         computerCommandActions.put("clear", this::clearConsole);
         computerCommandActions.put("exit", this::processQuit);
-        computerCommandActions.put("dir",computerCommand->currentFolder.getChangeDirectories());
+        computerCommandActions.put("dir",computerCommand->currentFolder.printChangeDirectories());
       }
 
     private void initFolders(String fileName) throws Exception {
@@ -118,13 +117,14 @@ public class DDOS {
         String folderName = (String) ((JSONObject) folderObj).get("name");
         String folderPath = (String) ((JSONObject) folderObj).get("path");
         folder.setFolderName(folderName);
+        folder.setFolderPath(folderPath);
 
         JSONArray jsonChangeDirectories = (JSONArray) ((JSONObject) folderObj).get("changeDirectories");
         ArrayList<ChangeDirectory> changeDirectories = new ArrayList<>();
-        for (Object directoryObj : jsonChangeDirectories) {
-            String directory = (String) ((JSONObject) directoryObj).get("directory");
-            String adjacentPath = (String) ((JSONObject) directoryObj).get("adjacentPath");
-            ChangeDirectory changeDirectory = new ChangeDirectory(directory, adjacentPath);
+        for (Object changeDirectoryObj : jsonChangeDirectories) {
+            String directoryName = (String) ((JSONObject) changeDirectoryObj).get("directory");
+            String directoryPath = (String) ((JSONObject) changeDirectoryObj).get("directoryPath");
+            ChangeDirectory changeDirectory = new ChangeDirectory(directoryName, directoryPath);
             changeDirectories.add(changeDirectory);
         }
         folder.setChangeDirectories(changeDirectories);
@@ -143,9 +143,10 @@ public class DDOS {
 
     private void processQuit(ComputerCommand command) {
         if (command.hasSecondWord()) {
-          System.out.println("Quit what?");
-        } else {
-          runningDDOS=false;
+            System.out.println("Quit what?");
+        } 
+        else {
+            runningDDOS=false;
         }
       }
 }

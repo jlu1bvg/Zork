@@ -1,0 +1,10 @@
+{
+    "files": [
+      {
+        "path": "C:\\Users\\StuartUllman\\Games\\PrimeQuest.exe",
+        "name": "PrimeQuest",
+        "type":"Executable",
+        "link":"Bootstrapper.runPrimequest()"
+      }
+    ]
+  }

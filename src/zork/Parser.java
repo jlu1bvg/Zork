@@ -36,11 +36,11 @@ public class Parser {
       return new Command(null, word2);
   }
 
-  public ComputerCommand getComputerCommand() throws java.io.IOException {
+  public ComputerCommand getComputerCommand(String currentFolder) throws java.io.IOException {
     String inputLine = "";
     String[] words;
 
-    System.out.print("C:\\Users\\StuartUllman> "); // print prompt
+    System.out.print(currentFolder+"> "); // print prompt
 
     inputLine = in.nextLine();
 

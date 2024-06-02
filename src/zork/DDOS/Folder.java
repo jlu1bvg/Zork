@@ -7,11 +7,25 @@ import zork.Game;
 public class Folder {
 
   private String folderName;
+  private String folderPath;
   private ArrayList<ChangeDirectory> changeDirectories;
   private ArrayList<File> files;
 
   public ArrayList<ChangeDirectory> getChangeDirectories() {
     return changeDirectories;
+  }
+
+  public void printChangeDirectories(){
+    System.out.printf("%-20s %-50s\n","Type","Name");
+    System.out.println();
+    for(ChangeDirectory changeDirectory:changeDirectories){
+      System.out.printf("%-20s %-50s\n","Folder",changeDirectory.getDirectory());
+    }
+    if(files!=null){
+      for(File file:files){
+        System.out.printf("%-20s %-50s\n",file.getType(),file.getName());
+      }
+    }
   }
 
   public void setChangeDirectories(ArrayList<ChangeDirectory> changeDirectories) {
@@ -86,6 +100,14 @@ public class Folder {
 
   public void setFolderName(String folderName) {
     this.folderName = folderName;
+  }
+
+  public void setFolderPath(String folderPath){
+    this.folderPath=folderPath;
+  }
+
+  public String getFolderPath(){
+    return folderPath;
   }
 
   public ArrayList<File> getFiles() {
