@@ -2,6 +2,9 @@ package zork;
 
 import java.util.Scanner;
 
+import zork.DDOS.ComputerCommand;
+import zork.DDOS.ComputerCommandWords;
+
 public class Parser {
   private CommandWords commands; // holds all valid command words
   private ComputerCommandWords computerCommands;

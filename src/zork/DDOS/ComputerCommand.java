@@ -1,4 +1,4 @@
-package zork;
+package zork.DDOS;
 
 public class ComputerCommand {
   private String commandWord;

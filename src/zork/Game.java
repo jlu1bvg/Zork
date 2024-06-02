@@ -12,11 +12,14 @@ import java.util.function.Consumer;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import zork.DDOS.Folder;
 import zork.commands.go;
 
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<>();
+  public static HashMap<String, Folder> folderMap=new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;

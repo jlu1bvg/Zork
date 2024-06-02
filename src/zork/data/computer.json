@@ -1,58 +1,45 @@
 {
   "folders": [
     {
-      "id": "Hallway",
-      "name": "Hallway",
+      "id": "C:",
+      "name": "C:",
       "description": "You are in a long hallway. There are family pictures on all of the walls.",
       "exits": [
         {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Bedroom"
-        },
-        {
-          "isLocked": true,
-          "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
+          "type": "folder",
+          "direction": "Users",
+          "adjacentRoom": "C:\\Users"
         }
       ]
     },
     {
-      "id": "Bedroom",
-      "name": "Bedroom",
+      "id": "C:\\Users",
+      "name": "Users",
       "description": "You are in a large bedroom",
       "exits": [
         {
-          "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "Hallway"
+          "type": "folder",
+          "direction": "..",
+          "adjacentRoom": "C:"
         },
         {
-          "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Closet"
+          "type": "folder",
+          "direction": "StuartUllman",
+          "adjacentRoom": "C:\\Users\\StuartUllman"
         }
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
+      "id": "C:\\Users\\StuartUllman",
+      "name": "StuartUllman",
       "description": "You are in a blue bathroom",
       "exits": [
         {
-          "isLocked": true,
-          "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
+          "type": "folder",
+          "direction": "Documents",
+          "adjacentRoom": "C:\\Users\\StuartUllman\\Documents"
         },
         {
-          "isLocked": false,
           "direction": "NorthWest",
           "adjacentRoom": "Bedroom"
         }
@@ -64,7 +51,6 @@
       "description": "You are in the closet. It is dark.",
       "exits": [
         {
-          "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Bedroom"
         }

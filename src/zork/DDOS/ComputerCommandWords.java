@@ -1,4 +1,4 @@
-package zork;
+package zork.DDOS;
 
 public class ComputerCommandWords {
   // a constant array that holds all valid command words

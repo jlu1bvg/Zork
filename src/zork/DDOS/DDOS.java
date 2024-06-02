@@ -1,5 +1,6 @@
-package zork;
+package zork.DDOS;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
@@ -7,6 +8,8 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import zork.Command;
+import zork.Parser;
 
 public class DDOS {
     private ComputerCommandWords commands;
@@ -14,6 +17,17 @@ public class DDOS {
     private static boolean runningDDOS;
     private static int bootTime=1;
     private Map<String,Consumer<Command>> computerCommandActions=new HashMap<>();
+
+
+    public DDOS() {
+        try {
+        initFolders("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
+        currentFolder = roomMap.get("Bedroom");
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
+        initializeCommands();
+    }
 
     public static void runDDOS(Parser parser) throws InterruptedException{
         runningDDOS=true;
@@ -65,7 +79,7 @@ public class DDOS {
         System.out.println("help - Shows all commands");
     }
 
-    private static boolean processCommand(ComputerCommand computerCommand) {
+    private boolean processCommand(ComputerCommand computerCommand) {
         if (computerCommand.isUnknown()) {
         System.out.println("I don't know what you mean...");
         return false;
