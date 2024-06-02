@@ -33,4 +33,12 @@ public class ComputerCommandWords {
     }
     System.out.println();
   }
+
+  public void printHelp(){
+    System.out.println("help - Shows all commands\n"+
+    "clear - Clears the consolen\n"+
+    "dir - Shows contents of current folder\n"+
+    "cd <folder> - Opens given folder, '..' to go back\n"+
+    "<fileName> - Opens given file");
+  }
 }

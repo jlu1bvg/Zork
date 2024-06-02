@@ -1,7 +1,5 @@
 package zork.DDOS;
 
-import zork.OpenableObject;
-
 public class File{
   private int weight;
   private String name;

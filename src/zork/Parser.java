@@ -64,6 +64,6 @@ public class Parser {
   }
 
   public void showComputerCommands(){
-    computerCommands.showAll();
+    computerCommands.printHelp();
   }
 }

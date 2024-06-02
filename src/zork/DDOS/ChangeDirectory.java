@@ -1,40 +1,26 @@
 package zork.DDOS;
 
-import zork.OpenableObject;
-
 /**
  * Exit
  */
-public class ChangeDirectory extends OpenableObject {
+public class ChangeDirectory{
   private String directory;
   private String adjacentFolder;
-
-  public ChangeDirectory(String directory, String adjacentFolder, boolean isLocked, String keyId) {
-    super(isLocked, keyId);
-    this.directory = directory;
-    this.adjacentFolder = adjacentFolder;
-  }
-
-  public ChangeDirectory(String directory, String adjacentFolder, boolean isLocked, String keyId, Boolean isOpen) {
-    super(isLocked, keyId, isOpen);
-    this.directory = directory;
-    this.adjacentFolder = adjacentFolder;
-  }
 
   public ChangeDirectory(String directory, String adjacentFolder) {
     this.directory = directory;
     this.adjacentFolder = adjacentFolder;
   }
 
-  public String getdirectory() {
+  public String getDirectory() {
     return directory;
   }
 
-  public void setdirectory(String directory) {
+  public void setDirectory(String directory) {
     this.directory = directory;
   }
 
-  public String getadjacentFolder() {
+  public String getAdjacentFolder() {
     return adjacentFolder;
   }
 

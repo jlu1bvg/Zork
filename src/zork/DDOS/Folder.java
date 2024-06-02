@@ -7,15 +7,15 @@ import zork.Game;
 public class Folder {
 
   private String folderName;
-  private ArrayList<ChangeDirectory> directories;
+  private ArrayList<ChangeDirectory> changeDirectories;
   private ArrayList<File> files;
 
-  public ArrayList<ChangeDirectory> getDirectories() {
-    return directories;
+  public ArrayList<ChangeDirectory> getChangeDirectories() {
+    return changeDirectories;
   }
 
-  public void setDirectories(ArrayList<ChangeDirectory> directories) {
-    this.directories = directories;
+  public void setChangeDirectories(ArrayList<ChangeDirectory> changeDirectories) {
+    this.changeDirectories = changeDirectories;
   }
 
   /**
@@ -29,47 +29,47 @@ public class Folder {
 
   public Folder() {
     folderName = "DEFAULT ROOM";
-    directories = new ArrayList<ChangeDirectory>();
+    changeDirectories = new ArrayList<ChangeDirectory>();
   }
 
-  public void addDirectory(ChangeDirectory directory) throws Exception {
-    directories.add(directory);
+  public void addChangeDirectory(ChangeDirectory changeDirectory) throws Exception {
+    changeDirectories.add(changeDirectory);
   }
 
   /**
    * Return a string describing the room's directories, for example "Directorys: north west
    * ".
    */
-  // private String directoryString() {
-  //   String returnString = "Directorys: ";
-  //   for (ChangeDirectory directory : directories) {
-  //     returnString += directory.getDirection() + " ";
-  //   }
+  public String changeDirectoryString() {
+    String returnString = "ChangeDirectories: ";
+    for (ChangeDirectory changeDirectory : changeDirectories) {
+      returnString += changeDirectory.getDirectory() + " ";
+    }
 
-  //   return returnString;
-  // }
+    return returnString;
+  }
 
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
    */
-  public Folder nextFolder(String folderName) {
+  public Folder nextFolder(String directory) {
     try {
-      for (ChangeDirectory directory : directories) {
+      for (ChangeDirectory changeDirectory : changeDirectories) {
 
-        if (directory.getDirection().equalsIgnoreCase(direction)) {
-          String adjacentRoom = directory.getAdjacentRoom();
+        if (changeDirectory.getDirectory().equalsIgnoreCase(directory)) {
+          String adjacentFolder = changeDirectory.getAdjacentFolder();
 
-          return Game.folderMap.get(adjacentRoom);
+          return Game.folderMap.get(adjacentFolder);
         }
 
       }
     } catch (IllegalArgumentException ex) {
-      System.out.println(direction + " is not a valid direction.");
+      System.out.println(directory + " is not a valid direction.");
       return null;
     }
 
-    System.out.println(direction + " is not a valid direction.");
+    System.out.println(directory + " is not a valid direction.");
     return null;
   }
 

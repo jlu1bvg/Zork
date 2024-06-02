@@ -17,6 +17,7 @@ public class Zork {
     // Bootstrapper.runPrimequest();
     // Bootstrapper.runZork(); 
     Parser parser=new Parser();
-    DDOS.runDDOS(parser);
+    DDOS computer=new DDOS();
+    computer.runDDOS(parser);
   }
 }

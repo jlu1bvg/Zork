@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.function.Consumer;
 
 import org.json.simple.JSONArray;
@@ -15,13 +14,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
-import zork.Command;
 import zork.Game;
 import zork.Parser;
 
 public class DDOS {
-    private ComputerCommandWords commands;
-    private Scanner in;
     private static boolean runningDDOS;
     private static int bootTime=1;
     private static Map<String,Consumer<ComputerCommand>> computerCommandActions=new HashMap<>();
@@ -38,7 +34,7 @@ public class DDOS {
         initializeCommands();
     }
 
-    public static void runDDOS(Parser parser) throws InterruptedException{
+    public void runDDOS(Parser parser) throws InterruptedException{
         Parser=parser;
         runningDDOS=true;
         bootup();
@@ -91,24 +87,26 @@ public class DDOS {
 
     private static boolean processComputerCommand(ComputerCommand computerCommand) {
         if (computerCommand.isUnknown()) {
-        System.out.println("I don't know what you mean...");
-        return false;
+            System.out.println("I don't know what you mean...");
+            return false;
         }
 
         Consumer<ComputerCommand> action = computerCommandActions.get(computerCommand.getComputerCommandWord().toLowerCase());
         if (action != null) {
-        action.accept(computerCommand);
-        return computerCommand.getComputerCommandWord().equals("quit") && !computerCommand.hasSecondWord();
+            action.accept(computerCommand);
+            // return computerCommand.getComputerCommandWord().equals("quit") && !computerCommand.hasSecondWord();
+            return true;
         } 
         else {
-        System.out.println("I don't know what you mean...");
-        return false;
+            System.out.println("I don't know what you mean...");
+            return true;
         }
     }
 
     private void initializeCommands() {
         computerCommandActions.put("help", computerCommand -> Parser.showComputerCommands());
-        computerCommandActions.put("dir",computerCommand->)
+        computerCommandActions.put("exit", this::processQuit);
+        computerCommandActions.put("dir",computerCommand->currentFolder.getChangeDirectories());
       }
 
     private void initFolders(String fileName) throws Exception {
@@ -133,8 +131,16 @@ public class DDOS {
             ChangeDirectory changeDirectory = new ChangeDirectory(directory, adjacentPath);
             changeDirectories.add(changeDirectory);
         }
-        folder.setDirectories(changeDirectories);
+        folder.setChangeDirectories(changeDirectories);
         Game.folderMap.put(folderPath, folder);
         }
     }
+
+    private void processQuit(ComputerCommand command) {
+        if (command.hasSecondWord()) {
+          System.out.println("Quit what?");
+        } else {
+          runningDDOS=false;
+        }
+      }
 }
