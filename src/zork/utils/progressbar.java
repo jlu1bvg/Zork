@@ -1,6 +1,6 @@
 package zork.utils;
 
-public class progressbar {
+public class ProgressBar {
     public static String generateProgressBar(int current, int maximum, int barLength) {
         if (maximum <= 0) {
             throw new IllegalArgumentException("Maximum value must be greater than 0");

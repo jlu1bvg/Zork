@@ -1,5 +1,5 @@
 package zork;
-import zork.utils.progressbar;
+import zork.utils.ProgressBar;
 public class Player {
 
     private int health;
@@ -25,7 +25,7 @@ public class Player {
     }
     
     public void checkInsanity(){
-        String progressBar = progressbar.generateProgressBar(insanity, 100, 30);
+        String progressBar = ProgressBar.generateProgressBar(insanity, 100, 30);
         System.out.println("Current sanity level: " + progressBar);
         if (insanity >= 100) {
             System.out.println("You have gone insane!");
