@@ -54,7 +54,7 @@ public class Game {
     parser = new Parser();
     initializeCommands();
     Jack = new Player(100, new Inventory(20));
-    Jack.increaseInsanity(48);
+    //Jack.increaseInsanity(48);
     // Jack.checkInsanity();
     computer=new DDOS(parser);
   }

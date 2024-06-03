@@ -186,15 +186,15 @@
         },
         {
             "id": "snowcat_manual",
-            "name": "SnowcatRepairManual",
-            "description": "the Snowcat Repair Manual. \n\nThese are items needed to repair the snowcat: \n1.Snowcat Engine Part \n2.Screwdriver \n3.Fuel Can \n4.Wires \n5.Battery",
+            "name": "Snowcat Repair Manual",
+            "description": "the Snowcat Repair Manual. \n---------------------------\nThese are items needed to repair the snowcat: \n1.Snowcat Engine Part \n2.Screwdriver \n3.Fuel Can \n4.Wires \n5.Battery",
             "shortDescription": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat",
             "weight": "1kg",
             "isOpenable": true
         },
         {
             "id": "fuel_can",
-            "name": "FuelCan",
+            "name": "Fuel Can",
             "description": "a heavy canister of fuel for the snowcat. It sloshes ominously when moved, each step with it echoing the dire need for escape and the dangerous journey ahead.",
             "shortDescription": "a heavy canister of fuel for the snowcat",
             "weight": "5kg",
