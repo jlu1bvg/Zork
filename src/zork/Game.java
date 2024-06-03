@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,8 @@ import zork.commands.drop;
 import zork.DDOS.Folder;
 import zork.commands.go;
 import zork.commands.pickup;
+import zork.utils.Ascii;
+import zork.utils.Audio;
 import zork.commands.look;
 import zork.commands.objective;
 
@@ -50,7 +53,7 @@ public class Game {
     initializeCommands();
     Jack = new Player(100, new Inventory(20));
     Jack.increaseInsanity(48);
-    Jack.checkInsanity();
+    // Jack.checkInsanity();
   }
 
   public static Map<String,Item> getAllItems(){
@@ -181,6 +184,19 @@ public class Game {
    * Print out the opening message for the player.
    */
   private void printWelcome() {
+    Audio audio = new Audio("audio", "src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"01 - Main Title The Shining.wav");
+    audio.play();
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    try {
+      String asciiArt = new String(Files.readAllBytes(Paths.get("src"+File.separator+"zork"+File.separator+"data"+File.separator+"KDstudios.txt")));
+      Ascii.printAsciiArtWithAnimation(asciiArt);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
     System.out.println();
     System.out.println("Welcome to Zork!");
     System.out.println("Zork is a new, incredibly boring adventure game.");
