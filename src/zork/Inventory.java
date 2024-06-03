@@ -35,6 +35,14 @@ public class Inventory {
     items.remove(item);
   }
 
+  public boolean containsItem(Item item){
+    for (Item i: items) {
+      if(item.getName().equals(i.getName()))
+        return true;
+    }
+    return false;
+  }
+
   public ArrayList<Item> getItems() {
     return items;
   }

@@ -17,17 +17,21 @@ import zork.commands.drop;
 import zork.commands.go;
 import zork.commands.pickup;
 import zork.commands.look;
+import zork.commands.objective;
 
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<>();
-  private Map<String, Item> itemMap = new HashMap<>();
+  private static Map<String, Item> itemMap = new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;
   private static Room currentRoom;
   private static Player Jack;
   private static boolean tryToPickup;
+  private static boolean Objective1 = false;
+  private static boolean Objective2 = true;
+  private static boolean ObjectiveInsane = false;
 
   /**
    * Create the game and initialise its internal map
@@ -42,13 +46,44 @@ public class Game {
     }
     parser = new Parser();
     initializeCommands();
-    Jack = new Player(100, new Inventory(100));
+    Jack = new Player(100, new Inventory(20));
     Jack.increaseInsanity(48);
     Jack.checkInsanity();
   }
 
+  public static Map<String,Item> getAllItems(){
+    return itemMap;
+  }
+
   public static Player getPlayer(){
     return Jack;
+  }
+
+  public static boolean checkObjective1(){
+    return Objective1;
+  }
+
+  public static boolean checkObjective2(){
+    return Objective2;
+  }
+
+  public static boolean checkObjectiveInsane(){
+    return ObjectiveInsane;
+  }
+
+  public static void changeObjective1(){
+    Objective1 = true;
+  }
+
+  public static void changeObjective2(){
+    Objective1 = false;
+    Objective2 = true;
+  }
+
+  public static void changeObjectiveInsane(){
+    Objective1 = false;
+    Objective2 = false;
+    ObjectiveInsane = true;
   }
 
   private void initItems(String fileName) throws Exception {
@@ -244,6 +279,10 @@ public class Game {
     }
   }
 
+  private void printObjective(Command command){
+    System.out.println(objective.printObjective());;
+  }
+
   public static Room getRoom(){
     return currentRoom;
   }
@@ -261,6 +300,7 @@ public class Game {
     commandActions.put("inventory", this::inventory);
     commandActions.put("look", this::lookaround);
     commandActions.put("drop", this::dropItem);
+    commandActions.put("objective", this::printObjective);
   }
 
   private void processQuit(Command command) {

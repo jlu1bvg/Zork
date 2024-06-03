@@ -199,7 +199,23 @@
             "shortDescription": "A heavy canister of fuel for the snowcat.",
             "weight": "5kg",
             "isOpenable": false
-        }
+        },
+        {
+            "id": "wires",
+            "name": "Frayed Wires",
+            "description": "a tangled mess of frayed electrical wires, their exposed copper glinting dangerously. They might be useful to fix a telephone ... or a snowcat",
+            "shortDescription": "A tangled mess of frayed electrical wires.",
+            "weight": "0.5kg",
+            "isOpenable": false
+        },
+        {
+            "id": "battery",
+            "name": "Battery",
+            "description": "a corroded, heavy-duty battery, its surface pitted with age and misuse. It holds a faint charge, just enough to power a snowcat...",
+            "shortDescription": "A corroded, heavy-duty battery.",
+            "weight": "5kg",
+            "isOpenable": false
+        } 
     ]
-  }
+}
   
