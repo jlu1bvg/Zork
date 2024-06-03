@@ -23,10 +23,11 @@ public class DDOS {
     private static int bootTime=1;
     private static Map<String,Consumer<ComputerCommand>> computerCommandActions=new HashMap<>();
     private Folder currentFolder;
-    private static Parser Parser;
+    private Parser parser;
     public static boolean playing=false;
 
-    public DDOS() {
+    public DDOS(Parser parser) {
+        this.parser=parser;
         try {
         initFolders("src"+File.separator+"zork"+File.separator+"data"+File.separator+"folders.json");
         currentFolder = Game.folderMap.get("C:\\Users\\StuartUllman");
@@ -38,8 +39,7 @@ public class DDOS {
         initializeCommands();
     }
 
-    public void runDDOS(Parser parser) throws InterruptedException{
-        Parser=parser;
+    public void runDDOS() throws InterruptedException{
         runningDDOS=true;
         bootup();
         while(runningDDOS&&!playing){

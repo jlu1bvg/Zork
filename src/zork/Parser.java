@@ -8,7 +8,7 @@ import zork.DDOS.Folder;
 
 public class Parser {
   private CommandWords commands; // holds all valid command words
-  private ComputerCommandWords computerCommands;
+  private static ComputerCommandWords computerCommands;
   private Scanner in;
 
   public Parser() {
@@ -76,7 +76,7 @@ public class Parser {
     commands.showAll();
   }
 
-  public void showComputerCommands(){
+  public static void showComputerCommands(){
     computerCommands.printHelp();
   }
 }

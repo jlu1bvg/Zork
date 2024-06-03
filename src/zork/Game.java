@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,10 +14,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.commands.drop;
+import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
 import zork.commands.go;
 import zork.commands.pickup;
+import zork.utils.Ascii;
+import zork.utils.Audio;
 import zork.commands.look;
 import zork.commands.objective;
 
@@ -34,6 +39,7 @@ public class Game {
   private static boolean Objective1 = false;
   private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
+  private DDOS computer;
 
   /**
    * Create the game and initialise its internal map
@@ -49,8 +55,9 @@ public class Game {
     parser = new Parser();
     initializeCommands();
     Jack = new Player(100, new Inventory(20));
-    Jack.increaseInsanity(48);
-    Jack.checkInsanity();
+    // Jack.increaseInsanity(48);
+    // Jack.checkInsanity();
+    computer=new DDOS(parser);
   }
 
   public static Map<String,Item> getAllItems(){
@@ -181,12 +188,26 @@ public class Game {
    * Print out the opening message for the player.
    */
   private void printWelcome() {
+    Audio audio = new Audio("audio", "src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"01 - Main Title The Shining.wav");
+    audio.play();
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    try {
+      String asciiArt = new String(Files.readAllBytes(Paths.get("src"+File.separator+"zork"+File.separator+"data"+File.separator+"KDstudios.txt")));
+      Ascii.printAsciiArtWithAnimation(asciiArt);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
     System.out.println();
     System.out.println("Welcome to Zork!");
     System.out.println("Zork is a new, incredibly boring adventure game.");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
+    audio.stop();
   }
 
   private boolean processCommand(Command command) {
@@ -220,6 +241,7 @@ public class Game {
   }
 
   private void goRoom(Command command) {
+    HorseRacingHelper.clearConsole();
     currentRoom = go.goRoom(currentRoom, command);
   }
 
@@ -293,6 +315,14 @@ public class Game {
     return currentRoom;
   }
 
+  private void runDDOS(Command command){
+    try {
+      computer.runDDOS();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -308,6 +338,7 @@ public class Game {
     commandActions.put("drop", this::dropItem);
     commandActions.put("objective", this::printObjective);
     commandActions.put("sanity", this::checkInsanity);
+    commandActions.put("computer", this::runDDOS);
   }
 
   private void processQuit(Command command) {
