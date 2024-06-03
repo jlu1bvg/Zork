@@ -30,7 +30,7 @@ public class Game {
   private static Player Jack;
   private static boolean tryToPickup;
   private static boolean Objective1 = false;
-  private static boolean Objective2 = true;
+  private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
 
   /**
