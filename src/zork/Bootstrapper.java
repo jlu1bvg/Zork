@@ -43,10 +43,9 @@ public class Bootstrapper {
         game.play();
     }
 
-    public void runDDOS(Parser parser){
-        DDOS computer=new DDOS();
+    public void runDDOS(DDOS computer){
         try {
-            computer.runDDOS(parser);
+            computer.runDDOS();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
