@@ -154,7 +154,7 @@
         },
         {
             "id": "snowcat_engine_part",
-            "name": "Snowcat Engine Part",
+            "name": "Engine",
             "description": "a crucial, greasy engine part needed to repair the snowcat. Its weight and appearance convey its importance, as well as the difficulty and danger involved in obtaining and installing it.",
             "shortDescription": "a crucial, greasy engine part needed to repair the snowcat",
             "weight": "8kg",
@@ -194,7 +194,7 @@
         },
         {
             "id": "fuel_can",
-            "name": "Fuel Can",
+            "name": "FuelCan",
             "description": "a heavy canister of fuel for the snowcat. It sloshes ominously when moved, each step with it echoing the dire need for escape and the dangerous journey ahead.",
             "shortDescription": "a heavy canister of fuel for the snowcat",
             "weight": "5kg",
@@ -202,7 +202,7 @@
         },
         {
             "id": "wires",
-            "name": "Frayed Wires",
+            "name": "Wires",
             "description": "a tangled mess of frayed electrical wires, their exposed copper glinting dangerously. They might be useful to fix a telephone ... or a snowcat",
             "shortDescription": "a tangled mess of frayed electrical wires",
             "weight": "0.5kg",

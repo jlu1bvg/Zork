@@ -13,7 +13,7 @@ public class look {
             System.out.print("You see ");
             for (int i = 0; i < items.size(); i++) {
                 if(i == items.size()-1){
-                    System.out.print(" and" + items.get(items.size()-1).getShortDescription() + ".");
+                    System.out.print("and " + items.get(items.size()-1).getShortDescription() + ".");
                     break;
                 }
                 System.out.print(items.get(i).getShortDescription() + ", ");

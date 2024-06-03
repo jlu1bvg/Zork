@@ -19,9 +19,9 @@ public class pickup {
         if(items.size()>1){
             System.out.println("Item not found");
             String listOfItems = "";
-            for (int i = 0; i < items.size()-1; i++) {
+            for (int i = 0; i < items.size(); i++) {
                 if(i == items.size()-1){
-                    listOfItems += items.get(items.size()-1) + ".";
+                    listOfItems += "and " + items.get(items.size()-1).getName() + ".";
                     break;
                 }
                 listOfItems += items.get(i).getName() + ", ";

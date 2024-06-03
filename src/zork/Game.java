@@ -281,6 +281,10 @@ public class Game {
     }
   }
 
+  private void checkInsanity(Command command){
+    Jack.checkInsanity();
+  }
+
   private void printObjective(Command command){
     System.out.println(objective.printObjective());;
   }
@@ -303,6 +307,7 @@ public class Game {
     commandActions.put("look", this::lookaround);
     commandActions.put("drop", this::dropItem);
     commandActions.put("objective", this::printObjective);
+    commandActions.put("sanity", this::checkInsanity);
   }
 
   private void processQuit(Command command) {
