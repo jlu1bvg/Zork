@@ -154,7 +154,7 @@
         },
         {
             "id": "snowcat_engine_part",
-            "name": "Engine",
+            "name": "Snowcat Engine Part",
             "description": "a crucial, greasy engine part needed to repair the snowcat. Its weight and appearance convey its importance, as well as the difficulty and danger involved in obtaining and installing it.",
             "shortDescription": "a crucial, greasy engine part needed to repair the snowcat",
             "weight": "8kg",
@@ -186,8 +186,8 @@
         },
         {
             "id": "snowcat_manual",
-            "name": "Snowcat Repair Manual",
-            "description": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat. Its pages are dog-eared and stained, indicating it has been well-used and perhaps even a lifeline in critical moments.",
+            "name": "SnowcatRepairManual",
+            "description": "the Snowcat Repair Manual. \n\nThese are items needed to repair the snowcat: \n1.Snowcat Engine Part \n2.Screwdriver \n3.Fuel Can \n4.Wires \n5.Battery",
             "shortDescription": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat",
             "weight": "1kg",
             "isOpenable": true
@@ -215,7 +215,23 @@
             "shortDescription": "a corroded, heavy-duty battery",
             "weight": "5kg",
             "isOpenable": false
-        } 
+        },
+        {
+            "id": "snowcat",
+            "name": "Snowcat",
+            "description": "a large, tracked vehicle designed for navigating through deep snow. Its exterior is battered and covered in a layer of frost, but it represents a potential lifeline for escaping the isolation of the Overlook Hotel. However, it looks like it might need some repairs before it can be used.",
+            "shortDescription": "a large, tracked vehicle in need of repair, designed for navigating through deep snow",
+            "weight": "300kg",
+            "isOpenable": true
+        },
+        {
+            "id": "telephone",
+            "name": "Rotary Telephone",
+            "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication.",
+            "shortDescription": "an old-fashioned rotary telephone with a heavy, black handset",
+            "weight": "3kg",
+            "isOpenable": true
+        }
     ]
 }
   
