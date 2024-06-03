@@ -6,6 +6,7 @@ import minizorks.primequest.src.zork.zork.Primequest;
 import minizorks.whodunit.Parallel.src.zork.Whodunit;
 import minizorks.undertale.TextAdventure.src.zork.Undertale;
 import minizorks.whodunit.Parallel.src.zork.exceptions.CommandNotFoundException;
+import zork.DDOS.DDOS;
 
 public class Bootstrapper {
     public static void runMultiHorseRacing(){
@@ -40,5 +41,14 @@ public class Bootstrapper {
     public static void runZork(){
         Game game = new Game();
         game.play();
+    }
+
+    public void runDDOS(Parser parser){
+        DDOS computer=new DDOS();
+        try {
+            computer.runDDOS(parser);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
