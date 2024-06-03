@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import zork.DDOS.DDOS;
 
 public class Game {
 
@@ -519,6 +520,8 @@ public class Game {
                 e.printStackTrace();
             }
         }
+        DDOS.playing=false;
+        DDOS.clearConsole();
     }
     
 

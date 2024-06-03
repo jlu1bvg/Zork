@@ -1,0 +1,66 @@
+{
+  "folders": [
+    {
+      "path": "C:",
+      "name": "C:",
+      "changeDirectories": [
+        {
+          "directory": "Users",
+          "adjacentID": "C:\\Users"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users",
+      "name": "Users",
+      "changeDirectories": [
+        {
+          "directory": "..",
+          "adjacentPath": "C:"
+        },
+        {
+          "directory": "StuartUllman",
+          "adjacentPath": "C:\\Users\\StuartUllman"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\StuartUllman",
+      "name": "StuartUllman",
+      "changeDirectories": [
+        {
+          "directory":"..",
+          "adjacentPath":"C:\\Users"
+        },
+        {
+          "directory": "Documents",
+          "adjacentPath": "C:\\Users\\StuartUllman\\Documents"
+        },
+        {
+          "directory":"Games",
+          "adjacentPath":"C:\\Users\\StuartUllman\\Games"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\StuartUllman\\Documents",
+      "name": "Documents",
+      "changeDirectories": [
+        {
+          "directory":"..",
+          "adjacentPath":"C:\\Users\\StuartUllman"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\StuartUllman\\Games",
+      "name": "Games",
+      "changeDirectories": [
+        {
+          "directory":"..",
+          "adjacentPath":"C:\\Users\\StuartUllman"
+        }
+      ]
+    }
+  ]
+}

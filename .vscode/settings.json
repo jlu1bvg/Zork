@@ -10,7 +10,7 @@
   "java.configuration.runtimes": [
     {
     "name":"JavaSE-20",
-    "path":"C:/Program Files/Java/jdk-20/",
+    // "path":"C:/Program Files/Java/jdk-20/",
     "default": true
     }
   ]

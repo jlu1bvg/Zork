@@ -29,7 +29,6 @@ public class Bootstrapper {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (CommandNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

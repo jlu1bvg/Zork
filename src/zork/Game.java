@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import zork.commands.drop;
+import zork.DDOS.Folder;
 import zork.commands.go;
 import zork.commands.pickup;
 import zork.commands.look;
@@ -23,6 +24,7 @@ public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<>();
   private static Map<String, Item> itemMap = new HashMap<>();
+  public static HashMap<String, Folder> folderMap=new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
 
   private Parser parser;

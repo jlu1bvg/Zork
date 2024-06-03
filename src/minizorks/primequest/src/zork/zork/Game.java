@@ -24,6 +24,7 @@ import minizorks.primequest.src.zork.zork.entites.Enemy;
 import minizorks.primequest.src.zork.zork.entites.Player;
 import minizorks.primequest.src.zork.zork.items.Prime;
 import minizorks.primequest.src.zork.zork.items.Weapon;
+import zork.DDOS.DDOS;
 
 import java.lang.Runnable;
 
@@ -2918,6 +2919,8 @@ public class Game {
     SoundHandler.stopSound("src"+File.separator+"minizorks"+File.separator+"primequest"+File.separator+"bin"+File.separator+"zork"+File.separator+"data"+File.separator+"kids_arent_alright.wav");
     HorseRacingHelper.clearConsole();
     System.out.println("game finished");
+    DDOS.playing=false;
+    DDOS.clearConsole();
   }
 
   /**
