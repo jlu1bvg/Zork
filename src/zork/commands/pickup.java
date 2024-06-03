@@ -9,6 +9,8 @@ public class pickup {
     public static String pickup(String item){
         Player player = Game.getPlayer();
         ArrayList<Item> items = Game.getRoom().getItems();
+        if(item.equalsIgnoreCase("snowcat"))
+            return "Did you really try to pickup a Snowcat...?";
         for(Item i:items){
             if(item.equals(i.getName())){
                 player.getInventory().addItem(i);
