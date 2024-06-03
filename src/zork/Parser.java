@@ -29,8 +29,12 @@ public class Parser {
 
     String word1 = words[0];
     String word2 = null;
-    if (words.length > 1)
+    if (words.length > 1){
       word2 = words[1];
+      for (int i = 2; i < words.length; i++) {
+        word2 += " " + words[i];
+      }
+    }
     if (commands.isCommand(word1.toLowerCase())){
       Game.changeCanPickup();
       return new Command(word1, word2);

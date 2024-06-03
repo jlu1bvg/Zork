@@ -11,15 +11,20 @@ public class pickup {
         ArrayList<Item> items = Game.getRoom().getItems();
         if(item.equalsIgnoreCase("snowcat"))
             return "Did you really try to pickup a Snowcat...?";
+
         for(Item i:items){
-            if(item.equals(i.getName())){
+            if(item.equalsIgnoreCase(i.getName())){
                 player.getInventory().addItem(i);
                 Game.getRoom().remove(i);
+                if(item.equalsIgnoreCase("snowcat repair manual")){
+                    Game.changeObjective2();
+                    Player.getInventory().removeItem(i);
+                    return "You have picked up " + i.getDescription();
+                }
                 return "You have picked up " + i.getDescription();
             }
         }
         if(items.size()>1){
-            System.out.println("Item not found");
             String listOfItems = "";
             for (int i = 0; i < items.size(); i++) {
                 if(i == items.size()-1){

@@ -18,7 +18,7 @@
         }
       ],
       "items": [
-        "room_237_key", "battery", "fuel_can"
+        "room_237_key"
       ]
     },
     {
@@ -43,7 +43,7 @@
         }
       ],
       "items": [
-        "snowcat_manual", "snowcat"
+        "snowcat_manual", "battery", "fuel_can", "snowcat_engine_part", "wires", "screwdriver"
       ]
     },
     {
