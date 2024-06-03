@@ -4,7 +4,7 @@
             "id": "room_237_key",
             "name": "Room237Key",
             "description": "a tarnished brass key labeled 'Room 237'. It feels unnaturally cold to the touch, sending a shiver down your spine as if warning you of the horrors that lie behind the door it unlocks.",
-            "shortDescription": "A tarnished brass key labeled 'Room 237'.",
+            "shortDescription": "a tarnished brass key labeled 'Room 237'",
             "weight": "2kg",
             "isOpenable": false
         },
@@ -12,7 +12,7 @@
             "id": "typewriter",
             "name": "Typewriter",
             "description": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke. The paper loaded in it is filled with the repeated phrase 'All work and no play makes Jack a dull boy,' written obsessively in a neat, yet frantic hand.",
-            "shortDescription": "Jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke.",
+            "shortDescription": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke",
             "weight": "10kg",
             "isOpenable": false
         },
@@ -20,7 +20,7 @@
             "id": "croquet_mallet",
             "name": "Croquet Mallet",
             "description": "a solid wooden croquet mallet, its handle worn smooth by countless hands. The head is dented and scratched, bearing the scars of violent impacts, hinting at a more sinister past than simple garden games.",
-            "shortDescription": "A solid wooden croquet mallet, its handle worn smooth by countless hands.",
+            "shortDescription": "a solid wooden croquet mallet, its handle worn smooth by countless hands",
             "weight": "5kg",
             "isOpenable": false
         },
@@ -28,7 +28,7 @@
             "id": "whiskey_bottle",
             "name": "Whiskey Bottle",
             "description": "a half-empty bottle of Jack Daniel's whiskey. The amber liquid inside sloshes lazily, and the bottle itself is smudged with fingerprints, as if clutched tightly during moments of despair and madness.",
-            "shortDescription": "A half-empty bottle of Jack Daniel's whiskey.",
+            "shortDescription": "a half-empty bottle of Jack Daniel's whiskey",
             "weight": "1kg",
             "isOpenable": true
         },
@@ -36,7 +36,7 @@
             "id": "kitchen_knife",
             "name": "Kitchen Knife",
             "description": "a large, razor-sharp kitchen knife. The blade gleams menacingly in the dim light, reflecting distorted images of your surroundings. It's the kind of knife that feels more suited to sinister purposes than culinary arts.",
-            "shortDescription": "A large, razor-sharp kitchen knife.",
+            "shortDescription": "a large, razor-sharp kitchen knife",
             "weight": "0.5kg",
             "isOpenable": false
         },
@@ -44,7 +44,7 @@
             "id": "axe",
             "name": "Axe",
             "description": "a massive, double-headed axe with a wickedly sharp edge. Its weight and balance suggest it could cleave through more than just wood, evoking images of brutal violence and chilling echoes of screams.",
-            "shortDescription": "A massive, double-headed axe with a wickedly sharp edge.",
+            "shortDescription": "a massive, double-headed axe with a wickedly sharp edge",
             "weight": "7kg",
             "isOpenable": false
         },
@@ -52,7 +52,7 @@
             "id": "family_photo",
             "name": "Family Photo",
             "description": "a dusty framed photo of Jack, Wendy, and Danny, smiling together in happier times. The glass is cracked, and there is something unnerving about their eyes, as if they know their fate and are silently pleading for help.",
-            "shortDescription": "A dusty framed photo of Jack, Wendy, and Danny, smiling together in happier times.",
+            "shortDescription": "a dusty framed photo of Jack, Wendy, and Danny, smiling together in happier times",
             "weight": "1kg",
             "isOpenable": false
         },
@@ -60,7 +60,7 @@
             "id": "medicine_bottle",
             "name": "Medicine Bottle",
             "description": "a small amber bottle filled with pills prescribed to Danny. The label bears a stark warning of severe side effects, hinting at the fragility of his mental state and the dire consequences of neglecting his medication.",
-            "shortDescription": "A small amber bottle filled with pills prescribed to Danny.",
+            "shortDescription": "a small amber bottle filled with pills prescribed to Danny",
             "weight": "0.2kg",
             "isOpenable": true
         },
@@ -68,7 +68,7 @@
             "id": "radio",
             "name": "Radio",
             "description": "a battered, portable radio that crackles with static. It offers a faint hope of contacting the outside world, but its unreliable reception makes every attempt to call for help a nerve-wracking gamble.",
-            "shortDescription": "A battered, portable radio that crackles with static.",
+            "shortDescription": "a battered, portable radio that crackles with static",
             "weight": "3kg",
             "isOpenable": true
         },
@@ -76,7 +76,7 @@
             "id": "snowshoes",
             "name": "Snowshoes",
             "description": "a pair of large, sturdy snowshoes, essential for traversing the treacherous, snow-covered grounds surrounding the Overlook Hotel. Their presence suggests the possibility of escape, but also the perilous journey required to achieve it.",
-            "shortDescription": "A pair of large, sturdy snowshoes, essential for traversing the treacherous, snow-covered grounds surrounding the Overlook Hotel.",
+            "shortDescription": "a pair of large, sturdy snowshoes, essential for traversing the treacherous, snow-covered grounds surrounding the Overlook Hotel",
             "weight": "2kg",
             "isOpenable": false
         },
@@ -84,7 +84,7 @@
             "id": "flashlight",
             "name": "Flashlight",
             "description": "a heavy-duty, battery-operated flashlight that cuts through the darkness with a piercing beam. Its light is a beacon of hope in the oppressive gloom, but the batteries are starting to run low, casting flickering shadows that play tricks on your mind.",
-            "shortDescription": "A heavy-duty, battery-operated flashlight that cuts through the darkness with a piercing beam.",
+            "shortDescription": "a heavy-duty, battery-operated flashlight that cuts through the darkness with a piercing beam",
             "weight": "0.5kg",
             "isOpenable": true
         },
@@ -92,7 +92,7 @@
             "id": "bat",
             "name": "Baseball Bat",
             "description": "a solid wooden baseball bat, its surface nicked and scratched from countless impacts. It feels reassuringly sturdy in your hands, offering a sense of protection against the unknown threats lurking in the shadows.",
-            "shortDescription": "A solid wooden baseball bat, its surface nicked and scratched from countless impacts.",
+            "shortDescription": "a solid wooden baseball bat, its surface nicked and scratched from countless impacts",
             "weight": "3kg",
             "isOpenable": false
         },
@@ -100,7 +100,7 @@
             "id": "hotel_ledger",
             "name": "Hotel Ledger",
             "description": "the Overlook Hotel's guest ledger, a heavy tome filled with the names of previous guests. Many of the entries are accompanied by ominous notes and mysterious symbols, hinting at the hotel's dark history and the fates that befell those who stayed here.",
-            "shortDescription": "The Overlook Hotel's guest ledger, a heavy tome filled with the names of previous guests.",
+            "shortDescription": "the Overlook Hotel's guest ledger, a heavy tome filled with the names of previous guests",
             "weight": "2kg",
             "isOpenable": true
         },
@@ -108,7 +108,7 @@
             "id": "ghost_sight",
             "name": "Ghostly Apparition",
             "description": "a fleeting glimpse of a translucent figure, its features twisted in a silent scream. It vanishes as quickly as it appeared, leaving behind an unsettling chill and the eerie sense that you are never truly alone.",
-            "shortDescription": "A fleeting glimpse of a translucent figure, its features twisted in a silent scream.",
+            "shortDescription": "a fleeting glimpse of a translucent figure, its features twisted in a silent scream",
             "weight": "0kg",
             "isOpenable": false
         },
@@ -116,7 +116,7 @@
             "id": "shining_book",
             "name": "The Shining Book",
             "description": "an old, leather-bound book filled with detailed accounts of supernatural abilities known as 'The Shining.' Its pages are filled with disturbing illustrations and ominous warnings, making it both a source of knowledge and a harbinger of dread.",
-            "shortDescription": "An old, leather-bound book filled with detailed accounts of supernatural abilities known as 'The Shining.'",
+            "shortDescription": "an old, leather-bound book filled with detailed accounts of supernatural abilities known as 'The Shining'",
             "weight": "1kg",
             "isOpenable": true
         },
@@ -124,7 +124,7 @@
             "id": "hotel_map",
             "name": "Hotel Map",
             "description": "a detailed map of the Overlook Hotel, showing every room, corridor, and hidden passage. Its precise markings and annotations suggest it was drawn by someone with an intimate knowledge of the hotel's secrets.",
-            "shortDescription": "A detailed map of the Overlook Hotel, showing every room, corridor, and hidden passage.",
+            "shortDescription": "a detailed map of the Overlook Hotel, showing every room, corridor, and hidden passage",
             "weight": "0.3kg",
             "isOpenable": true
         },
@@ -132,7 +132,7 @@
             "id": "danny's_toy",
             "name": "Danny's Toy Car",
             "description": "a small red toy car that belongs to Danny. Its bright color stands out starkly against the grim surroundings, a poignant reminder of innocence amidst the encroaching darkness.",
-            "shortDescription": "A small red toy car that belongs to Danny.",
+            "shortDescription": "a small red toy car that belongs to Danny",
             "weight": "0.2kg",
             "isOpenable": false
         },
@@ -140,7 +140,7 @@
             "id": "mysterious_note",
             "name": "Mysterious Note",
             "description": "a yellowed, crumpled note left by a previous guest. Its hastily scrawled message warns of the unspeakable horrors within Room 237, urging whoever finds it to stay away at all costs.",
-            "shortDescription": "A yellowed, crumpled note left by a previous guest.",
+            "shortDescription": "a yellowed, crumpled note left by a previous guest",
             "weight": "0.1kg",
             "isOpenable": false
         },
@@ -148,7 +148,7 @@
             "id": "hotel_chef_hat",
             "name": "Chef's Hat",
             "description": "a pristine white chef's hat worn by the Overlook Hotel's head chef. It carries the faint scent of cooked meals and a hint of something less savory, suggesting a hidden story behind its immaculate appearance.",
-            "shortDescription": "A pristine white chef's hat worn by the Overlook Hotel's head chef.",
+            "shortDescription": "a pristine white chef's hat worn by the Overlook Hotel's head chef",
             "weight": "0.1kg",
             "isOpenable": false
         },
@@ -156,7 +156,7 @@
             "id": "snowcat_engine_part",
             "name": "Snowcat Engine Part",
             "description": "a crucial, greasy engine part needed to repair the snowcat. Its weight and appearance convey its importance, as well as the difficulty and danger involved in obtaining and installing it.",
-            "shortDescription": "A crucial, greasy engine part needed to repair the snowcat.",
+            "shortDescription": "a crucial, greasy engine part needed to repair the snowcat",
             "weight": "8kg",
             "isOpenable": false
         },
@@ -164,7 +164,7 @@
             "id": "toolbox",
             "name": "Toolbox",
             "description": "a heavy metal toolbox filled with an assortment of tools necessary for various repairs. Its contents rattle ominously, each tool potentially a means of survival or a weapon in desperate hands.",
-            "shortDescription": "A heavy metal toolbox filled with an assortment of tools necessary for various repairs.",
+            "shortDescription": "a heavy metal toolbox filled with an assortment of tools necessary for various repairs",
             "weight": "10kg",
             "isOpenable": true
         },
@@ -172,7 +172,7 @@
             "id": "wrench",
             "name": "Wrench",
             "description": "a large, adjustable wrench, its jaws capable of gripping and turning stubborn bolts. It feels cold and solid in your hand, ready to be used for mechanical repairs or as a makeshift weapon.",
-            "shortDescription": "A large, adjustable wrench, its jaws capable of gripping and turning stubborn bolts.",
+            "shortDescription": "a large, adjustable wrench, its jaws capable of gripping and turning stubborn bolts",
             "weight": "2kg",
             "isOpenable": false
         },
@@ -180,7 +180,7 @@
             "id": "screwdriver",
             "name": "Screwdriver",
             "description": "a flat-head screwdriver, its tip worn from frequent use. It's an essential tool for any repair job, but also a reminder of the thin line between construction and destruction.",
-            "shortDescription": "A flat-head screwdriver, its tip worn from frequent use.",
+            "shortDescription": "a flat-head screwdriver, its tip worn from frequent use",
             "weight": "0.5kg",
             "isOpenable": false
         },
@@ -188,7 +188,7 @@
             "id": "snowcat_manual",
             "name": "Snowcat Repair Manual",
             "description": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat. Its pages are dog-eared and stained, indicating it has been well-used and perhaps even a lifeline in critical moments.",
-            "shortDescription": "A thick, detailed manual filled with diagrams and instructions on how to repair the snowcat.",
+            "shortDescription": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat",
             "weight": "1kg",
             "isOpenable": true
         },
@@ -196,7 +196,7 @@
             "id": "fuel_can",
             "name": "Fuel Can",
             "description": "a heavy canister of fuel for the snowcat. It sloshes ominously when moved, each step with it echoing the dire need for escape and the dangerous journey ahead.",
-            "shortDescription": "A heavy canister of fuel for the snowcat.",
+            "shortDescription": "a heavy canister of fuel for the snowcat",
             "weight": "5kg",
             "isOpenable": false
         },
@@ -204,7 +204,7 @@
             "id": "wires",
             "name": "Frayed Wires",
             "description": "a tangled mess of frayed electrical wires, their exposed copper glinting dangerously. They might be useful to fix a telephone ... or a snowcat",
-            "shortDescription": "A tangled mess of frayed electrical wires.",
+            "shortDescription": "a tangled mess of frayed electrical wires",
             "weight": "0.5kg",
             "isOpenable": false
         },
@@ -212,7 +212,7 @@
             "id": "battery",
             "name": "Battery",
             "description": "a corroded, heavy-duty battery, its surface pitted with age and misuse. It holds a faint charge, just enough to power a snowcat...",
-            "shortDescription": "A corroded, heavy-duty battery.",
+            "shortDescription": "a corroded, heavy-duty battery",
             "weight": "5kg",
             "isOpenable": false
         } 

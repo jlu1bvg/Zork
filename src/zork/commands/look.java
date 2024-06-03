@@ -11,10 +11,12 @@ public class look {
         System.out.println(Game.getRoom().longDescription());
         if(items.size()>1){
             System.out.print("You see ");
-            for (int i = 0; i < items.size()-1; i++) {
+            for (int i = 0; i < items.size(); i++) {
+                if(i == items.size()-1){
+                    System.out.print(" and" + items.get(items.size()-1).getShortDescription() + ".");
+                    break;
+                }
                 System.out.print(items.get(i).getShortDescription() + ", ");
-                if(i == items.size()-1)
-                    System.out.print("and" + items.get(i+1).getShortDescription());
             }
             System.out.println();
         }else if (items.size() == 1){

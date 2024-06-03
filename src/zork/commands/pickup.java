@@ -20,9 +20,11 @@ public class pickup {
             System.out.println("Item not found");
             String listOfItems = "";
             for (int i = 0; i < items.size()-1; i++) {
+                if(i == items.size()-1){
+                    listOfItems += items.get(items.size()-1) + ".";
+                    break;
+                }
                 listOfItems += items.get(i).getName() + ", ";
-                if(i == items.size()-1)
-                    listOfItems += items.get(i+1) + ".";
             }
             return "Item not found. You can pickup " + listOfItems;
         }else if(items.size() == 1){
