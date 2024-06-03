@@ -14,6 +14,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.commands.drop;
 import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
@@ -54,7 +55,7 @@ public class Game {
     parser = new Parser();
     initializeCommands();
     Jack = new Player(100, new Inventory(20));
-    //Jack.increaseInsanity(48);
+    // Jack.increaseInsanity(48);
     // Jack.checkInsanity();
     computer=new DDOS(parser);
   }
@@ -240,6 +241,7 @@ public class Game {
   }
 
   private void goRoom(Command command) {
+    HorseRacingHelper.clearConsole();
     currentRoom = go.goRoom(currentRoom, command);
   }
 

@@ -1,0 +1,44 @@
+{
+    "characters": [
+        {
+            "id": "wendy",
+            "name": "Wendy",
+            "description": "A slender woman with long, dark hair and wide, expressive eyes"
+        },
+        {
+            "id": "danny",
+            "name": "Danny",
+            "description": "A young boy with blond hair and a serious, often anxious expression, wearing the same expression now."
+        },
+        {
+            "id": "dick",
+            "name": "Dick",
+            "description": "A tall, middle-aged African-American man with a kind face and a calm demeanor."
+        },
+        {
+            "id": "nudist",
+            "name": "Naked Lady",
+            "description": "Scaring people off with her nudes, a decaying, nude wo - man?"
+        },
+        {
+            "id": "alcoholic",
+            "name": "Alcoholic Man",
+            "description": "A disheveled man with piercing eyes, a receding hairline, and an increasingly wild appearance"
+        },
+        {
+            "id": "thetwins",
+            "name": "The Wierd Twins",
+            "description": "Identical young girls with long, dark hair, wearing matching blue dresses and a hauntingly vacant stare, you cant stop staring at them."
+        },
+        {
+            "id": "monsiurgrady",
+            "name": "Monsieur Grady",
+            "description": "A distinguished, elderly man with a well-groomed appearance, dressed in a formal suit."
+        },
+        {
+            "id": "bossguy",
+            "name": "'Boss Man Dan' AKA Stuart Ullman",
+            "description": "A neatly dressed, middle-aged man, roughly 5,11', though he tells people he's 6 foot, well polished and is allways caught wearing a freshly drycleaned black suit."
+        }
+    ]
+}
