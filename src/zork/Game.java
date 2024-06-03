@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import zork.commands.drop;
+import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
 import zork.commands.go;
 import zork.commands.pickup;
@@ -37,6 +38,7 @@ public class Game {
   private static boolean Objective1 = false;
   private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
+  private DDOS computer;
 
   /**
    * Create the game and initialise its internal map
@@ -54,6 +56,7 @@ public class Game {
     Jack = new Player(100, new Inventory(20));
     Jack.increaseInsanity(48);
     // Jack.checkInsanity();
+    computer=new DDOS(parser);
   }
 
   public static Map<String,Item> getAllItems(){
@@ -203,6 +206,7 @@ public class Game {
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
+    audio.stop();
   }
 
   private boolean processCommand(Command command) {
@@ -309,6 +313,14 @@ public class Game {
     return currentRoom;
   }
 
+  private void runDDOS(Command command){
+    try {
+      computer.runDDOS();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -324,6 +336,7 @@ public class Game {
     commandActions.put("drop", this::dropItem);
     commandActions.put("objective", this::printObjective);
     commandActions.put("sanity", this::checkInsanity);
+    commandActions.put("computer", this::runDDOS);
   }
 
   private void processQuit(Command command) {
