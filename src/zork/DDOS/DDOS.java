@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import zork.Bootstrapper;
 import zork.Game;
 import zork.Parser;
 
@@ -23,11 +24,14 @@ public class DDOS {
     private static Map<String,Consumer<ComputerCommand>> computerCommandActions=new HashMap<>();
     private Folder currentFolder;
     private static Parser Parser;
+    public static boolean playing=false;
 
     public DDOS() {
         try {
         initFolders("src"+File.separator+"zork"+File.separator+"data"+File.separator+"folders.json");
         currentFolder = Game.folderMap.get("C:\\Users\\StuartUllman");
+        initFiles("src"+File.separator+"zork"+File.separator+"data"+File.separator+"files.json");
+        // initExecutables();
         } catch (Exception e) {
         e.printStackTrace();
         }
@@ -38,7 +42,7 @@ public class DDOS {
         Parser=parser;
         runningDDOS=true;
         bootup();
-        while(runningDDOS){
+        while(runningDDOS&&!playing){
             ComputerCommand computerCommand;
             try {
                 computerCommand=parser.getComputerCommand(currentFolder);
@@ -53,14 +57,7 @@ public class DDOS {
     private void bootup() throws InterruptedException{
         int timeScale=bootTime*100/100;
         for(int i=0;i<=50;i++){
-            int delay=(int)(Math.random()*100000);
-            if(delay>100&&delay<2000){
-                Thread.sleep(timeScale+delay);
-            }
-            else{
-                Thread.sleep(timeScale);
-            }
-            HorseRacingHelper.clearConsole();
+            
             System.out.println("  _____    _____     ____     _____ \r\n" + //
                              " |  __ \\  |  __ \\   / __ \\   / ____|\r\n" + //
                              " | |  | | | |  | | | |  | | | (___  \r\n" + //
@@ -80,6 +77,14 @@ public class DDOS {
                 System.out.print(" ");
             }
             System.out.print("|");
+            int delay=(int)(Math.random()*100000);
+            if(delay>100&&delay<2000){
+                Thread.sleep(timeScale+delay);
+            }
+            else{
+                Thread.sleep(timeScale);
+            }
+            HorseRacingHelper.clearConsole();
         }
         HorseRacingHelper.playBackgroundMusic("src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"Windows Final Vista.wav", false);
         clearConsole(null);
@@ -108,8 +113,33 @@ public class DDOS {
         computerCommandActions.put("exit", this::processQuit);
         computerCommandActions.put("dir",computerCommand->currentFolder.printChangeDirectories());
         computerCommandActions.put("cd", this::changeDirectory);
-        computerCommandActions.put("open", null);
-      }
+        computerCommandActions.put("open", this::runExecutable);
+    }
+
+    private void initFiles(String jsonName) throws Exception {
+        Path path = Path.of(jsonName);
+        String jsonString = Files.readString(path);
+        JSONParser parser = new JSONParser();
+        JSONObject json = (JSONObject) parser.parse(jsonString);
+
+        JSONArray jsonFiles = (JSONArray) json.get("files");
+
+        for (Object fileObj : jsonFiles) {
+            String fileName = (String) ((JSONObject) fileObj).get("name");
+            String filePath = (String) ((JSONObject) fileObj).get("path");
+            String fileType=(String)((JSONObject)fileObj).get("type");
+            zork.DDOS.File file=new zork.DDOS.File(fileName,fileType);
+            
+            Game.folderMap.get(filePath.substring(0,filePath.indexOf(fileName)-1)).addFile(file);
+        }
+        initExecutables();
+    }
+
+    private void initExecutables(){
+        Game.folderMap.get("C:\\Users\\StuartUllman\\Games").executables.put("PrimeQuest.exe", file->Bootstrapper.runPrimequest());
+        Game.folderMap.get("C:\\Users\\StuartUllman\\Games").executables.put("Whodunit.exe", file->Bootstrapper.runWhodunit());
+        Game.folderMap.get("C:\\Users\\StuartUllman\\Games").executables.put("Undertale.exe", file->Bootstrapper.runUndertale());
+    }
 
     private void initFolders(String fileName) throws Exception {
         Path path = Path.of(fileName);
@@ -120,23 +150,28 @@ public class DDOS {
         JSONArray jsonFolders = (JSONArray) json.get("folders");
 
         for (Object folderObj : jsonFolders) {
-        Folder folder = new Folder();
-        String folderName = (String) ((JSONObject) folderObj).get("name");
-        String folderPath = (String) ((JSONObject) folderObj).get("path");
-        folder.setFolderName(folderName);
-        folder.setFolderPath(folderPath);
+            Folder folder = new Folder();
+            String folderName = (String) ((JSONObject) folderObj).get("name");
+            String folderPath = (String) ((JSONObject) folderObj).get("path");
+            folder.setFolderName(folderName);
+            folder.setFolderPath(folderPath);
 
-        JSONArray jsonChangeDirectories = (JSONArray) ((JSONObject) folderObj).get("changeDirectories");
-        ArrayList<ChangeDirectory> changeDirectories = new ArrayList<>();
-        for (Object changeDirectoryObj : jsonChangeDirectories) {
-            String directoryName = (String) ((JSONObject) changeDirectoryObj).get("directory");
-            String directoryPath = (String) ((JSONObject) changeDirectoryObj).get("directoryPath");
-            ChangeDirectory changeDirectory = new ChangeDirectory(directoryName, directoryPath);
-            changeDirectories.add(changeDirectory);
-        }
+            JSONArray jsonChangeDirectories = (JSONArray) ((JSONObject) folderObj).get("changeDirectories");
+            ArrayList<ChangeDirectory> changeDirectories = new ArrayList<>();
+            for (Object changeDirectoryObj : jsonChangeDirectories) {
+                String directoryName = (String) ((JSONObject) changeDirectoryObj).get("directory");
+                String directoryPath = (String) ((JSONObject) changeDirectoryObj).get("directoryPath");
+                ChangeDirectory changeDirectory = new ChangeDirectory(directoryName, directoryPath);
+                changeDirectories.add(changeDirectory);
+            }
         folder.setChangeDirectories(changeDirectories);
         Game.folderMap.put(folderPath, folder);
         }
+    }
+
+    private void runExecutable(ComputerCommand command){
+        currentFolder.runExecutable(currentFolder.getFile(command.getSecondWord()));
+        HorseRacingHelper.clearConsole();
     }
 
     private void changeDirectory(ComputerCommand command){
@@ -169,6 +204,15 @@ public class DDOS {
     }
 
     private void clearConsole(ComputerCommand command){
+        HorseRacingHelper.clearConsole();
+
+        System.out.println("Deslauriers Disk Operating System for Enterprise v9.11");
+        System.out.println("Copyright Kevin Deslauriers Enterprise Networks. All rights reserved.");
+        System.out.println("");
+        System.out.println("help - Shows all commands");
+    }
+
+    public static void clearConsole(){
         HorseRacingHelper.clearConsole();
 
         System.out.println("Deslauriers Disk Operating System for Enterprise v9.11");

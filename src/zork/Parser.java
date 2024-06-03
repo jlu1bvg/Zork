@@ -58,7 +58,7 @@ public class Parser {
     if (computerCommands.isSingleCommand(word1.toLowerCase())&&word2==null)
       return new ComputerCommand(word1, null);
     else if(currentFolder.checkFile(word1))
-      return new ComputerCommand("open", word2);
+      return new ComputerCommand("open", word1);
     else
       return new ComputerCommand(null, null);
   }

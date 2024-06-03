@@ -32,6 +32,7 @@ import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import minizorks.whodunit.Parallel.src.zork.utils.Stopper;
+import zork.DDOS.DDOS;
 
 public class Game {
 
@@ -191,6 +192,8 @@ public class Game {
 			}
 			
 		}
+		DDOS.playing=false;
+		DDOS.clearConsole();
     	// cmdListener.start();
 	}
 

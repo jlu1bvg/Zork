@@ -35,12 +35,26 @@
         {
           "directory": "Documents",
           "adjacentPath": "C:\\Users\\StuartUllman\\Documents"
+        },
+        {
+          "directory":"Games",
+          "adjacentPath":"C:\\Users\\StuartUllman\\Games"
         }
       ]
     },
     {
       "path": "C:\\Users\\StuartUllman\\Documents",
       "name": "Documents",
+      "changeDirectories": [
+        {
+          "directory":"..",
+          "adjacentPath":"C:\\Users\\StuartUllman"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\StuartUllman\\Games",
+      "name": "Games",
       "changeDirectories": [
         {
           "directory":"..",

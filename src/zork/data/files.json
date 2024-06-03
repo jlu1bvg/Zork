@@ -2,9 +2,21 @@
     "files": [
       {
         "path": "C:\\Users\\StuartUllman\\Games\\PrimeQuest.exe",
-        "name": "PrimeQuest",
+        "name": "PrimeQuest.exe",
         "type":"Executable",
         "link":"Bootstrapper.runPrimequest()"
+      },
+      {
+        "path":"C:\\Users\\StuartUllman\\Games\\Whodunit.exe",
+        "name":"Whodunit.exe",
+        "type":"Executable",
+        "link":"Bootstrapper.runWhodunit()"
+      },
+      {
+        "path":"C:\\Users\\StuartUllman\\Games\\Undertale.exe",
+        "name":"Undertale.exe",
+        "type":"Executable",
+        "link":"Bootstrapper.runUndertale()"
       }
     ]
   }

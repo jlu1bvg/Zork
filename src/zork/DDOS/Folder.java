@@ -1,9 +1,11 @@
 package zork.DDOS;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
+import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.Game;
 
 public class Folder {
@@ -11,8 +13,8 @@ public class Folder {
   private String folderName;
   private String folderPath;
   private ArrayList<ChangeDirectory> changeDirectories;
-  private ArrayList<File> files;
-  private Map<String,Consumer<File>> mapFiles;
+  private ArrayList<File> files=new ArrayList<File>();
+  public Map<String,Consumer<File>> executables=new HashMap<>();
 
   public ArrayList<ChangeDirectory> getChangeDirectories() {
     return changeDirectories;
@@ -41,6 +43,46 @@ public class Folder {
 
   public void setChangeDirectories(ArrayList<ChangeDirectory> changeDirectories) {
     this.changeDirectories = changeDirectories;
+  }
+
+  public void runExecutable(File file){
+    Consumer<File> run = executables.get(file.getName());
+    if (run != null) {
+      DDOS.playing=true;
+      HorseRacingHelper.clearConsole();
+      int timeScale=100/100;
+      for(int i=0;i<=20;i++){
+          System.out.println("Loading "+file.getName());
+          System.out.print("|");
+          for(int j=0;j<i;j++){
+              System.out.print("-");
+          }
+          for(int k=20-i;k>0;k--){
+              System.out.print(" ");
+          }
+          System.out.print("|");
+          int delay=(int)(Math.random()*100000);
+          if(delay>100&&delay<2000){
+              try {
+                Thread.sleep(timeScale+delay);
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
+          }
+          else{
+              try {
+                Thread.sleep(timeScale);
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
+          }
+          HorseRacingHelper.clearConsole(); 
+      }
+      run.accept(file);      
+    } 
+    else {
+      System.out.println("Invalid thing");
+    }
   }
 
   /**
@@ -125,6 +167,15 @@ public class Folder {
     return files;
   }
 
+  public File getFile(String fileName){
+    for(File file:files){
+      if(file.getName().equals(fileName)){
+        return file;
+      }
+    }
+    return new File(null, null);
+  }
+
   public Boolean checkFile(String name){
     if(files!=null){
       for(File file:files){
@@ -136,13 +187,11 @@ public class Folder {
     return false;
   }
 
-  public Folder addFile(File i) {
+  public void addFile(File i) {
     files.add(i);
-    return this;
   }
   
-  public Folder remove(File i) {
+  public void removeFile(File i) {
     files.remove(i);
-    return this;
   }
 }
