@@ -31,6 +31,7 @@ public class Game {
   private static Map<String, Item> itemMap = new HashMap<>();
   public static HashMap<String, Folder> folderMap=new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
+  private static ArrayList<Room> rooms = new ArrayList<>();
 
   private Parser parser;
   private static Room currentRoom;
@@ -58,6 +59,10 @@ public class Game {
     // Jack.increaseInsanity(48);
     // Jack.checkInsanity();
     computer=new DDOS(parser);
+  }
+
+  public static ArrayList<Room> getRooms(){
+    return rooms;
   }
 
   public static Map<String,Item> getAllItems(){
@@ -163,6 +168,7 @@ public class Game {
                 room.setItems(itemsInRoom);
 
                 roomMap.put(roomId, room);
+                rooms.add(room);
             }
         }
     }
