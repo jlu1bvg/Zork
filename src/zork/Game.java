@@ -194,7 +194,7 @@ public class Game {
    * Print out the opening message for the player.
    */
   private void printWelcome() {
-    Audio audio = new Audio("audio", "src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"01 - Main Title The Shining.wav");
+    Audio audio = new Audio("audio", "src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"Various-1980TheShiningOriginalMotionPictureSoundtrack"+File.separator+"01 - Main Title The Shining.wav");
     audio.play();
     try {
       Thread.sleep(2000);
