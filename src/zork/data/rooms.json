@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
+      "id": "hallway",
       "name": "Hallway",
       "description": "You are in a long hallway. There are family pictures on all of the walls.",
       "exits": [
@@ -22,58 +22,25 @@
       ]
     },
     {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
+      "id": "lobby",
+      "name": "Lobby",
+      "description": "You are in the hotel lobby.",
       "exits": [
-        {
-          "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "Hallway"
-        },
-        {
-          "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Closet"
-        }
+
       ],
       "items": [
-        "snowcat_manual", "battery", "fuel_can", "snowcat_engine_part", "wires", "screwdriver"
+
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
+      "id": "",
+      "name": "",
+      "description": "",
       "exits": [
-        {
-          "isLocked": true,
-          "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
-        },
-        {
-          "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
-        }
-      ]
-    },
-    {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
-      "exits": [
-        {
-          "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Bedroom"
-        }
+
+      ],
+      "items": [
+        
       ]
     }
   ]
