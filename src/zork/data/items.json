@@ -131,7 +131,7 @@
         {
             "id": "danny's_toy",
             "name": "Danny's Toy Car",
-            "description": "a small red toy car that belongs to Danny. Its bright color stands out starkly against the grim surroundings, a poignant reminder of innocence amidst the encroaching darkness.",
+            "description": "a small red toy car that belongs to Danny. Its bright color stands out starkly against the grim surroundings, a poignant symbol of innocence amidst the encroaching darkness.",
             "shortDescription": "a small red toy car that belongs to Danny",
             "weight": "0.2kg",
             "isOpenable": false
@@ -189,7 +189,7 @@
             "name": "Snowcat Repair Manual",
             "description": "the Snowcat Repair Manual. \n---------------------------\nThese are items needed to repair the snowcat: \n1.Snowcat Engine Part \n2.Screwdriver \n3.Fuel Can \n4.Wires \n5.Battery",
             "shortDescription": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat",
-            "weight": "1kg",
+            "weight": "0.5kg",
             "isOpenable": true
         },
         {

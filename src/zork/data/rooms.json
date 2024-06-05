@@ -13,12 +13,11 @@
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
+          "adjacentRoom": "Bathroom"
         }
       ],
       "items": [
-        "room_237_key"
+        "room_237_key", ""
       ]
     },
     {
@@ -41,6 +40,56 @@
       ],
       "items": [
         
+      ]
+    },
+    {
+      "id": "garage",
+      "name": "Garage",
+      "description": "You enter a dimly lit room, with dust lining the walls and a large snoowcat in the middle. A narrow door lies behind it.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "garage_storage"
+        }
+      ],
+      "items": [
+        "egg", "snowcat"
+      ]
+    },
+    {
+      "id": "garage_storage",
+      "name": "Garage Storage",
+      "description": "",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "east",
+          "adjacentRoom": "garage"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "garage_basement"
+        }
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "garage_basement",
+      "name": "Garage Basement",
+      "description": "",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "garage_storage"
+        }
+      ],
+      "items": [
+        "snowcat_chest"
       ]
     }
   ]
