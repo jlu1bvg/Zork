@@ -17,7 +17,7 @@
         }
       ],
       "items": [
-        "room_237_key", ""
+        
       ]
     },
     {
@@ -48,13 +48,13 @@
 
       ],
       "items": [
-
+        "room_237_key"
       ]
     },
     {
       "id": "switchboard_room",
       "name": "Switchboard room",
-      "description": "You enter the switchboard room, a dimly lit chamber filled with rows of buzzing telecommunication equipment, evoking a sense of isolation and foreboding",
+      "description": "You are in the switchboard room, a dimly lit chamber filled with rows of buzzing telecommunication equipment, evoking a sense of isolation and foreboding",
       "exits": [
         {
           "isLocked": false, 
@@ -116,7 +116,7 @@
     {
       "id": "red_bathroom",
       "name": "Red bathroom",
-      "description": "You enter the red bathroom, with all red decor and furnishing and long rows of sinks and toilets",
+      "description": "You are in the red bathroom, with all red decor and furnishing and long rows of sinks and toilets",
       "exits": [
         {
           "isLocked": false, 
@@ -130,8 +130,8 @@
       ]
     },
     {
-      "id": "elavator",
-      "name": "Elavator",
+      "id": "elevator",
+      "name": "Elevator",
       "description": "You are in the elavator, it is tight and empty. Go south to go up a floor",
       "exits": [
         {
@@ -153,7 +153,7 @@
     {
       "id": "colorado_lounge",
       "name": "Colorado Lounge",
-      "description": "You enter the colorado lounge, a spacious grandiose hall with expansive windows offering breathtaking views of the Rockies, plenty of sofas and areas to relax. As well, a typewriter in the center of the room,",
+      "description": "You are in the colorado lounge, a spacious grandiose hall with expansive windows offering breathtaking views of the Rockies, plenty of sofas and areas to relax. As well, a typewriter in the center of the room,",
       "exits": [
         {
           "isLocked": false, 
@@ -195,7 +195,7 @@
     {
       "id": "garage",
       "name": "Garage",
-      "description": "You enter a dimly lit room, with dust lining the walls and a large snoowcat in the middle. A narrow door lies behind it.",
+      "description": "You are in a dimly lit room, with dust lining the walls and a large snoowcat in the middle. A narrow door lies behind it.",
       "exits": [
         {
           "isLocked": false,

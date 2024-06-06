@@ -247,22 +247,22 @@ public class Game {
   }
 
   private void goRoom(Command command) {
-    HorseRacingHelper.clearConsole();
+    //HorseRacingHelper.clearConsole();
     currentRoom = go.goRoom(currentRoom, command);
   }
 
   private void goRoom(String direction) {
-    HorseRacingHelper.clearConsole();
+    //HorseRacingHelper.clearConsole();
     currentRoom = go.goRoom(currentRoom, direction);
   }
 
   private void pickup(Command command){
     if(command.getSecondWord() == null){
-      System.out.println("What do you want to pick up?");
+      System.out.println("\nWhat do you want to pick up?\n");
       tryToPickup = true;
     }else{
       String response = pickup.pickup(command.getSecondWord());
-      System.out.println(response);
+      System.out.println("\n" + response + "\n");
     }
   }
 
@@ -281,18 +281,18 @@ public class Game {
 
   private void dropItem(Command command){
     if(command.getSecondWord() == null){
-      System.out.println("What do you want to drop?");
+      System.out.println("\nWhat do you want to drop?\n");
     }else if(command.getSecondWord().equals("everything") || command.getSecondWord().equals("all")){
       String response = drop.dropAll();
-      System.out.println(response);
+      System.out.println("\n" + response + "\n");
     }else{
       String response = drop.dropItem(command.getSecondWord());
-      System.out.println(response);
+      System.out.println("\n" + response + "\n");
     }
   }
 
   private void lookaround(Command command){
-    look.lookaround(currentRoom);
+    look.lookaround();
   }
   
   private void inventory(Command command){
@@ -300,7 +300,7 @@ public class Game {
     int weightWidth = 10;
     int isOpenableWidth = 15;
 
-    System.out.println("Inventory:");
+    System.out.println("\nInventory:");
     System.out.printf("%-" + nameWidth + "s %" + weightWidth + "s %" + isOpenableWidth + "s\n", "Name", "Weight", "Openable");
 
     System.out.println(new String(new char[nameWidth + weightWidth + isOpenableWidth + 2]).replace('\0', '-'));
@@ -308,6 +308,7 @@ public class Game {
     for (Item item : Player.getInventory().getItems()) {
         System.out.printf("%-" + nameWidth + "s %" + weightWidth + "d %" + isOpenableWidth + "s\n", item.getName(), item.getWeight(), item.isOpenable() ? "Yes" : "No");
     }
+    System.out.println();
   }
 
   private void checkInsanity(Command command){
@@ -315,7 +316,7 @@ public class Game {
   }
 
   private void printObjective(Command command){
-    System.out.println(objective.printObjective());;
+    System.out.println("\n" + objective.printObjective() + "\n");
   }
 
   public static Room getRoom(){

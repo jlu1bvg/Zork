@@ -46,7 +46,7 @@ public class Room {
    * constructor).
    */
   public String shortDescription() {
-    return "Room: " + roomName + "\n" + description;
+    return "\n" + description;
   }
 
   /**

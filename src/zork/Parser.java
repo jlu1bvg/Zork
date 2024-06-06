@@ -41,6 +41,10 @@ public class Parser {
     }else{
       if(Game.canPickup()){
         Game.changeCanPickup();
+        word1 = words[0];
+        for (int i = 1; i < words.length; i++) {
+          word1 += " " + words[i];
+        }
         return new Command("pickup", word1);
       }
       return new Command(null, word2);        
