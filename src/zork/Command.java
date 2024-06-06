@@ -18,7 +18,7 @@ public class Command {
    * Return the command word (the first word) of this command. If the command was
    * not understood, the result is null.
    */
-  public static String getCommandWord() {
+  public String getCommandWord() {
     return commandWord;
   }
 
@@ -26,7 +26,7 @@ public class Command {
    * Return the second word of this command. Returns null if there was no second
    * word.
    */
-  public static String getSecondWord() {
+  public String getSecondWord() {
     return secondWord;
   }
 

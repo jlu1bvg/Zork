@@ -49,7 +49,7 @@ public class Game {
     try {
       initItems("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
       initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
-      currentRoom = roomMap.get("Bedroom"); //change this
+      currentRoom = roomMap.get("lobby"); //change this
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -219,15 +219,15 @@ public class Game {
   private boolean processCommand(Command command) {
     if (command.isUnknown()) {
       if(tryToPickup)
-        pickup(Command.getCommandWord());
+        pickup(command.getCommandWord());
       System.out.println("I don't know what you mean...");
       return false;
     }
 
-    Consumer<Command> action = commandActions.get(Command.getCommandWord().toLowerCase());
+    Consumer<Command> action = commandActions.get(command.getCommandWord().toLowerCase());
     if (action != null) {
       action.accept(command);
-      return Command.getCommandWord().equals("quit") && !command.hasSecondWord();
+      return command.getCommandWord().equals("quit") && !command.hasSecondWord();
     } else {
       System.out.println("I don't know what you mean...");
       return false;
@@ -252,15 +252,16 @@ public class Game {
   }
 
   private void goRoom(String direction) {
+    HorseRacingHelper.clearConsole();
     currentRoom = go.goRoom(currentRoom, direction);
   }
 
   private void pickup(Command command){
-    if(Command.getSecondWord() == null){
+    if(command.getSecondWord() == null){
       System.out.println("What do you want to pick up?");
       tryToPickup = true;
     }else{
-      String response = pickup.pickup(Command.getSecondWord());
+      String response = pickup.pickup(command.getSecondWord());
       System.out.println(response);
     }
   }
@@ -279,13 +280,13 @@ public class Game {
   }
 
   private void dropItem(Command command){
-    if(Command.getSecondWord() == null){
+    if(command.getSecondWord() == null){
       System.out.println("What do you want to drop?");
-    }else if(Command.getSecondWord().equals("everything") || Command.getSecondWord().equals("all")){
+    }else if(command.getSecondWord().equals("everything") || command.getSecondWord().equals("all")){
       String response = drop.dropAll();
       System.out.println(response);
     }else{
-      String response = drop.dropItem(Command.getSecondWord());
+      String response = drop.dropItem(command.getSecondWord());
       System.out.println(response);
     }
   }
