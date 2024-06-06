@@ -86,7 +86,7 @@ public class DDOS {
             }
             HorseRacingHelper.clearConsole();
         }
-        HorseRacingHelper.playBackgroundMusic("src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"Windows Final Vista.wav", false);
+        HorseRacingHelper.playBackgroundMusic("src"+File.separator+"zork"+File.separator+"data"+File.separator+"audio"+File.separator+"DDOS"+File.separator+"Windows Final Vista.wav", false);
         clearConsole(null);
     }
 

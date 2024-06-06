@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
+      "id": "hallway",
       "name": "Hallway",
       "description": "You are in a long hallway. There are family pictures on all of the walls.",
       "exits": [
@@ -13,67 +13,83 @@
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
-        }
-      ],
-      "items": [
-        "room_237_key"
-      ]
-    },
-    {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
-      "exits": [
-        {
-          "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "Hallway"
-        },
-        {
-          "isLocked": false,
-          "direction": "SouthEast",
           "adjacentRoom": "Bathroom"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Closet"
         }
       ],
       "items": [
-        "snowcat_manual", "battery", "fuel_can", "snowcat_engine_part", "wires", "screwdriver"
+        "room_237_key", ""
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
+      "id": "lobby",
+      "name": "Lobby",
+      "description": "You are in the hotel lobby.",
+      "exits": [
+
+      ],
+      "items": [
+
+      ]
+    },
+    {
+      "id": "",
+      "name": "",
+      "description": "",
+      "exits": [
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "garage",
+      "name": "Garage",
+      "description": "You enter a dimly lit room, with dust lining the walls and a large snoowcat in the middle. A narrow door lies behind it.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
+          "adjacentRoom": "garage_storage"
+        }
+      ],
+      "items": [
+        "egg", "snowcat"
+      ]
+    },
+    {
+      "id": "garage_storage",
+      "name": "Garage Storage",
+      "description": "",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "east",
+          "adjacentRoom": "garage"
         },
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
+          "direction": "down",
+          "adjacentRoom": "garage_basement"
         }
+      ],
+      "items": [
+        
       ]
     },
     {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
+      "id": "garage_basement",
+      "name": "Garage Basement",
+      "description": "",
       "exits": [
         {
           "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Bedroom"
+          "direction": "up",
+          "adjacentRoom": "garage_storage"
         }
+      ],
+      "items": [
+        "snowcat_chest"
       ]
     }
   ]
