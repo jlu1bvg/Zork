@@ -28,13 +28,21 @@ public class Character {
         return description;
     }
 
+    public Room getRoom(){
+        return room;
+    }
+
     // public String appearInRoom(List<String> availableRooms) {
     //     Random rand = new Random();
     //     return availableRooms.get(rand.nextInt(availableRooms.size()));
     // }
 
-    public void randomRoom(){
-        room = rooms.get((int)Math.random()*(rooms.size()-1)); //if you want to restrict rooms you can use a while loop: while(room.getName()==the room you don't want)
+    public void randomRoom(Character character){
+        room = rooms.get((int)Math.random()*(rooms.size()-1)); //generates a random room
+        if(character.getName().equals("Danny")){ //just use if commands to restrict different characters
+            while(character.getRoom().getRoomName().equals("Room 237")) //use this to restrict which rooms the specific character can't go in
+                room = rooms.get((int)Math.random()*(rooms.size()-1)); 
+        }
     }
 
 }

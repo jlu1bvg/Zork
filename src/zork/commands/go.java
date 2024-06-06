@@ -17,7 +17,7 @@ public class go {
         Room nextRoom = currentRoom.nextRoom(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println("\nThere is no door!\n");
             return currentRoom;
         } else {
             System.out.println(nextRoom.longDescription());
