@@ -23,8 +23,28 @@
     {
       "id": "lobby",
       "name": "Lobby",
-      "description": "You are in the hotel lobby.",
+      "description": "You are in the hotel lobby, it is an open space with lots of furniture and entry ways on all sides of the room",
       "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "gold_room"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "elevator"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "entrance"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "switchboard_room"
+        }
 
       ],
       "items": [
@@ -32,11 +52,141 @@
       ]
     },
     {
-      "id": "",
-      "name": "",
-      "description": "",
+      "id": "switchboard_room",
+      "name": "Switchboard room",
+      "description": "You enter the switchboard room, a dimly lit chamber filled with rows of buzzing telecommunication equipment, evoking a sense of isolation and foreboding",
       "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "lobby"
+        }
+      ],
+      "items": [
+        "radio", "telephone"
+      ]
+    },
+    {
+      "id": "entrance",
+      "name": "Entrance",
+      "description": "You are outside, the ground is flat with a path leading north to a garage and west to green fort-like maze",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "garage"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "lobby"
+        }
 
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "gold_room",
+      "name": "Gold room",
+      "description": "You are in the gold room,luxurious, opulently decorated lounge where guests gather, its gilded surfaces and warm lighting concealing a palpable sense of unease",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "red_bathroom"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "lobby"
+        }
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "red_bathroom",
+      "name": "Red bathroom",
+      "description": "You enter the red bathroom, with all red decor and furnishing and long rows of sinks and toilets",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "gold_room"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "elavator",
+      "name": "Elavator",
+      "description": "You are in the elavator, it is tight and empty. Go south to go up a floor",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "colorado_lounge"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "lobby"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "colorado_lounge",
+      "name": "Colorado Lounge",
+      "description": "You enter the colorado lounge, a spacious grandiose hall with expansive windows offering breathtaking views of the Rockies, plenty of sofas and areas to relax. As well, a typewriter in the center of the room,",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "hall_2"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "elevator_2"
+        }
+        
+      ],
+      "items": [
+        "typewriter" 
+      ]
+    },
+    {
+      "id": "elevator_2",
+      "name": "Elevator 2",
+      "description": "You are in the elavator, it is tight and empty. Go north to go down a floor",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "lobby"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "colorado_lounge"
+        }
+        
       ],
       "items": [
         
@@ -51,6 +201,11 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "garage_storage"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "entrance"
         }
       ],
       "items": [
