@@ -10,6 +10,7 @@ import java.util.Map;
 public class openItem {
     public static String openItem(String item){
         Map<String, Item> items = Game.getAllItems();
+
         Item i = items.get(item.toLowerCase());
         String s = "";
         if(i.getItemInventory() != null){
