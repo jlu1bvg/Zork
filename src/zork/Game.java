@@ -19,7 +19,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
-import zork.commands.Open;
 import zork.commands.drop;
 import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
@@ -411,13 +410,13 @@ public class Game {
       System.out.println("\nWhat do you want to open?\n");
       tryToOpen = true;
     }else {
-      String response = Open.open(command.getSecondWord());
+      String response = openItem.openItem(command.getSecondWord());
       System.out.println("\n" + response + "\n");
     }
   }
 
   public void open(String item){
-    String response = Open.open(item);
+    String response = openItem.openItem(item);
     System.out.println(response);
 }
 
