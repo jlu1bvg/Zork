@@ -13,7 +13,7 @@
             "name": "Typewriter",
             "description": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke. The paper loaded in it is filled with the repeated phrase 'All work and no play makes Jack a dull boy,' written obsessively in a neat, yet frantic hand.",
             "shortDescription": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke",
-            "weight": "10kg",
+            "weight": "20kg",
             "isOpenable": false
         },
         {
@@ -103,14 +103,6 @@
             "shortDescription": "the Overlook Hotel's guest ledger, a heavy tome filled with the names of previous guests",
             "weight": "2kg",
             "isOpenable": true
-        },
-        {
-            "id": "ghost_sight",
-            "name": "Ghostly Apparition",
-            "description": "a fleeting glimpse of a translucent figure, its features twisted in a silent scream. It vanishes as quickly as it appeared, leaving behind an unsettling chill and the eerie sense that you are never truly alone.",
-            "shortDescription": "a fleeting glimpse of a translucent figure, its features twisted in a silent scream",
-            "weight": "0kg",
-            "isOpenable": false
         },
         {
             "id": "shining_book",

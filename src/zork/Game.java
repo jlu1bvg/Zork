@@ -113,12 +113,12 @@ public class Game {
             String itemId = (String) jsonItem.get("id");
             String itemName = (String) jsonItem.get("name");
             String itemDescription = (String) jsonItem.get("description");
-            String itemShrotDescription = (String) jsonItem.get("shortDescription");
+            String itemShortDescription = (String) jsonItem.get("shortDescription");
             String weightString = (String) jsonItem.get("weight");
             double itemWeightDouble = Double.parseDouble(weightString.replace("kg", "").trim());
             int itemWeight = (int) itemWeightDouble;  // Convert to int if necessary
             boolean isOpenable = (boolean) jsonItem.get("isOpenable");
-            Item item = new Item(itemWeight, itemName, itemDescription, itemShrotDescription, isOpenable);
+            Item item = new Item(itemWeight, itemName, itemDescription, itemShortDescription, isOpenable);
             itemMap.put(itemId, item);
         }
     }
@@ -341,6 +341,7 @@ public class Game {
     commandActions.put("east", command -> goRoom("east"));
     commandActions.put("west", command -> goRoom("west"));
     commandActions.put("pickup", this::pickup);
+    commandActions.put("take", this::pickup);
     commandActions.put("inventory", this::inventory);
     commandActions.put("look", this::lookaround);
     commandActions.put("drop", this::dropItem);
