@@ -60,10 +60,30 @@
           "isLocked": false, 
           "direction": "West",
           "adjacentRoom": "lobby"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "office_room"
         }
       ],
       "items": [
         "radio", "telephone"
+      ]
+    },
+    {
+      "id": "office_room",
+      "name": "Office room",
+      "description": "You are in the office room, a dimly lit claustrophobic room with a desk and painting on the walls",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "switchboard_room"
+        }
+      ],
+      "items": [
+        "radio", "telephone", "circuit_breaker"
       ]
     },
     {
@@ -74,7 +94,7 @@
         {
           "isLocked": false, 
           "direction": "West",
-          "adjacentRoom": "maze"
+          "adjacentRoom": "maze_r1"
         },
         {
           "isLocked": false, 
@@ -93,9 +113,343 @@
       ]
     },
     {
+      "id": "maze_r1",
+      "name": "Maze r1",
+      "description": "You are at the entrance of the maze, there are two paths north and south leading further in the maze. Or go east to exit the maze to go the the entrance of the hotel",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r15"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r14"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "entrance"
+        }
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r15",
+      "name": "Maze r15",
+      "description": "You are in the right bottom corner maze, you can either go north or west",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r1"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r2"
+        }
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r2",
+      "name": "Maze r2",
+      "description": "You are in the maze, you can either go north, west, or east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r7"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r3"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r15"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r3",
+      "name": "Maze r3",
+      "description": "You are in the bottom left corner of the maze, you can either go north or east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r4"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r2"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r4",
+      "name": "Maze r4",
+      "description": "You are in the maze, you can either go north, south, or east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r6"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r5"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r3"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r5",
+      "name": "Maze r5",
+      "description": "You are in the maze, at the end of this path there is a dead end",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r4"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r6",
+      "name": "Maze r6",
+      "description": "You are in the top left of the maze, there is a dead end at the front of the path. You can either go south or east",
+      "exits": [
+      
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r13"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r4"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r13",
+      "name": "Maze r13",
+      "description": "You are  still in the maze, at the end of this path there is a dead end",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r6"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r8",
+      "name": "Maze r8",
+      "description": "You are still in the maze, at the end of this path there is a dead end. You can only go east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r8"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r7",
+      "name": "Maze r7",
+      "description": "You are still in the maze, you can either go south, west, or east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r8"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r9"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r2"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r9",
+      "name": "Maze r9",
+      "description": "You are still in the maze, you can either go south, west, or north",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r7"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r11"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r10"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r10",
+      "name": "Maze r10",
+      "description": "You are still in the maze, at the end of this path there is a dead end. You can only go north",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "maze_r9"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r12",
+      "name": "Maze r12",
+      "description": "You are still in the maze, at the end of this path there is a dead end. You can only go east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r11"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r11",
+      "name": "Maze r11",
+      "description": "You are still in the maze, you can either go south, west, or east",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r12"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "maze_r14"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r9"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "maze_r14",
+      "name": "Maze r14",
+      "description": "You are in the top right of the maze, you can either go south or west",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "maze_r11"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "maze_r1"
+        }
+
+
+      ],
+      "items": [
+        
+      ]
+    },
+    {
       "id": "gold_room",
       "name": "Gold room",
-      "description": "You are in the gold room,luxurious, opulently decorated lounge where guests gather, its gilded surfaces and warm lighting concealing a palpable sense of unease",
+      "description": "You are in the gold room, a luxurious opulently decorated lounge where guests gather, its gilded surfaces and warm lighting concealing a palpable sense of unease",
       "exits": [
         {
           "isLocked": false, 
@@ -174,7 +528,7 @@
     {
       "id": "elevator_2",
       "name": "Elevator 2",
-      "description": "You are in the elavator, it is tight and empty. Go north to go down a floor",
+      "description": "You are in the elavator, it is tight and empty. You can either go down one floor or stay of the same floor. Go north to go down a floor",
       "exits": [
         {
           "isLocked": false, 

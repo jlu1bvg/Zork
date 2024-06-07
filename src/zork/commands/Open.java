@@ -7,7 +7,7 @@ import java.util.*;
 import zork.Game;
 
 public class Open {
-    public static String Open (String item) {
+    public static String open (String item) {
         ArrayList<Item> items = Game.getRoom().getItems();
         
         for (int i=0; i<items.size(); i++) {

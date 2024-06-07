@@ -5,16 +5,21 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import zork.commands.Open;
 import zork.commands.drop;
 import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
@@ -24,7 +29,7 @@ import zork.utils.Ascii;
 import zork.utils.Audio;
 import zork.commands.look;
 import zork.commands.objective;
-import zork.commands.open;
+import zork.commands.openItem;
 
 public class Game {
 
@@ -39,6 +44,7 @@ public class Game {
   private static Room currentRoom;
   private static Player Jack;
   private static boolean tryToPickup;
+  private static boolean tryToOpen;
   private static boolean Objective1 = false;
   private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
@@ -225,6 +231,17 @@ public class Game {
     System.out.println("Thank you for playing.  Good bye.");
   }
 
+  private void typeWrite(String text, int delay) {
+    try {
+      for (char c : text.toCharArray()) {
+        System.out.print(c);
+        Thread.sleep(delay); 
+      }
+      System.out.println();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
   /**
    * Print out the opening message for the player.
    */
@@ -243,10 +260,17 @@ public class Game {
       e.printStackTrace();
     }
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a new, incredibly boring adventure game.");
-    System.out.println("Type 'help' if you need help.");
+
+    typeWrite("You are Jack Torrance, the new caretaker of the Overlook Hotel.", 10);
+    typeWrite("The hotel is isolated, surrounded by snow, and filled with dark secrets.", 10);
+    typeWrite("The previous caretaker, driven mad by the hotel's eerie presence, met a gruesome end.", 10);
+    typeWrite("Beware, the hotel's malevolent influence is always lurking. You can check your sanity status during the game.", 10);
+    typeWrite("Explore the hotel to uncover its secrets, but tread carefully... the line between reality and madness is thin.", 10);
+    typeWrite("Type 'help' if you need help.", 10);
     System.out.println();
+
+    typeWrite(currentRoom.longDescription(), 10);
+
     System.out.println(currentRoom.longDescription());
     audio.stop();
   }
@@ -255,6 +279,11 @@ public class Game {
     if (command.isUnknown()) {
       if(tryToPickup)
         pickup(command.getCommandWord());
+      if(tryToOpen)
+        open(command.getCommandWord());
+        // idk what to do about the below stuff
+        // null
+        // I don't know what you mean...
       System.out.println("I don't know what you mean...");
       return false;
     }
@@ -359,7 +388,7 @@ public class Game {
   }
 
   public void openItem(Command command){
-    System.out.println(open.openItem(command.getSecondWord()));
+    System.out.println(openItem.openItem(command.getSecondWord()));
   }
 
   private void runDDOS(Command command){
@@ -368,6 +397,32 @@ public class Game {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
+  }
+
+  // public void playPuzzle() {
+  //   if ()
+  //   //check which item is open
+  //   //play the puzzle
+  //   //...
+  // }
+
+  public void open(Command command) {
+    if(command.getSecondWord() == null){
+      System.out.println("\nWhat do you want to open?\n");
+      tryToOpen = true;
+    }else{
+      String response = Open.open(command.getSecondWord());
+      System.out.println("\n" + response + "\n");
+    }
+  }
+
+  public void open(String item){
+    String response = Open.open(item);
+    System.out.println(response);
+}
+
+  public static void changeOpen() {
+    tryToOpen = false;
   }
 
   private void initializeCommands() {

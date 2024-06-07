@@ -226,6 +226,22 @@
             "shortDescription": "an old-fashioned rotary telephone with a heavy, black handset",
             "weight": "3kg",
             "isOpenable": true
+        },
+        {
+            "id": "circuit_breaker",
+            "name": "Circuit Breaker",
+            "description": "a faded circuit breaker with switches, once sturdy and dependable, that now creak with resistance at the slightest touch, as if reluctant to awaken from their slumber.",
+            "shortDescription": "a faded cicuit breaker with creaky switches",
+            "weight": "15kg",
+            "isOpenable": true
+        },
+        {
+            "id": "manual_key_paper",
+            "name": "Manual Key Paper",
+            "description": "",
+            "shortDescription": "",
+            "weight": "0.5kg",
+            "isOpenable": true
         }
     ]
 }
