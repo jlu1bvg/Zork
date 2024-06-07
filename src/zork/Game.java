@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -190,6 +193,17 @@ public class Game {
     System.out.println("Thank you for playing.  Good bye.");
   }
 
+  private void typeWrite(String text, int delay) {
+    try {
+      for (char c : text.toCharArray()) {
+        System.out.print(c);
+        Thread.sleep(delay); 
+      }
+      System.out.println();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
   /**
    * Print out the opening message for the player.
    */
@@ -208,10 +222,17 @@ public class Game {
       e.printStackTrace();
     }
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a new, incredibly boring adventure game.");
-    System.out.println("Type 'help' if you need help.");
+
+    typeWrite("You are Jack Torrance, the new caretaker of the Overlook Hotel.", 10);
+    typeWrite("The hotel is isolated, surrounded by snow, and filled with dark secrets.", 10);
+    typeWrite("The previous caretaker, driven mad by the hotel's eerie presence, met a gruesome end.", 10);
+    typeWrite("Beware, the hotel's malevolent influence is always lurking. You can check your sanity status during the game.", 10);
+    typeWrite("Explore the hotel to uncover its secrets, but tread carefully... the line between reality and madness is thin.", 10);
+    typeWrite("Type 'help' if you need help.", 10);
     System.out.println();
+
+    typeWrite(currentRoom.longDescription(), 10);
+
     System.out.println(currentRoom.longDescription());
     audio.stop();
   }
