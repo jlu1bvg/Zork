@@ -1,11 +1,14 @@
 package zork;
 
+import java.util.ArrayList;
+
 public class Item extends OpenableObject {
   private int weight;
   private String name;
   private boolean isOpenable;
   private String description;
   private String shortDescrption;
+  private ArrayList<Item> inventory;
 
   public Item(int weight, String name, boolean isOpenable) {
     this.weight = weight;
@@ -19,6 +22,16 @@ public class Item extends OpenableObject {
       this.description = description;
       this.isOpenable = isOpenable;
       this.shortDescrption = shortDescription;
+  }
+
+  public void setItemInventory(ArrayList<Item> inventory){
+    this.inventory = inventory;
+  }
+
+  public ArrayList<Item> getItemInventory(){
+      if(isOpenable)
+        return inventory;
+      return inventory;
   }
 
   public String getDescription(){

@@ -24,15 +24,17 @@ import zork.utils.Ascii;
 import zork.utils.Audio;
 import zork.commands.look;
 import zork.commands.objective;
+import zork.commands.open;
 
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<>();
   private static Map<String, Item> itemMap = new HashMap<>();
+  private static ArrayList<Item> itemArray = new ArrayList<>();
   public static HashMap<String, Folder> folderMap=new HashMap<>();
   private Map<String, Consumer<Command>> commandActions = new HashMap<>();
   private static ArrayList<Room> rooms = new ArrayList<>();
-
+  private ArrayList<Item> itemsInItem = new ArrayList<Item>();
   private Parser parser;
   private static Room currentRoom;
   private static Player Jack;
@@ -49,6 +51,19 @@ public class Game {
     try {
       initItems("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
       initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
+        Path path = Path.of("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
+        String jsonString = Files.readString(path);
+        JSONParser parser = new JSONParser();
+        JSONObject json = (JSONObject) parser.parse(jsonString);
+
+        JSONArray jsonItems = (JSONArray) json.get("items");
+        for (Object itemObj : jsonItems) {
+          JSONObject jsonItem = (JSONObject) itemObj;
+        if (jsonItems != null) {
+          String itemId = (String) jsonItem.get("id");
+          initItemsinItems(itemMap.get(itemId), (JSONArray) ((JSONObject) itemObj).get("items"));
+        }
+      }
       currentRoom = roomMap.get("lobby"); //change this
     } catch (Exception e) {
       e.printStackTrace();
@@ -67,6 +82,10 @@ public class Game {
 
   public static Map<String,Item> getAllItems(){
     return itemMap;
+  }
+
+  public static ArrayList<Item> getItemsArray(){
+    return itemArray;
   }
 
   public static Player getPlayer(){
@@ -100,6 +119,21 @@ public class Game {
     ObjectiveInsane = true;
   }
 
+  private void initItemsinItems(Item item, JSONArray jsonItemsInItem){
+    //ArrayList<Item> itemsInItem = new ArrayList<Item>();
+      if (jsonItemsInItem != null) {
+      for (Object itemIdObj : jsonItemsInItem) {
+        String id = (String) itemIdObj;
+        Item i = itemMap.get(id);
+        //System.out.println(i.getName());
+        if (i != null) {
+          itemsInItem.add(i);
+        }
+      }
+    }
+    item.setItemInventory(itemsInItem);
+  }
+
   private void initItems(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -120,6 +154,7 @@ public class Game {
             boolean isOpenable = (boolean) jsonItem.get("isOpenable");
             Item item = new Item(itemWeight, itemName, itemDescription, itemShortDescription, isOpenable);
             itemMap.put(itemId, item);
+            itemArray.add(item);
         }
     }
 }
@@ -323,6 +358,10 @@ public class Game {
     return currentRoom;
   }
 
+  public void openItem(Command command){
+    System.out.println(open.openItem(command.getSecondWord()));
+  }
+
   private void runDDOS(Command command){
     try {
       computer.runDDOS();
@@ -348,6 +387,7 @@ public class Game {
     commandActions.put("objective", this::printObjective);
     commandActions.put("sanity", this::checkInsanity);
     commandActions.put("computer", this::runDDOS);
+    commandActions.put("open", this::openItem);
   }
 
   private void processQuit(Command command) {

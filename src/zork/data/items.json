@@ -158,7 +158,10 @@
             "description": "a heavy metal toolbox filled with an assortment of tools necessary for various repairs. Its contents rattle ominously, each tool potentially a means of survival or a weapon in desperate hands.",
             "shortDescription": "a heavy metal toolbox filled with an assortment of tools necessary for various repairs",
             "weight": "10kg",
-            "isOpenable": true
+            "isOpenable": true,
+            "items": [
+                "wrench", "screwdriver"
+            ]
         },
         {
             "id": "wrench",
