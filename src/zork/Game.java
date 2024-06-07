@@ -30,6 +30,7 @@ import zork.commands.look;
 import zork.commands.objective;
 import zork.commands.openItem;
 import zork.commands.interact;
+import zork.commands.openPuzzle;
 
 public class Game {
 
@@ -278,11 +279,10 @@ public class Game {
     if (command.isUnknown()) {
       if(tryToPickup)
         pickup(command.getCommandWord());
-      if(tryToOpen)
-        open(command.getCommandWord());
-        // idk what to do about the below stuff
-        // null
-        // I don't know what you mean...
+      if(tryToOpen) {
+        openPuzzle(command.getCommandWord());
+        return false;
+      }
       System.out.println("I don't know what you mean...");
       return false;
     }
@@ -398,29 +398,31 @@ public class Game {
     }
   }
 
-  // public void playPuzzle() {
-  //   if ()
-  //   //check which item is open
-  //   //play the puzzle
-  //   //...
+  // public void openPuzz(Command command) {
+  //     openPuzzle.openPuzz(command.getSecondWord());
+  //     tryToOpen = true;
   // }
 
-  public void open(Command command) {
+  // public static void changeOpenPuzzle() {
+  //   tryToOpen = false;
+  // }
+
+  public void openPuzzle(Command command) {
     if(command.getSecondWord() == null){
       System.out.println("\nWhat do you want to open?\n");
       tryToOpen = true;
-    }else {
-      String response = openItem.openItem(command.getSecondWord());
+    }else{
+      String response = openPuzzle.openPuzz(command.getSecondWord());
       System.out.println("\n" + response + "\n");
     }
   }
 
-  public void open(String item){
-    String response = openItem.openItem(item);
+  public void openPuzzle(String item){
+    String response = openPuzzle.openPuzz(item);
     System.out.println(response);
 }
 
-  public static void changeOpen() {
+  public static void changeOpenPuzzle() {
     tryToOpen = false;
   }
 
@@ -451,6 +453,7 @@ public class Game {
     commandActions.put("computer", this::runDDOS);
     commandActions.put("open", this::openItem);
     commandActions.put("fix", this::inter);
+    commandActions.put("opens", this::openPuzzle);
   }
 
   private void processQuit(Command command) {
