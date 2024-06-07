@@ -8,7 +8,7 @@ public class Puzzles {
         
         String guess = in.nextLine();
         
-        if (guess.equals("all work and no play makes Jack a dull boy")) {
+        if (guess.equals("work no play dull boy")) {
             System.out.println("As you input the last letter, you hear a click coming from the chest.");
             return true;
         }
@@ -21,7 +21,7 @@ public class Puzzles {
         // have the player type in the code letter by letter
         // give them the manual puzzle paper as a reward
 
-        String manualKey = "all work and no play makes Jack a dull boy";
+        String manualKey = "work no play dull boy";
         String playersKey = "";
         Scanner in = new Scanner(System.in);
 
@@ -40,7 +40,6 @@ public class Puzzles {
     }
 
     public static boolean tirePuzzle() {
-
 
         return false;
     }
