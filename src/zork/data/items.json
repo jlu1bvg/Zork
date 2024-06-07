@@ -37,7 +37,7 @@
             "name": "Kitchen Knife",
             "description": "a large, razor-sharp kitchen knife. The blade gleams menacingly in the dim light, reflecting distorted images of your surroundings. It's the kind of knife that feels more suited to sinister purposes than culinary arts.",
             "shortDescription": "a large, razor-sharp kitchen knife",
-            "weight": "0.5kg",
+            "weight": "1kg",
             "isOpenable": false
         },
         {
@@ -61,7 +61,7 @@
             "name": "Medicine Bottle",
             "description": "a small amber bottle filled with pills prescribed to Danny. The label bears a stark warning of severe side effects, hinting at the fragility of his mental state and the dire consequences of neglecting his medication.",
             "shortDescription": "a small amber bottle filled with pills prescribed to Danny",
-            "weight": "0.2kg",
+            "weight": "1kg",
             "isOpenable": true
         },
         {
@@ -85,7 +85,7 @@
             "name": "Flashlight",
             "description": "a heavy-duty, battery-operated flashlight that cuts through the darkness with a piercing beam. Its light is a beacon of hope in the oppressive gloom, but the batteries are starting to run low, casting flickering shadows that play tricks on your mind.",
             "shortDescription": "a heavy-duty, battery-operated flashlight that cuts through the darkness with a piercing beam",
-            "weight": "0.5kg",
+            "weight": "2kg",
             "isOpenable": true
         },
         {
@@ -117,7 +117,7 @@
             "name": "Hotel Map",
             "description": "a detailed map of the Overlook Hotel, showing every room, corridor, and hidden passage. Its precise markings and annotations suggest it was drawn by someone with an intimate knowledge of the hotel's secrets.",
             "shortDescription": "a detailed map of the Overlook Hotel, showing every room, corridor, and hidden passage",
-            "weight": "0.3kg",
+            "weight": "1kg",
             "isOpenable": true
         },
         {
@@ -125,7 +125,7 @@
             "name": "Danny's Toy Car",
             "description": "a small red toy car that belongs to Danny. Its bright color stands out starkly against the grim surroundings, a poignant symbol of innocence amidst the encroaching darkness.",
             "shortDescription": "a small red toy car that belongs to Danny",
-            "weight": "0.2kg",
+            "weight": "1kg",
             "isOpenable": false
         },
         {
@@ -133,7 +133,7 @@
             "name": "Mysterious Note",
             "description": "a yellowed, crumpled note left by a previous guest. Its hastily scrawled message warns of the unspeakable horrors within Room 237, urging whoever finds it to stay away at all costs.",
             "shortDescription": "a yellowed, crumpled note left by a previous guest",
-            "weight": "0.1kg",
+            "weight": "1kg",
             "isOpenable": false
         },
         {
@@ -141,7 +141,7 @@
             "name": "Chef's Hat",
             "description": "a pristine white chef's hat worn by the Overlook Hotel's head chef. It carries the faint scent of cooked meals and a hint of something less savory, suggesting a hidden story behind its immaculate appearance.",
             "shortDescription": "a pristine white chef's hat worn by the Overlook Hotel's head chef",
-            "weight": "0.1kg",
+            "weight": "1kg",
             "isOpenable": false
         },
         {
@@ -176,7 +176,7 @@
             "name": "Screwdriver",
             "description": "a flat-head screwdriver, its tip worn from frequent use. It's an essential tool for any repair job, but also a reminder of the thin line between construction and destruction.",
             "shortDescription": "a flat-head screwdriver, its tip worn from frequent use",
-            "weight": "0.5kg",
+            "weight": "2kg",
             "isOpenable": false
         },
         {
@@ -184,7 +184,7 @@
             "name": "Snowcat Repair Manual",
             "description": "the Snowcat Repair Manual. \n---------------------------\nThese are items needed to repair the snowcat: \n1.Snowcat Engine Part \n2.Screwdriver \n3.Fuel Can \n4.Wires \n5.Battery",
             "shortDescription": "a thick, detailed manual filled with diagrams and instructions on how to repair the snowcat",
-            "weight": "0.5kg",
+            "weight": "1kg",
             "isOpenable": true
         },
         {
@@ -200,7 +200,7 @@
             "name": "Wires",
             "description": "a tangled mess of frayed electrical wires, their exposed copper glinting dangerously. They might be useful to fix a telephone ... or a snowcat",
             "shortDescription": "a tangled mess of frayed electrical wires",
-            "weight": "0.5kg",
+            "weight": "1kg",
             "isOpenable": false
         },
         {
@@ -240,7 +240,7 @@
             "name": "Manual Key Paper",
             "description": "",
             "shortDescription": "",
-            "weight": "0.5kg",
+            "weight": "1kg",
             "isOpenable": true
         }
     ]

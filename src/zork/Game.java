@@ -270,7 +270,6 @@ public class Game {
 
     typeWrite(currentRoom.longDescription(), 10);
 
-    System.out.println(currentRoom.longDescription());
     audio.stop();
   }
 

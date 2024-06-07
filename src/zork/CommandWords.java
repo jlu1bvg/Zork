@@ -6,9 +6,9 @@ import java.util.Map;
 public class CommandWords {
     // a constant array that holds all valid command words
     private static final String validCommands[] = {
-        "go", "quit", "help", "eat", "pickup", "swing", "south", "north", "west", "east",
-        "open", "close", "look", "inventory", "drop", "use", "read", "write", "climb",
-        "run", "talk", "shout", "integrate", "place", "sanity", "objective", "computer"
+        "go", "quit", "help", "eat", "pickup", "take", "south", "north", "west", "east",
+        "open", "look", "inventory", "drop", "use", "read", "write",
+        "integrate", "sanity", "objective", "computer"
     };
 
     private static final Map<String, String> commandDescriptions = new HashMap<>();
@@ -19,25 +19,22 @@ public class CommandWords {
         commandDescriptions.put("help", "Show available commands");
         commandDescriptions.put("eat", "Eat food to regain energy");
         commandDescriptions.put("pickup", "Pick up an item");
-        commandDescriptions.put("swing", "Swing an object");
+        commandDescriptions.put("take", "Same thing as pickup");
         commandDescriptions.put("south", "Move south");
         commandDescriptions.put("north", "Move north");
         commandDescriptions.put("west", "Move west");
         commandDescriptions.put("east", "Move east");
         commandDescriptions.put("open", "Open an object");
-        commandDescriptions.put("close", "Close an object");
         commandDescriptions.put("look", "Look around for details");
         commandDescriptions.put("inventory", "Show your inventory");
         commandDescriptions.put("drop", "Drop an item");
         commandDescriptions.put("use", "Use an item");
         commandDescriptions.put("read", "Read something");
         commandDescriptions.put("write", "Write something");
-        commandDescriptions.put("climb", "Climb an object");
         commandDescriptions.put("run", "Run to another location");
         commandDescriptions.put("talk", "Talk to someone");
         commandDescriptions.put("shout", "Shout loudly");
         commandDescriptions.put("integrate", "Integrate an item or system");
-        commandDescriptions.put("place", "Place an item somewhere");
         commandDescriptions.put("sanity", "Check your sanity level");
         commandDescriptions.put("objective", "Check your current objective");
         commandDescriptions.put("computer", "Use a computer");
