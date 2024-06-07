@@ -14,7 +14,7 @@
             "description": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke. The paper loaded in it is filled with the repeated phrase 'All work and no play makes Jack a dull boy,' written obsessively in a neat, yet frantic hand.",
             "shortDescription": "jack's typewriter, an ancient, heavy machine that clatters ominously with every keystroke",
             "weight": "10kg",
-            "isOpenable": false
+            "isOpenable": true
         },
         {
             "id": "croquet_mallet",
@@ -229,6 +229,14 @@
             "name": "Telephone",
             "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication.",
             "shortDescription": "an old-fashioned rotary telephone with a heavy, black handset",
+            "weight": "3kg",
+            "isOpenable": true
+        },
+        {
+            "id": "circuit_breaker",
+            "name": "Circuit Breaker",
+            "description": "a faded circuit breaker with switches, once sturdy and dependable, that now creak with resistance at the slightest touch, as if reluctant to awaken from their slumber.",
+            "shortDescription": "a faded cicuit breaker with creaky switches",
             "weight": "3kg",
             "isOpenable": true
         }

@@ -58,5 +58,4 @@ public class Item extends OpenableObject {
   public void setOpenable(boolean isOpenable) {
     this.isOpenable = isOpenable;
   }
-
 }

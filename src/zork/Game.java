@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
+import zork.commands.Open;
 import zork.commands.drop;
 import zork.DDOS.DDOS;
 import zork.DDOS.Folder;
@@ -352,6 +354,26 @@ public class Game {
     }
   }
 
+  public void playPuzzle() {
+    //check which item is open
+    //play the puzzle
+    //...
+  }
+
+  public void open(Command command) {
+    if(command.getSecondWord() == null){
+      System.out.println("\nWhat do you want to open?\n");
+    }else{
+      String response = Open.open(command.getSecondWord());
+      System.out.println("\n" + response + "\n");
+    }
+  }
+
+  private void open(String item){
+    String response = Open.open(item);
+    System.out.println(response);
+}
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -368,6 +390,7 @@ public class Game {
     commandActions.put("objective", this::printObjective);
     commandActions.put("sanity", this::checkInsanity);
     commandActions.put("computer", this::runDDOS);
+    commandActions.put("open", this::open);
   }
 
   private void processQuit(Command command) {
