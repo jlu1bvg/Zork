@@ -29,6 +29,7 @@ import zork.utils.Audio;
 import zork.commands.look;
 import zork.commands.objective;
 import zork.commands.openItem;
+import zork.commands.interact;
 
 public class Game {
 
@@ -423,6 +424,14 @@ public class Game {
     tryToOpen = false;
   }
 
+  public void interact(Command command) {
+    if(command.getSecondWord() == null){
+      System.out.println("\nWhat do you want to interact with?\n");
+    }else {
+      interact.interactWithItem(command.getSecondWord());
+    }
+  }
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -441,6 +450,7 @@ public class Game {
     commandActions.put("sanity", this::checkInsanity);
     commandActions.put("computer", this::runDDOS);
     commandActions.put("open", this::openItem);
+    commandActions.put("drive", this::interact);
   }
 
   private void processQuit(Command command) {
