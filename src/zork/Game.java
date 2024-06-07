@@ -354,11 +354,12 @@ public class Game {
     }
   }
 
-  public void playPuzzle() {
-    //check which item is open
-    //play the puzzle
-    //...
-  }
+  // public void playPuzzle() {
+  //   if ()
+  //   //check which item is open
+  //   //play the puzzle
+  //   //...
+  // }
 
   public void open(Command command) {
     if(command.getSecondWord() == null){

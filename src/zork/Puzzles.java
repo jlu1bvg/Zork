@@ -25,7 +25,7 @@ public class Puzzles {
         return false;
     }
 
-    public static String manualPuzzlePaper() {
+    public static boolean manualPuzzlePaper() {
         // Jack starts typing
         // have the player type in the code letter by letter
         // give them the manual puzzle paper as a reward
@@ -40,11 +40,11 @@ public class Puzzles {
             System.out.println("|" + manualKey.substring(i, i+1) + "|");
             playersKey += in.nextLine();
         }
-        
+
         if (playersKey.equals(manualKey)) {
-            return playersKey;
+            return true;
         }
 
-        return null;
+        return false;
     }
 }
