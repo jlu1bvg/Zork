@@ -410,7 +410,7 @@ public class Game {
     if(command.getSecondWord() == null){
       System.out.println("\nWhat do you want to open?\n");
       tryToOpen = true;
-    }else{
+    }else {
       String response = Open.open(command.getSecondWord());
       System.out.println("\n" + response + "\n");
     }
