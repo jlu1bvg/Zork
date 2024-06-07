@@ -43,4 +43,45 @@ public class Puzzles {
 
         return false;
     }
+
+    public static boolean batteryPuzzle() {
+        Boolean isCharged = false;
+        int juice = (int)(Math.random() * 26) + 20; // generate random num 20-45 (battery percentage)
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("You pick up a battery off the floor. Turning it over, you spot a small green illuminated rectangle which reads: Battery life - " + juice + "%");
+
+        // MISSING - user chooses to charge the battery
+        System.out.println("Enter the percentage of life to add to the battery: ");
+        String add = in.nextLine();
+
+        int addedLife = 0;
+        try {
+            addedLife = Integer.parseInt(add);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+        }
+        juice += addedLife;
+        if (juice > 100)
+            juice = 100;
+
+        System.out.println("Updated battery life: " + juice + "%");
+
+        Timer timer = new Timer();       
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+            //    juice -= 3;
+            }
+        }, 0, 120000);
+
+        // show this if the user inputs "show battery life or something"
+        if (isCharged && juice >= 80)
+            System.out.println("The battery is now fully charged!");
+        
+        if (juice < 80)
+            System.out.println("The battery will not work in the Snowcat.");
+
+        return false;
+    }
 }
