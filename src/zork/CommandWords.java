@@ -8,7 +8,8 @@ public class CommandWords {
     private static final String validCommands[] = {
         "go", "quit", "help", "eat", "pickup", "swing", "south", "north", "west", "east",
         "open", "close", "look", "inventory", "drop", "use", "read", "write", "climb",
-        "run", "talk", "shout", "integrate", "place", "sanity", "objective", "computer"
+        "run", "talk", "shout", "integrate", "place", "sanity", "objective", "computer",
+        "drive"
     };
 
     private static final Map<String, String> commandDescriptions = new HashMap<>();

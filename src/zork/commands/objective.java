@@ -37,4 +37,8 @@ public class objective {
         }
         return "You do not have an objective at the moment. Explore the map to find items and objectives";
     }
+
+    public static int getCarPartsFound(){
+        return carParts.size();
+    }
 }
