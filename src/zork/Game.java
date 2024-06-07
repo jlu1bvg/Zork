@@ -42,6 +42,7 @@ public class Game {
   private static Room currentRoom;
   private static Player Jack;
   private static boolean tryToPickup;
+  private static boolean tryToOpen;
   private static boolean Objective1 = false;
   private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
@@ -243,6 +244,11 @@ public class Game {
     if (command.isUnknown()) {
       if(tryToPickup)
         pickup(command.getCommandWord());
+      if(tryToOpen)
+        open(command.getCommandWord());
+        // idk what to do about the below stuff
+        // null
+        // I don't know what you mean...
       System.out.println("I don't know what you mean...");
       return false;
     }
@@ -364,16 +370,21 @@ public class Game {
   public void open(Command command) {
     if(command.getSecondWord() == null){
       System.out.println("\nWhat do you want to open?\n");
+      tryToOpen = true;
     }else{
       String response = Open.open(command.getSecondWord());
       System.out.println("\n" + response + "\n");
     }
   }
 
-  private void open(String item){
+  public void open(String item){
     String response = Open.open(item);
     System.out.println(response);
 }
+
+  public static void changeOpen() {
+    tryToOpen = false;
+  }
 
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());

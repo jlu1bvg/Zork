@@ -1,23 +1,30 @@
 package zork.commands;
 
 import zork.Item;
-import zork.Player;
+// import zork.Player;
 import zork.Puzzles;
-
 import java.util.*;
 import zork.Game;
 
 public class Open {
     public static String open (String item) {
-        if (item.equals("telephone")) {
-            boolean isDeserving = Puzzles.manualPuzzlePaper();
+        ArrayList<Item> items = Game.getRoom().getItems();
+        
+        for (int i=0; i<items.size(); i++) {
+            if (items.get(i).getName().equals("Typewriter")) {
+                boolean isDeserving = Puzzles.manualPuzzlePaper();
+                Game.changeOpen();
 
-            if (isDeserving) {
-                
-            } else {
-                System.out.println("As you regain control of your body you feel as if you have missed something crucial");
+                if (isDeserving) {
+                    // Player.getInventory().addItem(items.get(i));
+                    Game.getRoom().addItem(items.get(i));
+                    System.out.println("As you regain control of your body you notice a note has been typed on the typewriter.");
+                } else {
+                    System.out.println("As you regain control of your body you see a note however something about the note feels off.");
+                }
             }
         }
+
         return null;
     }
 }
