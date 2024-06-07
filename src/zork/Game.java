@@ -424,7 +424,7 @@ public class Game {
     tryToOpen = false;
   }
 
-  public void interact(Command command) {
+  public void inter(Command command) {
     if(command.getSecondWord() == null){
       System.out.println("\nWhat do you want to interact with?\n");
     }else {
@@ -450,7 +450,7 @@ public class Game {
     commandActions.put("sanity", this::checkInsanity);
     commandActions.put("computer", this::runDDOS);
     commandActions.put("open", this::openItem);
-    commandActions.put("drive", this::interact);
+    commandActions.put("fix", this::inter);
   }
 
   private void processQuit(Command command) {
