@@ -64,7 +64,7 @@ public class Game {
    */
   public Game() {
     try {
-      initCharacters("src/zork/data/items.json");
+      // initCharacters("src/zork/data/items.json");
       initItems("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
       initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
         Path path = Path.of("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
@@ -93,31 +93,31 @@ public class Game {
   }
 
 
-  public void initCharacters(String path) throws IOException, ParseException {
+  // public void initCharacters(String path) throws IOException, ParseException {
 
-    File charactersFile = new File(path);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(charactersFile)));
-    String line = null;
-    StringBuilder b = new StringBuilder();
+  //   File charactersFile = new File(path);
+  //   BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(charactersFile)));
+  //   String line = null;
+  //   StringBuilder b = new StringBuilder();
 
-    while((line = reader.readLine()) != null) {
-      b.append(line);
-    }
+  //   while((line = reader.readLine()) != null) {
+  //     b.append(line);
+  //   }
 
-    JSONParser parser = new JSONParser();
-    JSONObject json = (JSONObject) parser.parse(b.toString());
-      JSONArray jsonItems = (JSONArray) json.get("characters");
-      for(Object object : jsonItems) {
-        JsonObject obj = (JsonObject) object;
-        String id = obj.get("id").getAsString();
-        String name = obj.get("name").getAsString();
-        String description = obj.get("description").getAsString();
+  //   JSONParser parser = new JSONParser();
+  //   JSONObject json = (JSONObject) parser.parse(b.toString());
+  //     JSONArray jsonItems = (JSONArray) json.get("characters");
+  //     for(Object object : jsonItems) {
+  //       JsonObject obj = (JsonObject) object;
+  //       String id = obj.get("id").getAsString();
+  //       String name = obj.get("name").getAsString();
+  //       String description = obj.get("description").getAsString();
 
-        Character character = new Character(id, name, description, currentRoom);
-        character.randomRoom(character);
-        characters.add(character);
-      }
-  }
+  //       Character character = new Character(id, name, description, currentRoom);
+  //       character.randomRoom(character);
+  //       characters.add(character);
+  //     }
+  // }
 
   public static ArrayList<Room> getRooms(){
     return rooms;
@@ -164,17 +164,19 @@ public class Game {
 
   private void initItemsinItems(Item item, JSONArray jsonItemsInItem){
     //ArrayList<Item> itemsInItem = new ArrayList<Item>();
-      if (jsonItemsInItem != null) {
+    if (jsonItemsInItem != null) {
+      ArrayList<Item> temp = new ArrayList<>();
       for (Object itemIdObj : jsonItemsInItem) {
         String id = (String) itemIdObj;
         Item i = itemMap.get(id);
         //System.out.println(i.getName());
         if (i != null) {
-          itemsInItem.add(i);
+          temp.add(i);
+          System.out.println(i);
         }
       }
+      item.setItemInventory(temp);
     }
-    item.setItemInventory(itemsInItem);
   }
 
   private void initItems(String fileName) throws Exception {
