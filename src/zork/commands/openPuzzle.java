@@ -2,10 +2,14 @@ package zork.commands;
 
 import zork.Puzzles;
 import zork.Game;
+import zork.Player;
 
 
 public class openPuzzle {
     public static String openPuzz (String item) {
+
+                Player player = Game.getPlayer();
+
 
         if (item.equalsIgnoreCase("typewriter")) {
             boolean isDeserving = Puzzles.manualPuzzlePaper();
@@ -26,6 +30,7 @@ public class openPuzzle {
                 System.out.println("It seems the combination entered is incorrect.");
             }
         } else if (item.equalsIgnoreCase("telephone")){
+            Player.getInventory().addItem(Game.getAllItems().get("screwdriver"));
             boolean isDeserving = Puzzles.wires();
 
             if (isDeserving) {

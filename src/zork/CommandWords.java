@@ -7,7 +7,8 @@ public class CommandWords {
     // a constant array that holds all valid command words
     private static final String validCommands[] = {
         "go", "quit", "help", "eat", "pickup", "take", "south", "north", "west", "east",
-        "open", "look", "inventory", "drop", "use", "read", "sanity", "objective", "computer", "fix"
+        "open", "look", "inventory", "drop", "use", "read", "sanity", "objective", "computer", "fix",
+        "opens"
     };
 
     private static final Map<String, String> commandDescriptions = new HashMap<>();
@@ -38,6 +39,7 @@ public class CommandWords {
         commandDescriptions.put("objective", "Check your current objective");
         commandDescriptions.put("computer", "Use a computer");
         commandDescriptions.put("fix", "Fix the snowcat");
+        commandDescriptions.put("opens", "opens puzzles");
     }
 
     /**
