@@ -222,10 +222,13 @@
         {
             "id": "telephone",
             "name": "Telephone",
-            "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication.",
+            "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication but may be useful in another case.",
             "shortDescription": "an old-fashioned rotary telephone with a heavy, black handset",
             "weight": "3kg",
-            "isOpenable": true
+            "isOpenable": false,
+            "items": [
+                "wires"
+            ]
         },
         {
             "id": "circuit_breaker",
@@ -242,6 +245,17 @@
             "shortDescription": "",
             "weight": "1kg",
             "isOpenable": true
+        },
+        {
+            "id": "chest",
+            "name": "Chest",
+            "description": "A rustic chest with the words \"knlwuayrlo o o lbdyp\" etched on the top. The front of the chest holds what seems to be a place to input letters.",
+            "shortDescription": "",
+            "weight": "5kg",
+            "isOpenable": false,
+            "items": [
+                "snowcat_manual"
+            ]
         }
     ]
 }

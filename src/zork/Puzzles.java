@@ -5,7 +5,10 @@ import java.util.*;
 public class Puzzles {
     public static boolean manualPuzzleChest() {
         Scanner in = new Scanner(System.in);
-        
+        System.out.println("touching the chest you input your guess");
+
+        System.out.println("touching the chest you input your guess");
+
         String guess = in.nextLine();
         
         if (guess.equals("work no play dull boy")) {
@@ -20,7 +23,6 @@ public class Puzzles {
         // Jack starts typing
         // have the player type in the code letter by letter
         // give them the manual puzzle paper as a reward
-
         String manualKey = "work no play dull boy";
         String playersKey = "";
         Scanner in = new Scanner(System.in);
@@ -40,6 +42,64 @@ public class Puzzles {
     }
 
     public static boolean tirePuzzle() {
+
+        return false;
+    }
+
+    public static boolean wires() {
+        Scanner in = new Scanner(System.in);
+        double numScrews = 4;
+        int correct = 0;
+
+        System.out.println(numScrews + " screws face you as you attempt to open the telephone");
+        if (Player.getInventory().containsItem(Game.getAllItems().get("screwdriver"))) {
+            System.out.println("however it seems you don't have the necessary tools to remove them");
+        }
+
+        while (numScrews*2 > 0 && Player.getInventory().containsItem(Game.getAllItems().get("screwdriver"))) {
+            String RESET = "\u001B[0m";
+            String RED = "\u001B[31m";
+            String GREEN = "\u001B[32m";
+            String YELLOW = "\u001B[33m";
+            String BLUE = "\u001B[34m";
+
+            int random = (int) (Math.random()*4 + 1);
+            if (random == 1) {
+                System.out.println(BLUE + "+    " + RESET + ">   *   #");
+            }
+            if (random == 2) {
+                System.out.println("+   " + RED + ">   " + RESET+ "*   #");
+            }
+            if (random == 3) {
+                System.out.println("+   >   " + GREEN + "*   " + RESET+ "#");
+            }
+            if (random == 4) {
+                System.out.println("+   >   *   " + YELLOW + "#" + RESET);
+            }
+
+            String response = in.nextLine();
+            if (random == 1 && response.equals("+")) {
+                correct++;
+                numScrews-= 0.5;
+            }
+            if (random == 2 && response.equals(">")) {
+                correct++;
+                numScrews-= 0.5;
+            }
+            if (random == 3 && response.equals("*")) {
+                correct++;
+                numScrews-= 0.5;
+            }
+            if (random == 4 && response.equals("#")) {
+                correct++;
+                numScrews-= 0.5;
+            }
+            System.out.println(correct);
+        }
+        
+        if (correct == 8) {
+            return true;
+        }
 
         return false;
     }

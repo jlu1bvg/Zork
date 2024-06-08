@@ -276,11 +276,12 @@ public class Game {
   }
 
   private boolean processCommand(Command command) {
+    Scanner in = new Scanner(System.in);
     if (command.isUnknown()) {
       if(tryToPickup)
         pickup(command.getCommandWord());
       if(tryToOpen) {
-        openPuzzle(command.getCommandWord());
+        openPuzzle(in.nextLine());
         return false;
       }
       System.out.println("I don't know what you mean...");
@@ -420,11 +421,11 @@ public class Game {
   public void openPuzzle(String item){
     String response = openPuzzle.openPuzz(item);
     System.out.println(response);
-}
-
-  public static void changeOpenPuzzle() {
-    tryToOpen = false;
   }
+
+  // public static void changeOpenPuzzle() {
+  //   tryToOpen = false;
+  // }
 
   public void inter(Command command) {
     if(command.getSecondWord() == null){
