@@ -518,6 +518,11 @@
           "isLocked": false, 
           "direction": "North",
           "adjacentRoom": "elevator_2"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "stairs"
         }
         
       ],
@@ -540,6 +545,343 @@
           "direction": "South",
           "adjacentRoom": "colorado_lounge"
         }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "stairs",
+      "name": "Stairs",
+      "description": "You are on the stairs, go south to go up a floor to a hallway or north to go back to the colorado lounge ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "colorado_lounge"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "blue_halls"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "blue_halls",
+      "name": "Blue Halls",
+      "description": "You are in a hallway with blue flower wallpaper all over the walls, there are guest rooms on both sides of this hallway and the charatakers apartment at the end  ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "charatakers_apartment"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "stairs"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "room_237"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "stairs_2"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "stairs_2",
+      "name": "Stairs 2",
+      "description": "You are on the stairs, go west to go to the basement or east to go back to the blue flowered hall ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "boiler_room"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "blue_halls"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "boiler_room",
+      "name": "Boiler room",
+      "description": "You in the boiler room, it is dark room with lots of pipes and machinery ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "stairs_2"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "charatakers_apartment",
+      "name": "Charataker's apartment",
+      "description": "You are in a the entrance of the charatakers apartment, it has a rustic an old feeling with furniture and decor that doesn't make you feel at home",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "blue_halls"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "dannys_room"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "living_room"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "dannys_room",
+      "name": "Danny's room",
+      "description": "You are in Danny's room, it is a small room furnished with a wooden bed adorned with cozy blankets, accompanied by a small dresser housing personal trinkets",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "charatakers_apartment"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "living_room",
+      "name": "Living room",
+      "description": "You are in the living room, it is a medium sized room featuring plush furnishings arranged around a crackling fireplace, creating a warm and inviting space ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "charatakers_apartment"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "apartment_bedroom"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "apartment_bedroom",
+      "name": "Apartment bedroom",
+      "description": "You are in the bedroom, it has a queen bed in the center of the room as well a door leading to the bathroom ",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "living_room"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "apartment_bathroom"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "apartment_bathroom",
+      "name": "Apartment bathroom",
+      "description": "You are in the bathroom, it has a shower, toilet, and sink and is a very squishy small space",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "apartment_bedroom"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "room_237",
+      "name": "Room 237",
+      "description": "You are in the lounge area of room 237, go south to go to the bedroom",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "room237_bedroom"
+        },
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "blue_halls"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "room237_bedroom",
+      "name": "Room237 bedroom",
+      "description": "You are in the bedroom of room 237, go south to go to the bathroom or north to the lounge room of 237",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "room237_washroom"
+        },
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "room_237"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "room237_bathroom",
+      "name": "Room237 bathroom",
+      "description": "You are in the bathroom of room 237, the once-vibrant now muted colors of turqoise fill the walls, molding faucets, and a big bathtub",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "room237_bedroom"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "hall_2",
+      "name": "Halway 2",
+      "description": "You are in a long hallway, the west end leads you to the colorado loung. While, the east leads you to the kitchen area,",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "kitchen_area"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "colorado_lounge"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    
+    {
+      "id": "kitchen_area",
+      "name": "Kitachen area",
+      "description": "You are in the kitchen, a open space filled with kitchen appliances and pots and pans hanging from the sky",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "East",
+          "adjacentRoom": "dryfood_storage"
+        },
+        {
+          "isLocked": false, 
+          "direction": "South",
+          "adjacentRoom": "freezer_room"
+        },
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "hall_2"
+        }
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "freezer_room",
+      "name": "Freezer room",
+      "description": "You are in the freezer room, a cold long room filled wits shelves of frozen meet and foods",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "North",
+          "adjacentRoom": "kitchen_area"
+        }
+        
+        
+      ],
+      "items": [
+        
+      ]
+    },
+    {
+      "id": "dryfood_storage",
+      "name": "dryfood_storage",
+      "description": "You are in the canned food room, a long room filled wits shelves of canned foods and sauces",
+      "exits": [
+        {
+          "isLocked": false, 
+          "direction": "West",
+          "adjacentRoom": "kitchen_area"
+        }
+        
         
       ],
       "items": [
