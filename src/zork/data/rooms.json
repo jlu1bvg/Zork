@@ -81,9 +81,6 @@
           "direction": "North",
           "adjacentRoom": "switchboard_room"
         }
-      ],
-      "items": [
-        "radio", "telephone", "circuit_breaker"
       ]
     },
     {
@@ -133,9 +130,6 @@
           "adjacentRoom": "entrance"
         }
 
-      ],
-      "items": [
-        
       ]
     },
     {

@@ -3,6 +3,7 @@ package zork.commands;
 import zork.Puzzles;
 import zork.Game;
 
+
 public class openPuzzle {
     public static String openPuzz (String item) {
 
