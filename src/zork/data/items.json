@@ -278,6 +278,17 @@
             "items": [
                 "eric"
             ]
+        },
+         {
+            "id": "iceblock",
+            "name": "Iceblock",
+            "description": "A mysterious ice block that seems to be holding something inside.",
+            "shortDescription": "",
+            "weight": "5kg",
+            "isOpenable": false,
+            "items": [
+                
+            ]
         }
     ]
 }
