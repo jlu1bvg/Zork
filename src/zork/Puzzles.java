@@ -41,11 +41,6 @@ public class Puzzles {
         return false;
     }
 
-    public static boolean tirePuzzle() {
-
-        return false;
-    }
-
     public static boolean wires() {
         Scanner in = new Scanner(System.in);
         double numScrews = 4;
