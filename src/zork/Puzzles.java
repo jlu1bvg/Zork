@@ -52,7 +52,7 @@ public class Puzzles {
         int correct = 0;
 
         System.out.println(numScrews + " screws face you as you attempt to open the telephone");
-        if (Player.getInventory().containsItem(Game.getAllItems().get("screwdriver"))) {
+        if (!Player.getInventory().containsItem(Game.getAllItems().get("screwdriver"))) {
             System.out.println("however it seems you don't have the necessary tools to remove them");
         }
 
@@ -141,6 +141,68 @@ public class Puzzles {
         
         if (juice < 80)
             System.out.println("The battery will not work in the Snowcat.");
+
+        return false;
+    }
+
+    public static boolean engine() {
+        Scanner in = new Scanner(System.in);
+        int count = 0;
+
+        System.out.println("you feel as if there may be some use to switching the switches");
+
+        for (int i=0; i<10; i++) {
+            int random = (int) (Math.random()*10 + 1);
+            String answer;
+
+            if (random <= 5) {
+                System.out.println("|>|");
+            }
+            if (random > 5) {
+                System.out.println("|<|");
+            }
+
+            answer = in.nextLine();
+
+            if (random <= 5 && answer.equals("<")) {
+                count++;
+            }
+            if (random > 5 && answer.equals(">")) {
+                count++;
+            }
+        }
+
+        if (count == 10) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean fuelCan() {
+        Scanner in = new Scanner(System.in);
+        String answer;
+    
+        System.out.println("as you think of how you could get the item behind the ice block a picture appears in your mind but you cant remember the name of the object");
+
+        System.out.println("⠀⢱⣆⠀⠀⠀⠀⠀⠀\n" + //
+        "⠀⠀⠀⠀⠀⠀⠈⣿⣷⡀⠀⠀⠀⠀\n" + //
+        "⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣧⠀⠀⠀\n" + //
+        "⠀⠀⠀⠀⡀⢠⣿⡟⣿⣿⣿⡇⠀⠀\n" + //
+        "⠀⠀⠀⠀⣳⣼⣿⡏⢸⣿⣿⣿⢀⠀\n" + //
+        "⠀⠀⠀⣰⣿⣿⡿⠁⢸⣿⣿⡟⣼⡆\n" + //
+        "⢰⢀⣾⣿⣿⠟⠀⠀⣾⢿⣿⣿⣿⣿\n" + //
+        "⢸⣿⣿⣿⡏⠀⠀⠀⠃⠸⣿⣿⣿⡿\n" + //
+        "⢳⣿⣿⣿⠀⠀⠀⠀⠀⠀⢹⣿⡿⡁\n" + //
+        "⠀⠹⣿⣿⡄⠀⠀⠀⠀⠀⢠⣿⡞⠁\n" + //
+        "⠀⠀⠈⠛⢿⣄⠀⠀⠀⣠⠞⠋⠀⠀\n" + //
+        "⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀");
+
+        answer = in.nextLine();
+
+        if (answer.equalsIgnoreCase("fire")) {
+            return true;
+        }
 
         return false;
     }
