@@ -256,6 +256,25 @@
             "items": [
                 "snowcat_manual"
             ]
+        },
+         {
+            "id": "eric",
+            "name": "Eric",
+            "description": "A very much alive Etan. He stares into your soul. He urges you to type 'computer' before it's too late",
+            "shortDescription": "",
+            "weight": "5000kg",
+            "isOpenable": false
+        },
+        {
+            "id": "jeff_and_kevin",
+            "name": "Jeff and Kevin",
+            "description": "A dead Jeff and a dead Kevin. Their heads are smashed in and their bodies are covered in blood. It seems like they were killed by a blunt object. They have been dead for a while. Their body seems to be openable.",
+            "shortDescription": "",
+            "weight": "120kg",
+            "isOpenable": true,
+            "items": [
+                "eric"
+            ]
         }
     ]
 }

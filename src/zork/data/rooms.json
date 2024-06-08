@@ -17,7 +17,7 @@
         }
       ],
       "items": [
-        
+        "family_photo"
       ]
     },
     {
@@ -333,7 +333,7 @@
 
       ],
       "items": [
-        
+        "axe"
       ]
     },
     {
@@ -464,7 +464,7 @@
 
       ],
       "items": [
-        "snowcat_manual"
+        "whiskey_bottle"
       ]
     },
     {
@@ -601,7 +601,7 @@
         
       ],
       "items": [
-        
+        "croquet_mallet"
       ]
     },
     {
@@ -682,7 +682,7 @@
         
       ],
       "items": [
-        
+        "danny's_toy"
       ]
     },
     {
@@ -764,7 +764,7 @@
         
       ],
       "items": [
-        
+        "jeff_and_kevin"
       ]
     },
     {
@@ -808,7 +808,7 @@
     },
     {
       "id": "hall_2",
-      "name": "Halway 2",
+      "name": "Hallway 2",
       "description": "You are in a long hallway, the west end leads you to the colorado loung. While, the east leads you to the kitchen area,",
       "exits": [
         {
@@ -824,13 +824,13 @@
         
       ],
       "items": [
-        
+        "mysterious_note"
       ]
     },
     
     {
       "id": "kitchen_area",
-      "name": "Kitachen area",
+      "name": "Kitchen area",
       "description": "You are in the kitchen, a open space filled with kitchen appliances and pots and pans hanging from the sky",
       "exits": [
         {
@@ -851,7 +851,7 @@
         
       ],
       "items": [
-        
+        "hotel_chef_hat"
       ]
     },
     {
@@ -868,7 +868,7 @@
         
       ],
       "items": [
-        
+         "kitchen_knife"
       ]
     },
     {
@@ -885,7 +885,7 @@
         
       ],
       "items": [
-        
+
       ]
     },
     {
@@ -905,7 +905,7 @@
         }
       ],
       "items": [
-        "snowcat", "snowcat_manual", "snowcat_engine_part", "screwdriver", "fuel_can", "wires", "battery"
+        "snowcat", "snowcat_manual", "snowcat_engine_part", "fuel_can", "battery"
       ]
     },
     {
@@ -925,7 +925,7 @@
         }
       ],
       "items": [
-        
+        "toolbox"
       ]
     },
     {
@@ -940,7 +940,7 @@
         }
       ],
       "items": [
-        "snowcat_chest"
+        "chest"
       ]
     }
   ]
