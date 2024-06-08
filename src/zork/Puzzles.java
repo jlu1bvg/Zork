@@ -7,8 +7,6 @@ public class Puzzles {
         Scanner in = new Scanner(System.in);
         System.out.println("touching the chest you input your guess");
 
-        System.out.println("touching the chest you input your guess");
-
         String guess = in.nextLine();
         
         if (guess.equals("work no play dull boy")) {
