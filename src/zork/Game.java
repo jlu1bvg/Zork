@@ -1,7 +1,11 @@
 package zork;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +21,9 @@ import javax.sound.sampled.Clip;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.google.gson.JsonObject;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.commands.drop;
@@ -43,6 +50,7 @@ public class Game {
   private ArrayList<Item> itemsInItem = new ArrayList<Item>();
   private Parser parser;
   private static Room currentRoom;
+  public static ArrayList<Character> characters = new ArrayList<>();
   private static Player Jack;
   private static boolean tryToPickup;
   private static boolean tryToOpen;
@@ -56,6 +64,7 @@ public class Game {
    */
   public Game() {
     try {
+      initCharacters("src/zork/data/items.json");
       initItems("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
       initRooms("src" + File.separator + "zork" + File.separator + "data" + File.separator + "rooms.json");
         Path path = Path.of("src" + File.separator + "zork" + File.separator + "data" + File.separator + "items.json");
@@ -81,6 +90,37 @@ public class Game {
     // Jack.increaseInsanity(48);
     // Jack.checkInsanity();
     computer=new DDOS(parser);
+  }
+
+
+  public void initCharacters(String path) throws IOException, ParseException {
+
+    File charactersFile = new File(path);
+    BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(charactersFile)));
+    String line = null;
+    StringBuilder b = new StringBuilder();
+
+    while((line = reader.readLine()) != null) {
+      b.append(line);
+    }
+
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(b.toString());
+      JSONArray jsonItems = (JSONArray) json.get("characters");
+      for(Object object : jsonItems) {
+        JsonObject obj = (JsonObject) object;
+        String id = obj.get("id").getAsString();
+        String name = obj.get("name").getAsString();
+        String description = obj.get("description").getAsString();
+
+        Character character = new Character(id, name, description);
+        character.randomRoom(character);
+        characters.add(character);
+      }
+
+
+
+
   }
 
   public static ArrayList<Room> getRooms(){
