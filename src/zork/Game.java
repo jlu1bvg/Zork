@@ -173,7 +173,6 @@ public class Game {
         //System.out.println(i.getName());
         if (i != null) {
           temp.add(i);
-          System.out.println(i);
         }
       }
       item.setItemInventory(temp);
