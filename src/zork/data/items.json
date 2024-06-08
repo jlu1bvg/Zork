@@ -231,18 +231,21 @@
             ]
         },
         {
-            "id": "circuit_breaker",
-            "name": "Circuit Breaker",
+            "id": "circuit",
+            "name": "Circuit",
             "description": "a faded circuit breaker with switches, once sturdy and dependable, that now creak with resistance at the slightest touch, as if reluctant to awaken from their slumber.",
             "shortDescription": "a faded cicuit breaker with creaky switches",
             "weight": "15kg",
-            "isOpenable": true
+            "isOpenable": true,
+            "items": [
+                "switches"
+            ]
         },
         {
             "id": "manual_key_paper",
             "name": "Manual Key Paper",
-            "description": "",
-            "shortDescription": "",
+            "description": "an unnerving note written by you while semi conscious. Looking at the note makes you confused and scared but you feel it may be important",
+            "shortDescription": "a special note written while semi conscious",
             "weight": "1kg",
             "isOpenable": true
         },
@@ -250,12 +253,28 @@
             "id": "chest",
             "name": "Chest",
             "description": "A rustic chest with the words \"knlwuayrlo o o lbdyp\" etched on the top. The front of the chest holds what seems to be a place to input letters.",
-            "shortDescription": "",
+            "shortDescription": "a rustic chest with scrambled words that seem as though they hint to something",
             "weight": "5kg",
             "isOpenable": false,
             "items": [
                 "snowcat_manual"
             ]
+        },
+        {
+            "id": "switches",
+            "name": "Chest",
+            "description": "worn out switches that seem as if they are long overdue to be replaced. You see the paint has been scratched off through years of being in the hotel",
+            "shortDescription": "worn out switches that are all pointing the wrong direction",
+            "weight": "10kg",
+            "isOpenable": false
+        },
+        {
+            "id": "ice_block",
+            "name": "Ice Block",
+            "description": "a large block of ice that looks to have been built up over multiple years, you wonder what could possibly be hiding behind the large block of ice.",
+            "shortDescription": "a large block of ice that seems to be hiding something special behind it",
+            "weight": "30kg",
+            "isOpenable": false
         }
     ]
 }

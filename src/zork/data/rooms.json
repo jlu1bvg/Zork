@@ -68,7 +68,7 @@
         }
       ],
       "items": [
-        "radio", "telephone"
+        "radio", "telephone", "circuit"
       ]
     },
     {
@@ -462,9 +462,6 @@
           "adjacentRoom": "lobby"
         }
 
-      ],
-      "items": [
-        "snowcat_manual"
       ]
     },
     {
@@ -905,7 +902,7 @@
         }
       ],
       "items": [
-        "snowcat", "snowcat_manual", "snowcat_engine_part", "screwdriver", "fuel_can", "wires", "battery"
+        "egg", "snowcat", "ice_block"
       ]
     },
     {
