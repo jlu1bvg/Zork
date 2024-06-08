@@ -23,7 +23,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.google.gson.JsonObject;
+// import com.google.gson.JsonObject;
 
 import horseracers.multihorserace.HorseRacingAssignment.src.horseracing.HorseRacingHelper;
 import zork.commands.drop;
@@ -38,6 +38,7 @@ import zork.commands.objective;
 import zork.commands.openItem;
 import zork.commands.interact;
 import zork.commands.openPuzzle;
+import zork.commands.read;
 
 public class Game {
 
@@ -473,6 +474,10 @@ public class Game {
     }
   }
 
+  public void readItem(Command command) {
+    System.out.println(read.readItem(command.getSecondWord()));
+  }
+
   private void initializeCommands() {
     commandActions.put("help", command -> printHelp());
     commandActions.put("go", this::goRoom);
@@ -493,6 +498,7 @@ public class Game {
     commandActions.put("open", this::openItem);
     commandActions.put("fix", this::inter);
     commandActions.put("opens", this::openPuzzle);
+    commandActions.put("read", this::readItem);
   }
 
   private void processQuit(Command command) {

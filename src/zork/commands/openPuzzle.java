@@ -3,7 +3,6 @@ package zork.commands;
 import zork.Puzzles;
 import zork.Game;
 
-
 public class openPuzzle {
     public static String openPuzz (String item) {
 
@@ -16,7 +15,9 @@ public class openPuzzle {
             } else {
                 System.out.println("As you regain control of your body you see a note however something about the note feels off.");
             }
+
         } else if (item.equalsIgnoreCase("chest")){
+
             boolean isDeserving = Puzzles.manualPuzzleChest();
 
             if (isDeserving) {
@@ -25,7 +26,9 @@ public class openPuzzle {
             } else {
                 System.out.println("It seems the combination entered is incorrect.");
             }
+
         } else if (item.equalsIgnoreCase("telephone")){
+
             boolean isDeserving = Puzzles.wires();
 
             if (isDeserving) {
@@ -34,7 +37,9 @@ public class openPuzzle {
             } else {
                 System.out.println("your clumsy attempt to open the telephone was unfruitful.");
             }
+
         } else if (item.equalsIgnoreCase("circuit")){
+
             boolean isDeserving = Puzzles.engine();
 
             if (isDeserving) {
@@ -43,7 +48,9 @@ public class openPuzzle {
             } else {
                 System.out.println("not all the switches have been flipped? Maybe if you try again it might work?");
             }
+
         } else if (item.equalsIgnoreCase("ice block")){
+
             boolean isDeserving = Puzzles.fuelCan();
 
             if (isDeserving) {
@@ -52,6 +59,7 @@ public class openPuzzle {
             } else {
                 System.out.println("as you attempt to remember the word for the picture in your mind, the picture slowly fades from your mind");
             }
+
         } else {
             System.out.println("I don't know what you mean...");
         }
