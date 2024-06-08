@@ -7,8 +7,6 @@ public class Puzzles {
         Scanner in = new Scanner(System.in);
         System.out.println("touching the chest you input your guess");
 
-        System.out.println("touching the chest you input your guess");
-
         String guess = in.nextLine();
         
         if (guess.equals("work no play dull boy")) {
@@ -23,7 +21,8 @@ public class Puzzles {
         // Jack starts typing
         // have the player type in the code letter by letter
         // give them the manual puzzle paper as a reward
-        String manualKey = "work no play dull boy";
+        //String manualKey = "work no play dull boy";
+        String manualKey = "a";
         String playersKey = "";
         Scanner in = new Scanner(System.in);
 

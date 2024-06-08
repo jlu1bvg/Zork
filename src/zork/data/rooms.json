@@ -48,7 +48,7 @@
 
       ],
       "items": [
-        "room_237_key", "typewriter", "toolbox"
+        "room_237_key", "typewriter"
       ]
     },
     {
@@ -106,7 +106,7 @@
 
       ],
       "items": [
-        
+        "iceblock"
       ]
     },
     {
@@ -758,7 +758,7 @@
         
       ],
       "items": [
-        "jeff_and_kevin"
+        
       ]
     },
     {
@@ -899,7 +899,7 @@
         }
       ],
       "items": [
-        "snowcat", "snowcat_manual", "snowcat_engine_part", "fuel_can", "battery"
+        "snowcat", "battery"
       ]
     },
     {
@@ -914,7 +914,7 @@
         },
         {
           "isLocked": false,
-          "direction": "down",
+          "direction": "South",
           "adjacentRoom": "garage_basement"
         }
       ],
@@ -929,12 +929,12 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "up",
+          "direction": "North",
           "adjacentRoom": "garage_storage"
         }
       ],
       "items": [
-        "chest"
+        "chest", "jeff_and_kevin"
       ]
     }
   ]

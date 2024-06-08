@@ -242,10 +242,10 @@
             ]
         },
         {
-            "id": "manual_key_paper",
+            "id": "manual key paper",
             "name": "Manual Key Paper",
-            "description": "an unnerving note written by you while semi conscious. Looking at the note makes you confused and scared but you feel it may be important",
-            "shortDescription": "a special note written while semi conscious",
+            "description": "work no play dull boy",
+            "shortDescription": "work no play dull boy",
             "weight": "1kg",
             "isOpenable": true
         },
@@ -277,6 +277,17 @@
             "isOpenable": true,
             "items": [
                 "eric"
+            ]
+        },
+         {
+            "id": "iceblock",
+            "name": "Iceblock",
+            "description": "A mysterious ice block that seems to be holding something inside.",
+            "shortDescription": "",
+            "weight": "5kg",
+            "isOpenable": false,
+            "items": [
+                
             ]
         }
     ]
