@@ -2,6 +2,7 @@ package zork.commands;
 
 import zork.Puzzles;
 import zork.Game;
+import zork.commands.pickup;
 
 public class openPuzzle {
     public static String openPuzz (String item) {
@@ -10,7 +11,7 @@ public class openPuzzle {
             boolean isDeserving = Puzzles.manualPuzzlePaper();
 
             if (isDeserving) {
-                Game.getRoom().addItem(Game.getAllItems().get("manual_key_paper"));
+                pickup.pickupNoCondition(("Manual Key Paper"));
                 System.out.println("As you regain control of your body you notice a note has been typed on the typewriter.");
             } else {
                 System.out.println("As you regain control of your body you see a note however something about the note feels off.");
