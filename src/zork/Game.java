@@ -113,14 +113,10 @@ public class Game {
         String name = obj.get("name").getAsString();
         String description = obj.get("description").getAsString();
 
-        Character character = new Character(id, name, description);
+        Character character = new Character(id, name, description, currentRoom);
         character.randomRoom(character);
         characters.add(character);
       }
-
-
-
-
   }
 
   public static ArrayList<Room> getRooms(){
