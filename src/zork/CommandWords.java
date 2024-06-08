@@ -37,7 +37,7 @@ public class CommandWords {
         commandDescriptions.put("sanity", "Check your sanity level");
         commandDescriptions.put("objective", "Check your current objective");
         commandDescriptions.put("computer", "Use a computer");
-        commandDescriptions.put("drive", "Drive a vehicle");
+        commandDescriptions.put("fix", "Fix the snowcat");
     }
 
     /**

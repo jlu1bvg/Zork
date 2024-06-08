@@ -3,6 +3,7 @@ package zork.commands;
 import zork.commands.objective;
 import zork.utils.Ascii;
 import java.util.concurrent.TimeUnit;
+import zork.Game;
 
 public class interact {
     static String[] frames = {
@@ -72,8 +73,7 @@ public class interact {
     };
     public static void interactWithItem(String item) {
         if(item.equalsIgnoreCase("snowcat")){
-            //objective.getCarPartsFound() == 0
-            if(true){
+            if(objective.getCarPartsFound() == 5 && Game.getRoom().getRoomName().equalsIgnoreCase("garage")){
                 for (String frame : frames) {
                     Ascii.clearScreen();
                     Ascii.printAsciiArtWithAnimation(frame);

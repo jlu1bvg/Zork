@@ -272,7 +272,7 @@ public class Game {
 
     typeWrite(currentRoom.longDescription(), 10);
 
-    audio.stop();
+    //audio.stop();
   }
 
   private boolean processCommand(Command command) {

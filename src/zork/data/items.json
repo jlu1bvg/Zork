@@ -222,7 +222,7 @@
         {
             "id": "telephone",
             "name": "Telephone",
-            "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication but may be useful in another case.",
+            "description": "an old-fashioned rotary telephone with a heavy, black handset. The dial is stiff and the line crackles with static, making it unreliable for communication. There seems to be wires poking out from the back...",
             "shortDescription": "an old-fashioned rotary telephone with a heavy, black handset",
             "weight": "3kg",
             "isOpenable": false,

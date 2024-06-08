@@ -9,6 +9,7 @@ public class objective {
     private static ArrayList<Item> carParts = new ArrayList<Item>();
     
     public static String printObjective(){
+        //"snowcat_engine_part", "screwdriver", "fuel_can", "wires", "battery"
         carParts.removeAll(carParts);
         carParts.add(Game.getAllItems().get("snowcat_engine_part"));
         carParts.add(Game.getAllItems().get("screwdriver"));

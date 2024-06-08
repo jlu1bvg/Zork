@@ -905,7 +905,7 @@
         }
       ],
       "items": [
-        "egg", "snowcat"
+        "snowcat", "snowcat_manual", "snowcat_engine_part", "screwdriver", "fuel_can", "wires", "battery"
       ]
     },
     {
