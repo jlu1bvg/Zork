@@ -58,6 +58,7 @@ public class Game {
   private static boolean Objective2 = false;
   private static boolean ObjectiveInsane = false;
   private DDOS computer;
+  private Elevator elevator;
 
   /**
    * Create the game and initialise its internal map
@@ -90,6 +91,7 @@ public class Game {
     // Jack.increaseInsanity(48);
     // Jack.checkInsanity();
     computer=new DDOS(parser);
+    elevator=new Elevator();
   }
 
 

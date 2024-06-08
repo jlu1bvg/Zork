@@ -41,6 +41,12 @@ public class Room {
     exits.add(exit);
   }
 
+  public void removeExit(Exit exit){
+    if(exits.indexOf(exit)>-1){
+      exits.remove(exit);
+    }
+  }
+
   /**
    * Return the description of the room (the one that was defined in the
    * constructor).
