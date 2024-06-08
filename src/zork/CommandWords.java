@@ -6,10 +6,8 @@ import java.util.Map;
 public class CommandWords {
     // a constant array that holds all valid command words
     private static final String validCommands[] = {
-        "go", "quit", "help", "eat", "pickup", "swing", "south", "north", "west", "east",
-        "open", "close", "look", "inventory", "drop", "use", "read", "write", "climb",
-        "run", "talk", "shout", "integrate", "place", "sanity", "objective", "computer",
-        "opens"
+        "go", "quit", "help", "eat", "pickup", "take", "south", "north", "west", "east",
+        "open", "look", "inventory", "drop", "use", "read", "sanity", "objective", "computer", "fix"
     };
 
     private static final Map<String, String> commandDescriptions = new HashMap<>();
@@ -39,7 +37,6 @@ public class CommandWords {
         commandDescriptions.put("sanity", "Check your sanity level");
         commandDescriptions.put("objective", "Check your current objective");
         commandDescriptions.put("computer", "Use a computer");
-        commandDescriptions.put("opens", "Open a puzzle");
         commandDescriptions.put("drive", "Drive a vehicle");
     }
 
