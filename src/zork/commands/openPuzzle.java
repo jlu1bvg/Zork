@@ -2,8 +2,6 @@ package zork.commands;
 
 import zork.Puzzles;
 import zork.Game;
-import zork.Player;
-
 
 public class openPuzzle {
     public static String openPuzz (String item) {
@@ -61,7 +59,7 @@ public class openPuzzle {
             } else {
                 System.out.println("as you attempt to remember the word for the picture in your mind, the picture slowly fades from your mind");
             }
-            
+
         } else {
             System.out.println("I don't know what you mean...");
         }
