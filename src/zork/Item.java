@@ -31,7 +31,8 @@ public class Item extends OpenableObject {
   public ArrayList<Item> getItemInventory(){
       if(isOpenable)
         return inventory;
-      return inventory;
+      else
+        return null;
   }
 
   public String getDescription(){
